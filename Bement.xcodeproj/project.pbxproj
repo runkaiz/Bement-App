@@ -352,6 +352,17 @@
 			path = Locksmith;
 			sourceTree = "<group>";
 		};
+		B2333AA621A4DB2400340B88 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				B2D667BC21861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift */,
+				B2D667BB21861F4900CF8428 /* ATCClassicWalkthroughViewController.xib */,
+				B2D667BD21861F4A00CF8428 /* ATCWalkthroughViewController.swift */,
+				B2D667BA21861F4900CF8428 /* ATCWalkthroughViewController.xib */,
+			);
+			path = Walkthrough;
+			sourceTree = "<group>";
+		};
 		B23C8E54214C14DF007F1220 /* watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,10 +465,7 @@
 				B2E97A26211B2B890005BEA9 /* Bement.entitlements */,
 				B2BA44D420EB9FD1009437A7 /* AppDelegate.swift */,
 				B268D40A21195B06001D7BF1 /* LoginViewController.swift */,
-				B2D667BC21861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift */,
-				B2D667BB21861F4900CF8428 /* ATCClassicWalkthroughViewController.xib */,
-				B2D667BD21861F4A00CF8428 /* ATCWalkthroughViewController.swift */,
-				B2D667BA21861F4900CF8428 /* ATCWalkthroughViewController.xib */,
+				B2333AA621A4DB2400340B88 /* Walkthrough */,
 				B2E97A24211B2B4C0005BEA9 /* AdminViewController.swift */,
 				B2720438211D78590066AC5E /* MessagesTableViewController.swift */,
 				B2045D8B2129818800272036 /* MessagesTableViewCell.swift */,
@@ -1135,7 +1143,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C58CLY4K2U;
 				INFOPLIST_FILE = Bement/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1155,7 +1163,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C58CLY4K2U;
 				INFOPLIST_FILE = Bement/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

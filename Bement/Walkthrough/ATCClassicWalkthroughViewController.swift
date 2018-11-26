@@ -10,7 +10,6 @@ import UIKit
 
 class ATCClassicWalkthroughViewController: UIViewController {
     @IBOutlet var containerView: UIView!
-    @IBOutlet var imageContainerView: UIView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
@@ -30,11 +29,9 @@ class ATCClassicWalkthroughViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.image = UIImage.localImage(model.icon, template: true)
-        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage.localImage(model.icon)
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.tintColor = .white
-        imageContainerView.backgroundColor = .clear
 
         titleLabel.text = model.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20.0)

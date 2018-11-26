@@ -40,9 +40,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
     let passwords = Locksmith.loadDataForUserAccount(userAccount: "admin-password")
     
     let walkthroughs = [
-        ATCWalkthroughModel(title: "Efficienct Login System", subtitle: "This login system is very user-friendly and 100% secure when handling your data.", icon: "secure"),
+        ATCWalkthroughModel(title: "Efficienct Login System", subtitle: "This login system is very user-friendly and 100% secure when handling your data.", icon: "Real"),
         ATCWalkthroughModel(title: "Quick Responses", subtitle: "This system have lightning respond time and can provide you first hand data withour delay.", icon: "lighting"),
-        ATCWalkthroughModel(title: "Calender Feeds", subtitle: "Extremely convenient calender system by using Apple's native calender app, keeping you up to date.", icon: "calendar"),
+        ATCWalkthroughModel(title: "Calender Feeds", subtitle: "Extremely convenient calender system by using Apple's native calender app, keeping you up to date.", icon: "Straight"),
         ATCWalkthroughModel(title: "Get Notified", subtitle: "Receive notifications when a term report is released to stay on top of everything.", icon: "bell"),
         ]
     
@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
         } else {
             lockButton.fadeOut()
         }
-        print(UIDevice.modelName)
+        //print(UIDevice.modelName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -341,11 +341,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
     func isAppAlreadyLaunchedOnce()->Bool{
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
-            print("App already launched")
+            //print("App already launched")
             return true
         }else{
             defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("App launched first time")
+            //print("App launched first time")
             return false
         }
     }
