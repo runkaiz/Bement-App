@@ -77,6 +77,8 @@
 		B2BA44DC20EB9FD6009437A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BA44DB20EB9FD6009437A7 /* Assets.xcassets */; };
 		B2C8C971214ED10600A5AF67 /* UpcomingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8C970214ED10600A5AF67 /* UpcomingInterfaceController.swift */; };
 		B2C8C973214F0EEF00A5AF67 /* NextDateTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C8C972214F0EEF00A5AF67 /* NextDateTableCell.swift */; };
+		B2C96A4521AE242300480AB8 /* LookAheadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C96A4421AE242300480AB8 /* LookAheadViewController.swift */; };
+		B2C96A4821AE2B7B00480AB8 /* PresentSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C96A4721AE2B7B00480AB8 /* PresentSectionViewController.swift */; };
 		B2D035A1218A700500F79DBF /* CatalogDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D035A0218A700500F79DBF /* CatalogDetailTableViewController.swift */; };
 		B2D035A3218A850F00F79DBF /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D035A2218A850E00F79DBF /* CatalogTableViewCell.swift */; };
 		B2D035A5218A89C600F79DBF /* DeviceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D035A4218A89C600F79DBF /* DeviceKit.swift */; };
@@ -113,6 +115,7 @@
 		B2E97A23211AFFF70005BEA9 /* ForgotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E97A22211AFFF60005BEA9 /* ForgotViewController.swift */; };
 		B2E97A25211B2B4C0005BEA9 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E97A24211B2B4C0005BEA9 /* AdminViewController.swift */; };
 		B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35211215C5B3300E0F436 /* ClagettViewController.swift */; };
+		B2FE70BF21ACB4E0002852D7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE70BE21ACB4E0002852D7 /* DashboardViewController.swift */; };
 		EA4AF79B89B391775142DBBD /* Pods_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C86ED8319AA6179D0029815 /* Pods_watch.framework */; };
 /* End PBXBuildFile section */
 
@@ -256,6 +259,8 @@
 		B2BA44E020EB9FD6009437A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C8C970214ED10600A5AF67 /* UpcomingInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingInterfaceController.swift; sourceTree = "<group>"; };
 		B2C8C972214F0EEF00A5AF67 /* NextDateTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDateTableCell.swift; sourceTree = "<group>"; };
+		B2C96A4421AE242300480AB8 /* LookAheadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAheadViewController.swift; sourceTree = "<group>"; };
+		B2C96A4721AE2B7B00480AB8 /* PresentSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentSectionViewController.swift; sourceTree = "<group>"; };
 		B2D035A0218A700500F79DBF /* CatalogDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailTableViewController.swift; sourceTree = "<group>"; };
 		B2D035A2218A850E00F79DBF /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
 		B2D035A4218A89C600F79DBF /* DeviceKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKit.swift; sourceTree = "<group>"; };
@@ -297,6 +302,7 @@
 		B2E97A24211B2B4C0005BEA9 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		B2E97A26211B2B890005BEA9 /* Bement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bement.entitlements; sourceTree = "<group>"; };
 		B2F35211215C5B3300E0F436 /* ClagettViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClagettViewController.swift; sourceTree = "<group>"; };
+		B2FE70BE21ACB4E0002852D7 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		C836ACBBEB62D0DCB40A2562 /* Pods_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF6F8E08F84FEB82BE13C51 /* Pods_Bement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -465,6 +471,7 @@
 				B2E97A26211B2B890005BEA9 /* Bement.entitlements */,
 				B2BA44D420EB9FD1009437A7 /* AppDelegate.swift */,
 				B268D40A21195B06001D7BF1 /* LoginViewController.swift */,
+				B2C96A4621AE242F00480AB8 /* User Interface */,
 				B2333AA621A4DB2400340B88 /* Walkthrough */,
 				B2E97A24211B2B4C0005BEA9 /* AdminViewController.swift */,
 				B2720438211D78590066AC5E /* MessagesTableViewController.swift */,
@@ -492,6 +499,7 @@
 				B2D667B621861F3C00CF8428 /* UIViewController.swift */,
 				B2D667C221861FBF00CF8428 /* ATCWalkthroughModel.swift */,
 				B2D035A4218A89C600F79DBF /* DeviceKit.swift */,
+				B2C96A4721AE2B7B00480AB8 /* PresentSectionViewController.swift */,
 				B2BA44D820EB9FD1009437A7 /* Main.storyboard */,
 				B26C0F112119861100750545 /* LaunchScreen.storyboard */,
 				B2BA44DB20EB9FD6009437A7 /* Assets.xcassets */,
@@ -502,6 +510,15 @@
 				B2BA44E020EB9FD6009437A7 /* Info.plist */,
 			);
 			path = Bement;
+			sourceTree = "<group>";
+		};
+		B2C96A4621AE242F00480AB8 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B2FE70BE21ACB4E0002852D7 /* DashboardViewController.swift */,
+				B2C96A4421AE242300480AB8 /* LookAheadViewController.swift */,
+			);
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
 		B2D667C921862E8700CF8428 /* BementUITests */ = {
@@ -832,10 +849,12 @@
 				B2DB0A4D2193A00900BC07AF /* AlgoEntity.swift in Sources */,
 				B2D667C121861F4A00CF8428 /* ATCWalkthroughViewController.swift in Sources */,
 				B2DB0A462193A00900BC07AF /* AlgoError.swift in Sources */,
+				B2C96A4521AE242300480AB8 /* LookAheadViewController.swift in Sources */,
 				B26C0F102119710900750545 /* SupportTableViewController.swift in Sources */,
 				B2DB0A492193A00900BC07AF /* AlgorithmiaClient.swift in Sources */,
 				B2DB0A4C2193A00900BC07AF /* AlgoDataFile.swift in Sources */,
 				B2E5B440212AE05500CF904E /* ErrorViewController.swift in Sources */,
+				B2C96A4821AE2B7B00480AB8 /* PresentSectionViewController.swift in Sources */,
 				B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */,
 				B268D40B21195B06001D7BF1 /* LoginViewController.swift in Sources */,
 				B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */,
@@ -869,6 +888,7 @@
 				B2E97A23211AFFF70005BEA9 /* ForgotViewController.swift in Sources */,
 				B2045DEA212A7DD900272036 /* Locksmith.swift in Sources */,
 				B2DB0A4A2193A00900BC07AF /* AlgoDataObject.swift in Sources */,
+				B2FE70BF21ACB4E0002852D7 /* DashboardViewController.swift in Sources */,
 				B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */,
 				B2045DEB212A7DD900272036 /* LocksmithInternetProtocol.swift in Sources */,
 			);

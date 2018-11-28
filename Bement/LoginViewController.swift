@@ -23,17 +23,11 @@ enum KeychainError: Error {
 class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthroughViewControllerDelegate {
     
     @IBOutlet var LoginButton: UIButton!
-    
     @IBOutlet var SupportButton: UIButton!
-    
     @IBOutlet var username: UITextField!
-    
     @IBOutlet var password: UITextField!
-    
     @IBOutlet var stackView: UIStackView!
-    
     @IBOutlet var logoTop: NSLayoutConstraint!
-    
     @IBOutlet var lockButton: UIButton!
     
     let dictionary = Locksmith.loadDataForUserAccount(userAccount: "admin")
@@ -259,28 +253,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
                             print(error)
                         }
                     }
-                }
-                else {
+                } else {
                     let alert = UIAlertController(title: NSLocalizedString("AD", comment: ""), message: NSLocalizedString("AdminNoPassword", comment: ""), preferredStyle: .alert)
                     let sorry = UIAlertAction(title: NSLocalizedString("sorry", comment: ""), style: .cancel, handler: nil)
                     alert.addAction(sorry)
                     present(alert, animated: true, completion: nil)
                 }
-            }
-            else {
+            } else if username.text == "demo" {
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "loggedIn", sender: self)
+                }
+            } else {
                 
                 if password.text != "" {
-                    
                 } else {
-                    
                     let alert = UIAlertController(title: NSLocalizedString("noText", comment: ""), message: NSLocalizedString("NoPassword", comment: ""), preferredStyle: .alert)
                     let dismiss = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel, handler: nil)
                     alert.addAction(dismiss)
                     present(alert, animated: true, completion: nil)
                 }
             }
-        }
-        else {
+        } else {
             let alert = UIAlertController(title: NSLocalizedString("noText", comment: ""), message: NSLocalizedString("NoUsername", comment: ""), preferredStyle: .alert)
             let dismiss = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel, handler: nil)
             alert.addAction(dismiss)
@@ -295,9 +288,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
     
     @IBAction func usernameChanged(_ sender: Any) {
         UIView.animate(withDuration: 0.25, animations: {
-                
+            
             self.view.layoutIfNeeded()
-            self.stackView.frame.origin.y = 231
+            self.stackView.frame.origin.y = 255
+            
             self.logoTop.constant = 0
         })
         
@@ -317,7 +311,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
         UIView.animate(withDuration: 0.25, animations: {
                 
             self.view.layoutIfNeeded()
-            self.stackView.frame.origin.y = 231
+            self.stackView.frame.origin.y = 255
             self.logoTop.constant = 0
         })
         

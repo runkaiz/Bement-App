@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -103,6 +104,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cuv-oF-354" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4588" y="-1032"/>
+        </scene>
+        <!--Look Ahead View Controller-->
+        <scene sceneID="J17-v1-ofA">
+            <objects>
+                <viewController id="HRf-zr-Y8Q" customClass="LookAheadViewController" customModule="Bement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o5l-Qc-kfG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQb-y2-BLG">
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBF-Bl-L1w">
+                                <rect key="frame" x="309" y="60" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gwX-Xv-mwJ"/>
+                                    <constraint firstAttribute="width" constant="50" id="hfs-sn-ddR"/>
+                                </constraints>
+                                <state key="normal" image="cross">
+                                    <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="K7x-ve-zmt" kind="unwind" unwindAction="done:" id="kF6-yE-cfw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="yQb-y2-BLG" firstAttribute="leading" secondItem="J3B-8Q-Kk0" secondAttribute="leading" id="8sE-z0-fXJ"/>
+                            <constraint firstItem="yQb-y2-BLG" firstAttribute="trailing" secondItem="J3B-8Q-Kk0" secondAttribute="trailing" priority="999" id="Osz-n4-Gg3"/>
+                            <constraint firstItem="vBF-Bl-L1w" firstAttribute="top" secondItem="J3B-8Q-Kk0" secondAttribute="top" constant="16" id="Ow4-N7-ZC0"/>
+                            <constraint firstItem="yQb-y2-BLG" firstAttribute="top" secondItem="J3B-8Q-Kk0" secondAttribute="top" id="axW-AO-rYm"/>
+                            <constraint firstAttribute="bottom" secondItem="yQb-y2-BLG" secondAttribute="bottom" priority="999" id="b1V-z3-7Ay"/>
+                            <constraint firstItem="J3B-8Q-Kk0" firstAttribute="trailing" secondItem="vBF-Bl-L1w" secondAttribute="trailing" constant="16" id="ik5-sR-25S"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J3B-8Q-Kk0"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="vBF-Bl-L1w" id="z1T-JO-5m0"/>
+                        <outlet property="web" destination="yQb-y2-BLG" id="YjY-NR-meP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPG-az-8i4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="K7x-ve-zmt" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6173.6000000000004" y="-551.23152709359613"/>
         </scene>
         <!--Admin Panel-->
         <scene sceneID="EVu-0r-tMk">
@@ -746,7 +797,7 @@
                         <outlet property="stackView" destination="x0b-lu-wxJ" id="RtR-uH-Toj"/>
                         <outlet property="username" destination="2pO-ZR-lzZ" id="olm-jC-vaF"/>
                         <segue destination="NL0-bD-Ihg" kind="show" identifier="admin" id="qhn-p4-4e0"/>
-                        <segue destination="o5x-dq-Byw" kind="show" id="xws-1K-clU"/>
+                        <segue destination="o5x-dq-Byw" kind="show" identifier="loggedIn" id="xws-1K-clU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r8-NZ-kjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -922,7 +973,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGj-Yw-WdI">
-                                <rect key="frame" x="63.666666666666657" y="385" width="247.99999999999997" height="42"/>
+                                <rect key="frame" x="62.666666666666657" y="385" width="249.99999999999997" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="q9r-9z-gcQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="35"/>
                                 <color key="textColor" red="0.55764974359999997" green="0.34240914309999998" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -1014,7 +1068,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iHc-G5-Orj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" id="Tia-Xq-GGK"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="stat" id="Tia-Xq-GGK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BM-UC-yG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1023,14 +1077,99 @@
         <!--Dashboard View Controller-->
         <scene sceneID="dMq-Pm-dS8">
             <objects>
-                <viewController title="Dashboard View Controller" id="T0U-iT-t1f" sceneMemberID="viewController">
+                <viewController title="Dashboard View Controller" id="T0U-iT-t1f" customClass="DashboardViewController" customModule="Bement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YWp-7k-MA5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O19-KG-cIR">
+                                <rect key="frame" x="112.66666666666669" y="65" width="150" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1c-S4-VLa">
+                                <rect key="frame" x="37.666666666666657" y="135" width="300" height="100"/>
+                                <color key="backgroundColor" red="0.58526581525802612" green="1" blue="0.69443559646606445" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="g1c-S4-VLa" secondAttribute="height" multiplier="3:1" id="799-Y1-lBa"/>
+                                    <constraint firstAttribute="height" constant="100" id="h1t-pX-Y8T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="The Look Ahead" image="Radio">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="HRf-zr-Y8Q" kind="show" identifier="lookAhead" id="P8G-Fn-HuO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCA-L3-zaW">
+                                <rect key="frame" x="37.666666666666657" y="269" width="300" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.45054280757904053" blue="0.51757615804672241" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ko7-AV-VEF"/>
+                                    <constraint firstAttribute="width" secondItem="cCA-L3-zaW" secondAttribute="height" multiplier="3:1" id="wCe-Ha-skg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Alerts &amp; Messages" image="Bell-1">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RnF-An-l7e">
+                                <rect key="frame" x="37.666666666666657" y="403" width="300" height="100"/>
+                                <color key="backgroundColor" red="0.41977974772453308" green="0.99185138940811157" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="SUG-8F-E21"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-27" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Progress Reports" image="report">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCE-PM-oKg">
+                                <rect key="frame" x="37.666666666666657" y="537" width="300" height="100"/>
+                                <color key="backgroundColor" red="0.9628329873085022" green="1" blue="0.50260794162750244" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gTf-Tu-s5T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-2" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-116" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Imports" image="import">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xCE-PM-oKg" firstAttribute="width" secondItem="xCE-PM-oKg" secondAttribute="height" multiplier="3:1" id="3I1-Ex-ihT"/>
+                            <constraint firstItem="cCA-L3-zaW" firstAttribute="centerX" secondItem="YWp-7k-MA5" secondAttribute="centerX" id="6Kw-T1-IHJ"/>
+                            <constraint firstItem="xCE-PM-oKg" firstAttribute="top" secondItem="RnF-An-l7e" secondAttribute="bottom" constant="34" id="Ilp-Sm-ayC"/>
+                            <constraint firstItem="g1c-S4-VLa" firstAttribute="top" secondItem="O19-KG-cIR" secondAttribute="bottom" constant="34" id="Kvw-oI-iHU"/>
+                            <constraint firstItem="RnF-An-l7e" firstAttribute="width" secondItem="RnF-An-l7e" secondAttribute="height" multiplier="3:1" id="Ofk-r6-zKb"/>
+                            <constraint firstItem="cCA-L3-zaW" firstAttribute="top" secondItem="g1c-S4-VLa" secondAttribute="bottom" constant="34" id="QE9-Vd-5gX"/>
+                            <constraint firstItem="RnF-An-l7e" firstAttribute="centerX" secondItem="YWp-7k-MA5" secondAttribute="centerX" id="cPK-Qx-Gz4"/>
+                            <constraint firstItem="RnF-An-l7e" firstAttribute="top" secondItem="cCA-L3-zaW" secondAttribute="bottom" constant="34" id="dQQ-Me-QNg"/>
+                            <constraint firstItem="O19-KG-cIR" firstAttribute="centerX" secondItem="YWp-7k-MA5" secondAttribute="centerX" id="mKd-mb-fuA"/>
+                            <constraint firstItem="g1c-S4-VLa" firstAttribute="centerX" secondItem="YWp-7k-MA5" secondAttribute="centerX" id="mfg-dh-91G"/>
+                            <constraint firstItem="O19-KG-cIR" firstAttribute="top" secondItem="Std-Xe-F5c" secondAttribute="top" constant="21" id="mj8-8o-AUJ"/>
+                            <constraint firstItem="xCE-PM-oKg" firstAttribute="centerX" secondItem="YWp-7k-MA5" secondAttribute="centerX" id="zP4-I7-HMf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Std-Xe-F5c"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="fHA-bw-tG2"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="fHA-bw-tG2"/>
+                    <connections>
+                        <outlet property="alerts" destination="cCA-L3-zaW" id="feg-dA-r3c"/>
+                        <outlet property="imports" destination="xCE-PM-oKg" id="x4s-NB-1jj"/>
+                        <outlet property="progressReport" destination="RnF-An-l7e" id="sns-LQ-UuI"/>
+                        <outlet property="theLookAhead" destination="g1c-S4-VLa" id="8sT-cQ-M6z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhj-M0-xj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1391,12 +1530,19 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bell-1" width="58" height="58"/>
         <image name="IMG_1324" width="640" height="1136"/>
         <image name="IMG_1325" width="640" height="1136"/>
         <image name="Logo-1" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="Radio" width="58" height="53"/>
         <image name="Settings" width="150" height="180"/>
+        <image name="cross" width="512" height="512"/>
+        <image name="dashboard" width="30" height="30"/>
+        <image name="import" width="48" height="60"/>
         <image name="library" width="341.33334350585938" height="341.33334350585938"/>
         <image name="lock" width="1024" height="1024"/>
+        <image name="report" width="58" height="58"/>
+        <image name="stat" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JUg-PJ-UlK"/>
