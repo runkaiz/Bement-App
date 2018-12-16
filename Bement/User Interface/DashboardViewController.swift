@@ -15,7 +15,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var progressReport: UIButton!
     @IBOutlet weak var imports: UIButton!
     
-    let presentSectionViewController = PresentSectionViewController()
+    let PresentLookAheadViewController = presentLookAheadViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +47,14 @@ class DashboardViewController: UIViewController {
             
             let cellFrame = view.convert(theLookAhead.frame, from: theLookAhead.superview)
             
-            presentSectionViewController.cellFrame = cellFrame
-            presentSectionViewController.cellTransform = animateCell(cellFrame: cellFrame)
+            PresentLookAheadViewController.cellFrame = cellFrame
+            PresentLookAheadViewController.cellTransform = animateCell(cellFrame: cellFrame)
             
             destination.transitioningDelegate = self
+        }
+        
+        if segue.identifier == "import" {
+            
         }
     }
     
@@ -79,6 +83,6 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
-        return presentSectionViewController
+        return PresentLookAheadViewController
     }
 }

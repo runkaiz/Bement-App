@@ -90,6 +90,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
     @IBAction func done(_ segue: UIStoryboardSegue) {
         //print("Popping back to this view controller!")
         // reset UI elements etc here
+        globalVariable.loginStats = "nil"
     }
     
     @IBAction func support(_ sender: Any) {
@@ -230,7 +231,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
         if username.text != "" {
             if username.text == "admin" {
                 if password.text == "bementdeerfield" {
-                    
+                    globalVariable.loginStats = "Admin"
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "admin", sender: self)
                     }
@@ -243,7 +244,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
                             print("saved")
                         } catch {
                             print("A error appeared")
-                            print("First: \(error)")
                         }
                     } else {
                         do {
@@ -260,6 +260,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
                     present(alert, animated: true, completion: nil)
                 }
             } else if username.text == "demo" {
+                globalVariable.loginStats = "Demo"
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "loggedIn", sender: self)
                 }

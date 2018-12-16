@@ -77,9 +77,9 @@
                         <label width="136" alignment="left" text="End of Term:" id="c1J-ta-tsX">
                             <fontDescription key="font" style="UICTFontTextStyleTitle3"/>
                         </label>
-                        <label alignment="left" text="Label" id="TkO-AZ-q9w">
+                        <label width="136" alignment="left" text="Label" id="TkO-AZ-q9w">
                             <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                            <fontDescription key="font" style="UICTFontTextStyleTitle1"/>
                         </label>
                         <separator alignment="left" id="AZa-IX-Stl"/>
                         <table alignment="left" id="v5H-yU-VUB">
