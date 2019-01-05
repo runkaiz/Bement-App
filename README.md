@@ -1,4 +1,5 @@
-![alt text](Bement-Parent-Portal/logo-bement.png) # The Bement Parent Portal
+![alt text](Bement-Parent-Portal/logo-bement.png) 
+# The Bement Parent Portal
 
 ## What is it?
 It is an app that helps parents at Bement to get access to their account and view term papers in a faster and easier way. 
