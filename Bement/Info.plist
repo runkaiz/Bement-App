@@ -50,6 +50,14 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs your camera so it can identify buildings in Bement.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app accesses your photo library to search and identify photos.
+</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app stores your photo so you can access them later.
+</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

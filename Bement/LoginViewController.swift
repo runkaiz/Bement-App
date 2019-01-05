@@ -333,7 +333,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, ATCWalkthrough
         }
     }
     
-    func isAppAlreadyLaunchedOnce()->Bool{
+    @IBAction func cameraClicked(_ sender: Any) {
+        
+    }
+    
+    func isAppAlreadyLaunchedOnce()-> Bool {
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
             //print("App already launched")

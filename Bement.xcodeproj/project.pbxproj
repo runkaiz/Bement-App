@@ -69,6 +69,31 @@
 		B272043B211D7DAF0066AC5E /* QuickSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B272043A211D7DAF0066AC5E /* QuickSubmitViewController.swift */; };
 		B2766A23214F253300C1D2A9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2766A22214F253300C1D2A9 /* Data.swift */; };
 		B27F6B52217D626B003FF94E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27F6B43217D625A003FF94E /* ComplicationController.swift */; };
+		B282976921D18342004EAB6C /* Bement Buildings.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B282976821D18342004EAB6C /* Bement Buildings.mlmodel */; };
+		B282976B21D186AC004EAB6C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282976A21D186AC004EAB6C /* CameraViewController.swift */; };
+		B282977E21D1BA54004EAB6C /* InteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282976D21D1BA54004EAB6C /* InteractiveTransition.swift */; };
+		B282977F21D1BA54004EAB6C /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282976E21D1BA54004EAB6C /* PresentationController.swift */; };
+		B282978021D1BA54004EAB6C /* UIImageView+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282976F21D1BA54004EAB6C /* UIImageView+Calculations.swift */; };
+		B282978121D1BA54004EAB6C /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977021D1BA54004EAB6C /* UIView+Animations.swift */; };
+		B282978221D1BA54004EAB6C /* PopupDialogDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977121D1BA54004EAB6C /* PopupDialogDefaultView.swift */; };
+		B282978321D1BA54004EAB6C /* PopupDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977221D1BA54004EAB6C /* PopupDialog.swift */; };
+		B282978521D1BA54004EAB6C /* PopupDialogOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977421D1BA54004EAB6C /* PopupDialogOverlayView.swift */; };
+		B282978621D1BA54004EAB6C /* PopupDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977521D1BA54004EAB6C /* PopupDialogButton.swift */; };
+		B282978721D1BA54004EAB6C /* UIViewController+Visibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977621D1BA54004EAB6C /* UIViewController+Visibility.swift */; };
+		B282978821D1BA54004EAB6C /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977721D1BA54004EAB6C /* TransitionAnimator.swift */; };
+		B282978921D1BA54004EAB6C /* PopupDialog+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977821D1BA54004EAB6C /* PopupDialog+Keyboard.swift */; };
+		B282978A21D1BA54004EAB6C /* PopupDialogDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977921D1BA54004EAB6C /* PopupDialogDefaultViewController.swift */; };
+		B282978B21D1BA54004EAB6C /* TransitionAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977A21D1BA54004EAB6C /* TransitionAnimations.swift */; };
+		B282978C21D1BA54004EAB6C /* PopupDialogDefaultButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977B21D1BA54004EAB6C /* PopupDialogDefaultButtons.swift */; };
+		B282978D21D1BA54004EAB6C /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977C21D1BA54004EAB6C /* PresentationManager.swift */; };
+		B282978E21D1BA54004EAB6C /* PopupDialogContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282977D21D1BA54004EAB6C /* PopupDialogContainerView.swift */; };
+		B282979921D1BB59004EAB6C /* CGImage+Accelerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282979021D1BB59004EAB6C /* CGImage+Accelerate.swift */; };
+		B282979A21D1BB59004EAB6C /* CGContext+CGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282979121D1BB59004EAB6C /* CGContext+CGImage.swift */; };
+		B282979B21D1BB59004EAB6C /* CaptureQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282979221D1BB59004EAB6C /* CaptureQuality.swift */; };
+		B282979C21D1BB59004EAB6C /* TrackingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282979421D1BB59004EAB6C /* TrackingMode.swift */; };
+		B282979D21D1BB59004EAB6C /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282979521D1BB59004EAB6C /* UIImage+Blur.swift */; };
+		B282979E21D1BB59004EAB6C /* BlurLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282979621D1BB59004EAB6C /* BlurLayer.swift */; };
+		B28297A021D1BB59004EAB6C /* DynamicBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282979821D1BB59004EAB6C /* DynamicBlurView.swift */; };
 		B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28396592161A7A200034DA4 /* UIViewExtensions.swift */; };
 		B295BE82214F325600D7E63C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B295BE81214F325600D7E63C /* CloudKit.framework */; };
 		B2A4E662212D98B10079C7E6 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A4E660212D98AC0079C7E6 /* LocalAuthentication.framework */; };
@@ -237,6 +262,32 @@
 		B2766A21214F20FA00C1D2A9 /* watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watch.entitlements; sourceTree = "<group>"; };
 		B2766A22214F253300C1D2A9 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		B27F6B43217D625A003FF94E /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		B282976821D18342004EAB6C /* Bement Buildings.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Bement Buildings.mlmodel"; sourceTree = "<group>"; };
+		B282976A21D186AC004EAB6C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B282976D21D1BA54004EAB6C /* InteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveTransition.swift; sourceTree = "<group>"; };
+		B282976E21D1BA54004EAB6C /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		B282976F21D1BA54004EAB6C /* UIImageView+Calculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Calculations.swift"; sourceTree = "<group>"; };
+		B282977021D1BA54004EAB6C /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		B282977121D1BA54004EAB6C /* PopupDialogDefaultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultView.swift; sourceTree = "<group>"; };
+		B282977221D1BA54004EAB6C /* PopupDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialog.swift; sourceTree = "<group>"; };
+		B282977421D1BA54004EAB6C /* PopupDialogOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogOverlayView.swift; sourceTree = "<group>"; };
+		B282977521D1BA54004EAB6C /* PopupDialogButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogButton.swift; sourceTree = "<group>"; };
+		B282977621D1BA54004EAB6C /* UIViewController+Visibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Visibility.swift"; sourceTree = "<group>"; };
+		B282977721D1BA54004EAB6C /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
+		B282977821D1BA54004EAB6C /* PopupDialog+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PopupDialog+Keyboard.swift"; sourceTree = "<group>"; };
+		B282977921D1BA54004EAB6C /* PopupDialogDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultViewController.swift; sourceTree = "<group>"; };
+		B282977A21D1BA54004EAB6C /* TransitionAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimations.swift; sourceTree = "<group>"; };
+		B282977B21D1BA54004EAB6C /* PopupDialogDefaultButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogDefaultButtons.swift; sourceTree = "<group>"; };
+		B282977C21D1BA54004EAB6C /* PresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
+		B282977D21D1BA54004EAB6C /* PopupDialogContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupDialogContainerView.swift; sourceTree = "<group>"; };
+		B282979021D1BB59004EAB6C /* CGImage+Accelerate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+Accelerate.swift"; sourceTree = "<group>"; };
+		B282979121D1BB59004EAB6C /* CGContext+CGImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+CGImage.swift"; sourceTree = "<group>"; };
+		B282979221D1BB59004EAB6C /* CaptureQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureQuality.swift; sourceTree = "<group>"; };
+		B282979321D1BB59004EAB6C /* DynamicBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicBlurView.h; sourceTree = "<group>"; };
+		B282979421D1BB59004EAB6C /* TrackingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingMode.swift; sourceTree = "<group>"; };
+		B282979521D1BB59004EAB6C /* UIImage+Blur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
+		B282979621D1BB59004EAB6C /* BlurLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurLayer.swift; sourceTree = "<group>"; };
+		B282979821D1BB59004EAB6C /* DynamicBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBlurView.swift; sourceTree = "<group>"; };
 		B28396592161A7A200034DA4 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		B284DC39212EA58F0052AD67 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		B295BE81214F325600D7E63C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -450,6 +501,44 @@
 			path = "SF Pro";
 			sourceTree = "<group>";
 		};
+		B282976C21D1BA54004EAB6C /* PopupDialog */ = {
+			isa = PBXGroup;
+			children = (
+				B282976D21D1BA54004EAB6C /* InteractiveTransition.swift */,
+				B282976E21D1BA54004EAB6C /* PresentationController.swift */,
+				B282976F21D1BA54004EAB6C /* UIImageView+Calculations.swift */,
+				B282977021D1BA54004EAB6C /* UIView+Animations.swift */,
+				B282977121D1BA54004EAB6C /* PopupDialogDefaultView.swift */,
+				B282977221D1BA54004EAB6C /* PopupDialog.swift */,
+				B282977421D1BA54004EAB6C /* PopupDialogOverlayView.swift */,
+				B282977521D1BA54004EAB6C /* PopupDialogButton.swift */,
+				B282977621D1BA54004EAB6C /* UIViewController+Visibility.swift */,
+				B282977721D1BA54004EAB6C /* TransitionAnimator.swift */,
+				B282977821D1BA54004EAB6C /* PopupDialog+Keyboard.swift */,
+				B282977921D1BA54004EAB6C /* PopupDialogDefaultViewController.swift */,
+				B282977A21D1BA54004EAB6C /* TransitionAnimations.swift */,
+				B282977B21D1BA54004EAB6C /* PopupDialogDefaultButtons.swift */,
+				B282977C21D1BA54004EAB6C /* PresentationManager.swift */,
+				B282977D21D1BA54004EAB6C /* PopupDialogContainerView.swift */,
+			);
+			path = PopupDialog;
+			sourceTree = "<group>";
+		};
+		B282978F21D1BB59004EAB6C /* DynamicBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				B282979021D1BB59004EAB6C /* CGImage+Accelerate.swift */,
+				B282979121D1BB59004EAB6C /* CGContext+CGImage.swift */,
+				B282979221D1BB59004EAB6C /* CaptureQuality.swift */,
+				B282979321D1BB59004EAB6C /* DynamicBlurView.h */,
+				B282979421D1BB59004EAB6C /* TrackingMode.swift */,
+				B282979521D1BB59004EAB6C /* UIImage+Blur.swift */,
+				B282979621D1BB59004EAB6C /* BlurLayer.swift */,
+				B282979821D1BB59004EAB6C /* DynamicBlurView.swift */,
+			);
+			path = DynamicBlurView;
+			sourceTree = "<group>";
+		};
 		B2B78C4C21B0BADB00B39C71 /* Shift */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +571,9 @@
 		B2B78C5D21B0BAE300B39C71 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B282978F21D1BB59004EAB6C /* DynamicBlurView */,
+				B282976C21D1BA54004EAB6C /* PopupDialog */,
+				B2D035A4218A89C600F79DBF /* DeviceKit.swift */,
 				B2045DDF212A7DD900272036 /* Locksmith */,
 				B2B78C4C21B0BADB00B39C71 /* Shift */,
 			);
@@ -517,9 +609,11 @@
 				B2E97A26211B2B890005BEA9 /* Bement.entitlements */,
 				B2BA44D420EB9FD1009437A7 /* AppDelegate.swift */,
 				B268D40A21195B06001D7BF1 /* LoginViewController.swift */,
+				B282976A21D186AC004EAB6C /* CameraViewController.swift */,
 				B2C96A4621AE242F00480AB8 /* User Interface */,
 				B2333AA621A4DB2400340B88 /* Walkthrough */,
 				B21218A621B0B22B0025438F /* Support Interface */,
+				B2C96A4721AE2B7B00480AB8 /* PresentLookAheadViewController.swift */,
 				B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */,
 				B2F35211215C5B3300E0F436 /* ClagettViewController.swift */,
 				B24B2687212C4ECB00D316F5 /* wifiTableViewController.swift */,
@@ -530,8 +624,7 @@
 				B2074B8C2162E22200F5C229 /* TermDates.swift */,
 				B2395B4F2159A67F006B7F0A /* CatalogResources.swift */,
 				B21218A921B0B5440025438F /* Extension */,
-				B2D035A4218A89C600F79DBF /* DeviceKit.swift */,
-				B2C96A4721AE2B7B00480AB8 /* PresentLookAheadViewController.swift */,
+				B282976821D18342004EAB6C /* Bement Buildings.mlmodel */,
 				B2BA44D820EB9FD1009437A7 /* Main.storyboard */,
 				B26C0F112119861100750545 /* LaunchScreen.storyboard */,
 				B2BA44DB20EB9FD6009437A7 /* Assets.xcassets */,
@@ -811,15 +904,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28297A021D1BB59004EAB6C /* DynamicBlurView.swift in Sources */,
 				B2E5B43A212AD48600CF904E /* ErrorsTableViewController.swift in Sources */,
+				B282979D21D1BB59004EAB6C /* UIImage+Blur.swift in Sources */,
 				B2720439211D78590066AC5E /* MessagesTableViewController.swift in Sources */,
 				B272043B211D7DAF0066AC5E /* QuickSubmitViewController.swift in Sources */,
 				B2045DEC212A7DD900272036 /* LocksmithSecurityClass.swift in Sources */,
+				B282978021D1BA54004EAB6C /* UIImageView+Calculations.swift in Sources */,
+				B282978521D1BA54004EAB6C /* PopupDialogOverlayView.swift in Sources */,
+				B282978121D1BA54004EAB6C /* UIView+Animations.swift in Sources */,
 				B24B2688212C4ECB00D316F5 /* wifiTableViewController.swift in Sources */,
+				B282978721D1BA54004EAB6C /* UIViewController+Visibility.swift in Sources */,
+				B282978B21D1BA54004EAB6C /* TransitionAnimations.swift in Sources */,
+				B282979B21D1BB59004EAB6C /* CaptureQuality.swift in Sources */,
+				B282978D21D1BA54004EAB6C /* PresentationManager.swift in Sources */,
 				B2B78C5821B0BADC00B39C71 /* ShiftUI_ObcjCompatible.swift in Sources */,
 				B2D667B821861F3D00CF8428 /* UIColor.swift in Sources */,
 				B2045DEF212A7DD900272036 /* LocksmithInternetAuthenticationType.swift in Sources */,
+				B282979E21D1BB59004EAB6C /* BlurLayer.swift in Sources */,
 				B2045DEE212A7DD900272036 /* LocksmithAccessibleOption.swift in Sources */,
+				B282977F21D1BA54004EAB6C /* PresentationController.swift in Sources */,
 				B2D667C121861F4A00CF8428 /* ATCWalkthroughViewController.swift in Sources */,
 				B2C96A4521AE242300480AB8 /* LookAheadViewController.swift in Sources */,
 				B2B78C5B21B0BADC00B39C71 /* ShiftUI.swift in Sources */,
@@ -827,8 +931,11 @@
 				B2E5B440212AE05500CF904E /* ErrorViewController.swift in Sources */,
 				B2C96A4821AE2B7B00480AB8 /* PresentLookAheadViewController.swift in Sources */,
 				B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */,
+				B282978921D1BA54004EAB6C /* PopupDialog+Keyboard.swift in Sources */,
 				B268D40B21195B06001D7BF1 /* LoginViewController.swift in Sources */,
 				B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */,
+				B282978821D1BA54004EAB6C /* TransitionAnimator.swift in Sources */,
+				B282978E21D1BA54004EAB6C /* PopupDialogContainerView.swift in Sources */,
 				B2D667C021861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift in Sources */,
 				B2D035A3218A850F00F79DBF /* CatalogTableViewCell.swift in Sources */,
 				B2D035A5218A89C600F79DBF /* DeviceKit.swift in Sources */,
@@ -840,7 +947,10 @@
 				B2045DED212A7DD900272036 /* Dictionary_Initializers.swift in Sources */,
 				B26C0F0A21196ACB00750545 /* Functions.swift in Sources */,
 				B2E5B43E212ADCD800CF904E /* ErrorTableViewCell.swift in Sources */,
+				B282976B21D186AC004EAB6C /* CameraViewController.swift in Sources */,
+				B282978621D1BA54004EAB6C /* PopupDialogButton.swift in Sources */,
 				B2D035A1218A700500F79DBF /* CatalogDetailTableViewController.swift in Sources */,
+				B282978321D1BA54004EAB6C /* PopupDialog.swift in Sources */,
 				B2074B8D2162E22200F5C229 /* TermDates.swift in Sources */,
 				B2B78C5A21B0BADC00B39C71 /* Shiftable.swift in Sources */,
 				B2045D8C2129818800272036 /* MessagesTableViewCell.swift in Sources */,
@@ -848,15 +958,23 @@
 				B2E5B43C212AD52900CF904E /* MessageInfoViewController.swift in Sources */,
 				B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */,
 				B2D667C321861FBF00CF8428 /* ATCWalkthroughModel.swift in Sources */,
+				B282979921D1BB59004EAB6C /* CGImage+Accelerate.swift in Sources */,
 				B2045DE9212A7DD900272036 /* LocksmithError.swift in Sources */,
 				B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */,
+				B282978A21D1BA54004EAB6C /* PopupDialogDefaultViewController.swift in Sources */,
 				B2E97A23211AFFF70005BEA9 /* ForgotViewController.swift in Sources */,
+				B282978C21D1BA54004EAB6C /* PopupDialogDefaultButtons.swift in Sources */,
 				B2045DEA212A7DD900272036 /* Locksmith.swift in Sources */,
+				B282979A21D1BB59004EAB6C /* CGContext+CGImage.swift in Sources */,
 				B21218A821B0B25D0025438F /* StatisticsViewController.swift in Sources */,
 				B2FE70BF21ACB4E0002852D7 /* DashboardViewController.swift in Sources */,
+				B282979C21D1BB59004EAB6C /* TrackingMode.swift in Sources */,
 				B2B78C5921B0BADC00B39C71 /* ShiftPoint.swift in Sources */,
+				B282977E21D1BA54004EAB6C /* InteractiveTransition.swift in Sources */,
+				B282978221D1BA54004EAB6C /* PopupDialogDefaultView.swift in Sources */,
 				B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */,
 				B2045DEB212A7DD900272036 /* LocksmithInternetProtocol.swift in Sources */,
+				B282976921D18342004EAB6C /* Bement Buildings.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

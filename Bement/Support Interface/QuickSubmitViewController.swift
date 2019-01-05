@@ -90,14 +90,6 @@ class QuickSubmitViewController: UIViewController, UITextViewDelegate, UITextFie
                     self.present(alert, animated: true, completion: nil)
                 }
                 
-                let input = "[" + "\"" + messageField.text + "\"" +  "]"
-                
-                let client = Algorithmia.client(simpleKey: "simUU2Suq089OuJAHIqumIUPNoR1")
-                
-                let algo = client.algo(algoUri: "nlp/ProfanityDetection/1.0.0")
-                algo.pipe(rawJson: input) { resp, error in
-                    
-                }
                 //获取当前时间
                 let now = Date()
                     
