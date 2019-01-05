@@ -1,4 +1,4 @@
-![alt text](Bement-Parent-Portal/logo-bement.png) 
+![alt text](https://github.com/Runkai-Zhang/Bement-Parent-Portal/blob/master/logo-bement.png) 
 # The Bement Parent Portal
 
 ## What is it?
