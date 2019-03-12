@@ -3,6 +3,8 @@
 [logo]: https://github.com/Runkai-Zhang/Bement-Parent-Portal/blob/master/logo-bement.png "Logo"
 # The Bement Parent Portal
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/da78dd7dcbdc4df99f01b0fbb4af97d9)](https://app.codacy.com/app/1105420698/Bement-Parent-Portal?utm_source=github.com&utm_medium=referral&utm_content=Runkai-Zhang/Bement-Parent-Portal&utm_campaign=Badge_Grade_Dashboard)
+
 ## What is it?
 It is an app that helps parents at Bement to get access to their account and view term papers in a faster and easier way. 
 
