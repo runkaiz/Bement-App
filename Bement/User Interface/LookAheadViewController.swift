@@ -12,12 +12,11 @@ import WebKit
 class LookAheadViewController: UIViewController {
 
     @IBOutlet weak var web: WKWebView!
-    @IBOutlet weak var closeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let myURL = URL(string:"https://bementorg.finalsite.com/cf_enotify/view.cfm?n=1581")
+        let myURL = URL(string:"https://bementorg.finalsite.com/cf_enotify/view.cfm?n=1751")
         let myRequest = URLRequest(url: myURL!)
         web.load(myRequest)
     }

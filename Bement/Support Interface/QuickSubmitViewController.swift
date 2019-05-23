@@ -12,21 +12,13 @@ import CloudKit
 class QuickSubmitViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
 
     @IBOutlet var form: UIStackView!
-    
     @IBOutlet var Placeholder: UILabel!
-    
     @IBOutlet var messageField: UITextView!
-    
     @IBOutlet var Category: UISegmentedControl!
-    
     @IBOutlet var send: UIButton!
-    
     @IBOutlet var emailField: UITextField!
-    
     @IBOutlet var detailLabel: UILabel!
-    
     @IBOutlet var emailLabel: UILabel!
-    
     @IBOutlet var categoryLabel: UILabel!
     
     override func viewDidLoad() {

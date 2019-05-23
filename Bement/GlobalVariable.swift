@@ -14,10 +14,7 @@ struct globalVariable {
     public static var messageCategory = [Int : [CKRecord]]()
     public static var row = Int()
     public static var section = Int()
+    public static var catalogGrade = String()
     public static var errorRecordsName = [CKRecord]()
     public static var firstTimeIndicator = false
-    public static var username = String()
-    public static var password = String()
-    public static var dateCount = Int()
-    public static var loginStats = "nil"
 }

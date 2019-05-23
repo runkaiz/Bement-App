@@ -33,4 +33,4 @@
 	"send" = "Send";
 	"placeholder" = "My problem is...";
 	"nilTitle" = "Oops";
-	"nilDetail" = "It looks like there are no messages at this time.";
+    "nilDetail" = "It looks like there are no messages at this time.";

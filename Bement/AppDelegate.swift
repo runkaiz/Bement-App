@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import WatchConnectivity
-import CoreLocation
 import UserNotifications
 
 @UIApplicationMain
@@ -17,28 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = self
-            session.activate()
-        }
-        
-        if UserDefaults().bool(forKey: "alert") == true {
-            var count = 0
-            for item in TermDates.terms {
-                
-                let date = tools.component2Date(item)
-                
-                if date as Date > Date() {
-                    tools.pushTerms(termName: TermDates.names[count], date: item)
-                    globalVariable.dateCount = count
-                    break
-                } else {
-                    count += 1
-                }
-            }
-        }
         
         return true
     }
@@ -87,44 +63,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return topViewControllerWithRootViewController(rootViewController: rootViewController.presentedViewController)
         }
         return rootViewController
-    }
-}
-
-extension AppDelegate: WCSessionDelegate {
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        guard let alertRequest = message["alert"] as? String else {
-            replyHandler([:])
-            return
-        }
-        
-        switch alertRequest {
-        case "true":
-            replyHandler(["alert":"On"])
-            UserDefaults().set(true, forKey: "alert")
-        case "false":
-            replyHandler(["alert":"Off"])
-            UserDefaults().set(false, forKey: "alert")
-        case "?":
-            let stats = String(UserDefaults().bool(forKey: "alert"))
-            replyHandler(["alert":stats])
-        default:
-            replyHandler(["alert":"If you see this, something is wrong and this should never appear!"])
-        }
-    }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-        if error != nil {
-            print(error!)
-        }
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        print("Session Inactive")
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        print("Session Deactivated")
     }
 }

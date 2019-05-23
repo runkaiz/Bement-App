@@ -29,8 +29,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSFaceIDUsageDescription</key>
-	<string>This app use Face ID Feature to help you get access to your account faster.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs your camera so it can identify buildings in Bement.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app stores your photo so you can access them later.
+</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app accesses your photo library to search and identify photos.
+</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SF-Pro-Text-Semibold.otf</string>
@@ -50,14 +56,6 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>This app needs your camera so it can identify buildings in Bement.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app accesses your photo library to search and identify photos.
-</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>This app stores your photo so you can access them later.
-</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -81,6 +81,6 @@ final internal class PresentationManager: NSObject, UIViewControllerTransitionin
     }
 
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return interactor.hasStarted ? interactor as! UIViewControllerInteractiveTransitioning : nil
+        return interactor.hasStarted ? interactor as UIViewControllerInteractiveTransitioning : nil
     }
 }
