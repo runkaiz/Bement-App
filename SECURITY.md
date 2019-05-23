@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-Report a vulnerability in Issues with corrosponding tags.
+Report a vulnerability in Issues with the corrosponding label.
