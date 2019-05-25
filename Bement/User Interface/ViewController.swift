@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
+    @IBOutlet var calendersButton: UIButton!
     @IBOutlet var lunchButton: UIButton!
     @IBOutlet var reportsButton: UIButton!
     @IBOutlet var SupportButton: UIButton!
@@ -33,6 +34,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         tools.beautifulButton(SupportButton)
         tools.beautifulButton(reportsButton)
         tools.beautifulButton(lunchButton)
+        tools.beautifulButton(calendersButton)
     }
     
     @IBAction func done(_ segue: UIStoryboardSegue) {

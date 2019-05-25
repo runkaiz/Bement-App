@@ -21,7 +21,7 @@
 	"error" = "Error";
 	"suggestion" = "Suggestion";
 	"help" = "Help";
-	"forgotPasswordWarning" = "Sorry for your inconvenience, but for the protection of privacy, please contact the school yourself";
+	"forgotPasswordWarning" = "Sorry for your inconvenience, but for the protection of privacy, please contact the school yourself.";
 	"wifi-first" = "First, go to Settings by clicking on this icon in the Home page";
 	"wifi-second" = "Second, click on the Wi-Fi option";
 	"wifi-third" = "Lastly, check both highlighted icon to see if they are in place, if not, try connect to a wireless network before proceeding.";

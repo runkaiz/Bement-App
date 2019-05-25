@@ -9,16 +9,23 @@
 import UIKit
 import WebKit
 
-class ClagettViewController: UIViewController, WKUIDelegate {
+class ClagettViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
     @IBOutlet var libraryView: WKWebView!
     @objc func canRotate() -> Void {}
+    var activityIndicator: UIActivityIndicatorView!
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         libraryView = WKWebView(frame: .zero, configuration: webConfiguration)
         libraryView.uiDelegate = self
         view = libraryView
+        
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        activityIndicator.hidesWhenStopped = true
+        let barButton = UIBarButtonItem(customView: activityIndicator)
+        self.navigationItem.setRightBarButton(barButton, animated: true)
     }
     
     override func viewDidLoad() {
@@ -36,6 +43,34 @@ class ClagettViewController: UIViewController, WKUIDelegate {
         if (self.isMovingFromParent) {
             UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
         }
-        
+    }
+    
+    func showActivityIndicator(show: Bool) {
+        if show {
+            // Start the loading animation
+            activityIndicator.startAnimating()
+        } else {
+            // Stop the loading animation
+            activityIndicator.stopAnimating()
+        }
+    }
+    
+    //MARK:- WKNavigationDelegate
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        showActivityIndicator(show: true)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        showActivityIndicator(show: false)
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print(error.localizedDescription)
+        showActivityIndicator(show: false)
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        print(error.localizedDescription)
+        showActivityIndicator(show: false)
     }
 }

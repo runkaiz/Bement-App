@@ -17,4 +17,5 @@ struct globalVariable {
     public static var catalogGrade = String()
     public static var errorRecordsName = [CKRecord]()
     public static var firstTimeIndicator = false
+    public static var calenderLink = String()
 }

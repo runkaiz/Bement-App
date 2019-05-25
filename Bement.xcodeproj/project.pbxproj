@@ -19,6 +19,7 @@
 		B2045DF2212A7DF700272036 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2045DF1212A7DF700272036 /* Security.framework */; };
 		B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */; };
 		B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4F2159A67F006B7F0A /* CatalogResources.swift */; };
+		B241A2AE2298908F00ABD14E /* CalendersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */; };
 		B24B2688212C4ECB00D316F5 /* wifiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B2687212C4ECB00D316F5 /* wifiTableViewController.swift */; };
 		B24B268A212C51DD00D316F5 /* OtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24B2689212C51DD00D316F5 /* OtherViewController.swift */; };
 		B251C7F522974F8400566842 /* CatalogWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7F422974F8400566842 /* CatalogWebViewController.swift */; };
@@ -166,6 +167,7 @@
 		B2045DF1212A7DF700272036 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewController.swift; sourceTree = "<group>"; };
 		B2395B4F2159A67F006B7F0A /* CatalogResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResources.swift; sourceTree = "<group>"; };
+		B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendersTableViewController.swift; sourceTree = "<group>"; };
 		B24B2687212C4ECB00D316F5 /* wifiTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wifiTableViewController.swift; sourceTree = "<group>"; };
 		B24B2689212C51DD00D316F5 /* OtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewController.swift; sourceTree = "<group>"; };
 		B251C7F422974F8400566842 /* CatalogWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogWebViewController.swift; sourceTree = "<group>"; };
@@ -527,11 +529,12 @@
 				B2F35211215C5B3300E0F436 /* ClagettViewController.swift */,
 				B24B2687212C4ECB00D316F5 /* wifiTableViewController.swift */,
 				B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */,
+				B2D035A2218A850E00F79DBF /* CatalogTableViewCell.swift */,
 				B2D035A0218A700500F79DBF /* CatalogDetailTableViewController.swift */,
 				B251C7F422974F8400566842 /* CatalogWebViewController.swift */,
 				B251C7F62297585500566842 /* LunchViewController.swift */,
 				B282976A21D186AC004EAB6C /* CameraViewController.swift */,
-				B2D035A2218A850E00F79DBF /* CatalogTableViewCell.swift */,
+				B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				B282978021D1BA54004EAB6C /* UIImageView+Calculations.swift in Sources */,
 				B282978521D1BA54004EAB6C /* PopupDialogOverlayView.swift in Sources */,
 				B282978121D1BA54004EAB6C /* UIView+Animations.swift in Sources */,
+				B241A2AE2298908F00ABD14E /* CalendersTableViewController.swift in Sources */,
 				B24B2688212C4ECB00D316F5 /* wifiTableViewController.swift in Sources */,
 				B282978721D1BA54004EAB6C /* UIViewController+Visibility.swift in Sources */,
 				B282978B21D1BA54004EAB6C /* TransitionAnimations.swift in Sources */,
