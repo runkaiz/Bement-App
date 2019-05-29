@@ -141,8 +141,8 @@ class ReportViewController: UIViewController {
             }
         }
         
-        globalVariable.messageCategory[0] = Errors
-        globalVariable.messageCategory[1] = Help
+        globalVariable.messageCategory[1] = Errors
+        globalVariable.messageCategory[0] = Help
         
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "messages", sender: self)

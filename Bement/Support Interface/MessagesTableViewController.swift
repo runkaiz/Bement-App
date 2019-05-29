@@ -18,6 +18,10 @@ class MessagesTableViewController: UITableViewController {
         
         if globalVariable.messageCategory[0] == nil {
             sectionName.remove(at: 0)
+            
+            if globalVariable.messageCategory[0] == nil {
+                sectionName.remove(at: 0)
+            }
         } else if globalVariable.messageCategory[1] == nil {
             sectionName.remove(at: 1)
         }
