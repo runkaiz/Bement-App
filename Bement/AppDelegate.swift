@@ -7,14 +7,35 @@
 //
 
 import UIKit
-import UserNotifications
+import AlamofireRSSParser
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    public static var facebookItems: [RSSItem] = []
+    public static var instagramItems: [RSSItem] = []
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        RSSParser.getRSSFeedResponse(path: "https://rss.app/feeds/70kt4j8QVyb7gjsb.xml") { (response, status: NetworkResponseStatus) in
+            if let feed: RSSFeed = response {
+                for item in feed.items {
+                    AppDelegate.facebookItems.append(item)
+                    //print(item)
+                }
+            }
+        }
+        
+        RSSParser.getRSSFeedResponse(path: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml") { (response, status: NetworkResponseStatus) in
+            if let feed: RSSFeed = response {
+                for item in feed.items {
+                    AppDelegate.instagramItems.append(item)
+                    //print(item)
+                }
+            }
+        }
         
         return true
     }

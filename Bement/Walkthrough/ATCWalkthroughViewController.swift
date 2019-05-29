@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import UserNotifications
 
 protocol ATCWalkthroughViewControllerDelegate: class {
     func walkthroughViewControllerDidFinishFlow(_ vc: ATCWalkthroughViewController)
 }
 
-class ATCWalkthroughViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UNUserNotificationCenterDelegate {
+class ATCWalkthroughViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     @IBOutlet var pageControl: UIPageControl!
 
     weak var delegate: ATCWalkthroughViewControllerDelegate?
@@ -59,18 +58,6 @@ class ATCWalkthroughViewController: UIViewController, UIPageViewControllerDataSo
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if let index = self.index(of: viewController) {
             if index + 1 >= viewControllers.count {
-                let center =  UNUserNotificationCenter.current()
-                center.requestAuthorization(options: [.alert, .sound, .badge]) { (result, error) in
-                    //handle result of request failure
-                }
-                
-                let defaultCategory = UNNotificationCategory(identifier: "default",
-                                                             actions: [],
-                                                             intentIdentifiers: [],
-                                                             options: .customDismissAction)
-                
-                // Register the category.
-                center.setNotificationCategories([defaultCategory])
                 return fakeVC
             }
             return viewControllers[index + 1]

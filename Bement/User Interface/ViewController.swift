@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
+    @IBOutlet var socialButton: UIButton!
     @IBOutlet var calendersButton: UIButton!
     @IBOutlet var lunchButton: UIButton!
     @IBOutlet var reportsButton: UIButton!
-    @IBOutlet var SupportButton: UIButton!
+    @IBOutlet var supportButton: UIButton!
+    @IBOutlet var startHour: UILabel!
+    @IBOutlet var endHour: UILabel!
     
     let walkthroughs = [
         ATCWalkthroughModel(title: "Efficienct Login System", subtitle: "This login system is very user-friendly and 100% secure when handling your data.", icon: "Real"),
@@ -31,10 +35,32 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
             self.addChildViewControllerWithView(walkthroughVC)
         }
         
-        tools.beautifulButton(SupportButton)
+        tools.beautifulButton(supportButton)
         tools.beautifulButton(reportsButton)
         tools.beautifulButton(lunchButton)
         tools.beautifulButton(calendersButton)
+        tools.beautifulButton(socialButton)
+        
+        var request = URLRequest(url: URL(string: "http://207.246.85.80:3000/time")!)
+        request.httpMethod = "GET"
+        let session = URLSession.shared
+        
+        session.dataTask(with: request) {data, response, err in
+            DispatchQueue.main.async {
+                
+                do {
+                    let json = try JSON(data: data!)
+                    if let start = json["startTime"].string {
+                        self.startHour.text = "Starts at \(start)"
+                        if let end = json["endTime"].string {
+                            self.endHour.text = "Ends at \(end)"
+                        }
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }.resume()
     }
     
     @IBAction func done(_ segue: UIStoryboardSegue) {

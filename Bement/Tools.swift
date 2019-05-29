@@ -12,9 +12,9 @@ import UserNotifications
 
 class tools {
     
-    public static func beautifulButton(_ object:AnyObject) {
-        object.layer?.cornerRadius = 15
-        object.layer?.masksToBounds = true
+    public static func beautifulButton(_ object:UIButton) {
+        object.layer.cornerRadius = 15
+        object.layer.masksToBounds = true
     }
     
     public static func push(title:String, subtitle:String, body:String, sound:UNNotificationSound, triggerInterval:TimeInterval, repeating:Bool, id:String) {
