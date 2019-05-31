@@ -11,11 +11,14 @@ import SwiftyJSON
 
 class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
+    private var observer: NSObjectProtocol?
+    
     @IBOutlet var socialButton: UIButton!
     @IBOutlet var calendersButton: UIButton!
     @IBOutlet var lunchButton: UIButton!
     @IBOutlet var reportsButton: UIButton!
     @IBOutlet var supportButton: UIButton!
+    @IBOutlet var hourTitle: UILabel!
     @IBOutlet var startHour: UILabel!
     @IBOutlet var endHour: UILabel!
     
@@ -41,26 +44,46 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         tools.beautifulButton(calendersButton)
         tools.beautifulButton(socialButton)
         
-        var request = URLRequest(url: URL(string: "http://207.246.85.80:3000/time")!)
+        self.getSchoolHours()
+        
+        observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
+            self.getSchoolHours()
+        }
+    }
+    
+    func getSchoolHours() {
+        var request = URLRequest(url: URL(string: "https://runkaizhang.xyz:3000/time")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
-        session.dataTask(with: request) {data, response, err in
-            DispatchQueue.main.async {
-                
-                do {
-                    let json = try JSON(data: data!)
-                    if let start = json["startTime"].string {
-                        self.startHour.text = "Starts at \(start)"
-                        if let end = json["endTime"].string {
-                            self.endHour.text = "Ends at \(end)"
+        if self.getDayOfWeek(Date()) == 7 || self.getDayOfWeek(Date()) == 6 {
+            self.hourTitle.isHidden = true
+            self.startHour.isHidden = true
+            self.endHour.isHidden = true
+        } else {
+            session.dataTask(with: request) {data, response, err in
+                DispatchQueue.main.async {
+                    do {
+                        self.hourTitle.text = "School Hours tomorrow:"
+                        let json = try JSON(data: data!)
+                        if let start = json["startTime"].string {
+                            self.startHour.text = "Starts at \(start)"
+                            if let end = json["endTime"].string {
+                                self.endHour.text = "Ends at \(end)"
+                            }
                         }
+                    } catch {
+                        print(error)
                     }
-                } catch {
-                    print(error)
                 }
-            }
-        }.resume()
+            }.resume()
+        }
+    }
+    
+    func getDayOfWeek(_ date:Date) -> Int? {
+        let myCalendar = Calendar(identifier: .gregorian)
+        let weekDay = myCalendar.component(.weekday, from: date)
+        return weekDay
     }
     
     @IBAction func done(_ segue: UIStoryboardSegue) {

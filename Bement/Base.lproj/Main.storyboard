@@ -724,7 +724,7 @@
                                     <segue destination="E5n-ug-ovF" kind="show" id="IZt-Jc-qNP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Hours tomorrow:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXV-WY-lRU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXV-WY-lRU">
                                 <rect key="frame" x="0.0" y="352" width="375" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="vGj-Hy-lD6"/>
@@ -733,7 +733,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Hours for tomorrow:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdj-2e-fIr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdj-2e-fIr">
                                 <rect key="frame" x="82" y="375" width="211" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Cyi-AP-Vef"/>
@@ -742,7 +742,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Hours for tomorrow:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxe-zo-g1A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxe-zo-g1A">
                                 <rect key="frame" x="82" y="397" width="211" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4C8-5C-0Uj"/>
@@ -800,6 +800,7 @@
                     <connections>
                         <outlet property="calendersButton" destination="fJd-2N-w2i" id="jaH-hV-XZP"/>
                         <outlet property="endHour" destination="Qxe-zo-g1A" id="yw3-1w-juC"/>
+                        <outlet property="hourTitle" destination="nXV-WY-lRU" id="x1x-xC-gLr"/>
                         <outlet property="lunchButton" destination="QEb-eu-8Cn" id="fqD-I9-7TT"/>
                         <outlet property="reportsButton" destination="G05-VN-bQJ" id="4gE-FC-wd7"/>
                         <outlet property="socialButton" destination="InF-yX-tXM" id="Tqh-uR-WkM"/>
