@@ -747,6 +747,9 @@
                                     <constraint firstAttribute="height" constant="45" id="wwq-Gt-t5g"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="library"/>
+                                <connections>
+                                    <segue destination="8sd-b0-eqz" kind="show" id="4Yg-Ch-ehK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2163,7 +2166,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hk-ST-x98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="349"/>
+            <point key="canvasLocation" x="1860" y="347"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iv6-ya-5Ea">
@@ -2529,7 +2532,7 @@
         <image name="photos" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mkr-05-3JV"/>
+        <segue reference="JBw-GB-eb5"/>
         <segue reference="JUg-PJ-UlK"/>
     </inferredMetricsTieBreakers>
 </document>
