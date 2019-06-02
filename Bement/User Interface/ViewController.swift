@@ -68,12 +68,12 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                         self.startHour.isHidden = false
                         self.endHour.isHidden = false
                         
-                        self.hourTitle.text = "School Hours tomorrow:"
+                        self.hourTitle.text = "School hours tomorrow:"
                         let json = try JSON(data: data!)
                         if let start = json["startTime"].string {
                             self.startHour.text = "Starts at \(start)"
                             if let end = json["endTime"].string {
-                                self.endHour.text = "Ends at \(end)"
+                                self.endHour.text = "Dismisses at \(end)"
                             }
                         }
                     } catch {
