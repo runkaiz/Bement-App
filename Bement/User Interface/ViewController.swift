@@ -52,7 +52,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     }
     
     func getSchoolHours() {
-        var request = URLRequest(url: URL(string: "https://runkaizhang.xyz:3000/time")!)
+        var request = URLRequest(url: URL(string: "http://207.246.85.80:3000/time")!)
         request.httpMethod = "GET"
         let session = URLSession.shared
         
