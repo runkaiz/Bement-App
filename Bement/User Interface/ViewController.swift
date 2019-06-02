@@ -68,7 +68,13 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                         self.startHour.isHidden = false
                         self.endHour.isHidden = false
                         
-                        self.hourTitle.text = "School hours tomorrow:"
+                        let formatter = DateFormatter()
+                        formatter.dateStyle = .short
+                        let today = Date()
+                        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)
+                        let date = formatter.string(from: tomorrow!)
+                        
+                        self.hourTitle.text = "School hours for \(date):"
                         let json = try JSON(data: data!)
                         if let start = json["startTime"].string {
                             self.startHour.text = "Starts at \(start)"
