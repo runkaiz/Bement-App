@@ -99,7 +99,7 @@
             </objects>
             <point key="canvasLocation" x="4588" y="-1032"/>
         </scene>
-        <!--Submitted Feedbacks-->
+        <!--Submitted Feedback-->
         <scene sceneID="EVu-0r-tMk">
             <objects>
                 <viewController id="tQg-eZ-bCw" customClass="ReportViewController" customModule="Bement" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,7 +145,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gId-Lt-jzV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Submitted Feedbacks" id="P4q-sG-kdq">
+                    <navigationItem key="navigationItem" title="Submitted Feedback" id="P4q-sG-kdq">
                         <barButtonItem key="rightBarButtonItem" title="Exit" id="OYK-Qi-wuj">
                             <connections>
                                 <segue destination="4cD-r8-ax5" kind="unwind" unwindAction="done:" id="xiw-zx-t71"/>
@@ -647,7 +647,7 @@
                                     <constraint firstAttribute="height" constant="55" id="Bmr-9B-1r5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="Support">
+                                <state key="normal" title="Troubleshoot">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -659,22 +659,12 @@
                                 <rect key="frame" x="25" y="638" width="325" height="55"/>
                                 <color key="backgroundColor" red="0.07729639858007431" green="0.21700689196586609" blue="0.49005788564682007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="Submitted Feedbacks">
+                                <state key="normal" title="The Look Ahead">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="support:" destination="vhr-DB-jCY" eventType="touchUpInside" id="ATJ-ho-zuk"/>
                                     <segue destination="NL0-bD-Ihg" kind="show" id="JBw-GB-eb5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5T-y3-bMv">
-                                <rect key="frame" x="16" y="44" width="45" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="wwq-Gt-t5g"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="library"/>
-                                <connections>
-                                    <segue destination="8sd-b0-eqz" kind="show" id="Lln-X7-j33"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg9-H3-uag">
@@ -751,6 +741,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5T-y3-bMv">
+                                <rect key="frame" x="16" y="44" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="wwq-Gt-t5g"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="library"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -812,7 +809,7 @@
             </objects>
             <point key="canvasLocation" x="2797.5999999999999" y="348.02955665024632"/>
         </scene>
-        <!--Support-->
+        <!--Troubleshoot-->
         <scene sceneID="RtA-be-deY">
             <objects>
                 <tableViewController id="04C-wz-CeJ" customClass="SupportTableViewController" customModule="Bement" customModuleProvider="target" sceneMemberID="viewController">
@@ -846,8 +843,28 @@
                                             </segue>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Vtb-QU-eMo" style="IBUITableViewCellStyleDefault" id="16Q-Cj-r9G">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="RNd-EY-LlY" style="IBUITableViewCellStyleDefault" id="pKR-QM-9Kb">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pKR-QM-9Kb" id="ika-5b-XtY">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Submitted Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RNd-EY-LlY">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NL0-bD-Ihg" kind="show" id="Mkr-05-3JV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Vtb-QU-eMo" style="IBUITableViewCellStyleDefault" id="16Q-Cj-r9G">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="16Q-Cj-r9G" id="8Zz-i1-X8Z">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -871,7 +888,7 @@
                             <outlet property="delegate" destination="04C-wz-CeJ" id="Fco-fa-dTW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Support" id="98y-id-uSV">
+                    <navigationItem key="navigationItem" title="Troubleshoot" id="98y-id-uSV">
                         <barButtonItem key="rightBarButtonItem" title="Back to Login" id="4TS-7Y-eFD">
                             <connections>
                                 <segue destination="qH9-s1-Yze" kind="unwind" unwindAction="done:" id="biM-Db-MCj"/>
@@ -2504,14 +2521,15 @@
         <image name="Settings" width="150" height="180"/>
         <image name="bement-front" width="6720" height="4027"/>
         <image name="blog" width="25" height="25"/>
-        <image name="camera" width="512" height="512"/>
+        <image name="camera" width="160" height="160"/>
         <image name="cross" width="512" height="512"/>
         <image name="facebook" width="25" height="25"/>
         <image name="instagram" width="25" height="25"/>
-        <image name="library" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="library" width="160" height="160"/>
         <image name="photos" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Mkr-05-3JV"/>
         <segue reference="JUg-PJ-UlK"/>
     </inferredMetricsTieBreakers>
 </document>

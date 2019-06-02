@@ -3,7 +3,7 @@
 //  Bement
 //
 //  Created by Runkai Zhang on 8/7/18.
-//  Copyright © 2018 Numeric Design. All rights reserved.
+//  Copyright © 2019 Runkai Zhang. All rights reserved.
 //
 
 import UIKit
@@ -57,13 +57,17 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         let session = URLSession.shared
         
         if self.getDayOfWeek(Date()) == 7 || self.getDayOfWeek(Date()) == 6 {
-            self.hourTitle.isHidden = true
-            self.startHour.isHidden = true
+            self.hourTitle.text = "There is no school tomorrow."
+            self.startHour.text = "Have a great day!"
             self.endHour.isHidden = true
         } else {
             session.dataTask(with: request) {data, response, err in
                 DispatchQueue.main.async {
                     do {
+                        self.hourTitle.isHidden = false
+                        self.startHour.isHidden = false
+                        self.endHour.isHidden = false
+                        
                         self.hourTitle.text = "School Hours tomorrow:"
                         let json = try JSON(data: data!)
                         if let start = json["startTime"].string {

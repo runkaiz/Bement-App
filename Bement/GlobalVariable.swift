@@ -3,7 +3,7 @@
 //  Bement
 //
 //  Created by Runkai Zhang on 8/19/18.
-//  Copyright © 2018 Numeric Design. All rights reserved.
+//  Copyright © 2019 Runkai Zhang. All rights reserved.
 //
 
 import Foundation

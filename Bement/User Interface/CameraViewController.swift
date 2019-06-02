@@ -3,7 +3,7 @@
 //  Bement
 //
 //  Created by Runkai Zhang on 12/24/18.
-//  Copyright © 2018 Numeric Design. All rights reserved.
+//  Copyright © 2019 Runkai Zhang. All rights reserved.
 //
 
 import UIKit
@@ -113,6 +113,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             welcomeLabel.isHidden = true
             cameraView.isHidden = false
             cameraView.image = image
+            titleBackground.isHidden = true
             
             if (newMedia == true) {
                 UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)

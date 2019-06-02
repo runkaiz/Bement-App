@@ -3,7 +3,7 @@
 //  Bement
 //
 //  Created by Runkai Zhang on 8/7/18.
-//  Copyright © 2018 Numeric Design. All rights reserved.
+//  Copyright © 2019 Runkai Zhang. All rights reserved.
 //
 
 import UIKit
@@ -21,7 +21,7 @@ class SupportTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

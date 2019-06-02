@@ -3,7 +3,7 @@
 //  WalkthroughOnboarding
 //
 //  Created by Florian Marcu on 8/16/18.
-//  Copyright © 2018 Instamobile. All rights reserved.
+//  Copyright © 2019 Instamobile. All rights reserved.
 //
 
 import UIKit

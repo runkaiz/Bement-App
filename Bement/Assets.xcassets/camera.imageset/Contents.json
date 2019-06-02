@@ -1,12 +1,23 @@
 {
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "camera.png"
+      "scale" : "1x",
+      "filename" : "camera~iphone@1x.png",
+      "idiom" : "iphone"
+    },
+    {
+      "filename" : "camera~iphone@2x.png",
+      "scale" : "2x",
+      "idiom" : "iphone"
+    },
+    {
+      "filename" : "camera~iphone@3x.png",
+      "scale" : "3x",
+      "idiom" : "iphone"
     }
-  ],
-  "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  }
+  ]
 }
