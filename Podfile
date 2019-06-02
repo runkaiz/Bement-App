@@ -7,7 +7,7 @@ target 'Bement' do
   # Pods for Bement
   pod 'Alamofire'
   pod "AlamofireRSSParser"
-  pod 'Fuzi'
+  pod 'Fuzi', '~> 3.1.0'
   pod 'SwiftyJSON'
   pod 'Kingfisher', '~> 5.0'
   
