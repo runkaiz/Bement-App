@@ -1,5 +1,5 @@
 //
-//  FacebookTableViewCell.swift
+//  TwitterTableViewCell.swift
 //  Bement
 //
 //  Created by Runkai Zhang on 5/26/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FacebookWithImageTableViewCell: UITableViewCell {
+class TwitterWithImageTableViewCell: UITableViewCell {
 
     @IBOutlet var dateOfPub: UILabel!
     @IBOutlet var contentImage: UIImageView!
@@ -17,6 +17,8 @@ class FacebookWithImageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        contentImage.layer.cornerRadius = 15
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

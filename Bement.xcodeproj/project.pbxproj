@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		05CCBC7DD4D637ACB6FBD794 /* Pods_BementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23074EAADDC2DFE075C4583 /* Pods_BementUITests.framework */; };
 		3E347874D50C7C7505E62724 /* Pods_Bement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F8E08F84FEB82BE13C51 /* Pods_Bement.framework */; };
-		B20326BF229B6074003BEB7F /* FacebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326BE229B6074003BEB7F /* FacebookTableViewController.swift */; };
+		B20326BF229B6074003BEB7F /* TwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */; };
 		B20326C1229B60C7003BEB7F /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C0229B60C7003BEB7F /* RSSParser.swift */; };
-		B20326C3229B6AC4003BEB7F /* FacebookWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C2229B6AC4003BEB7F /* FacebookWithImageTableViewCell.swift */; };
-		B20326C5229B70FF003BEB7F /* FacebookWithoutImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C4229B70FF003BEB7F /* FacebookWithoutImageTableViewCell.swift */; };
+		B20326C3229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */; };
+		B20326C5229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */; };
 		B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2045D8921297F7000272036 /* GlobalVariable.swift */; };
 		B2045D8C2129818800272036 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2045D8B2129818800272036 /* MessagesTableViewCell.swift */; };
 		B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */; };
@@ -126,10 +126,10 @@
 /* Begin PBXFileReference section */
 		547218A1E45794FF0CDA8259 /* Pods-Bement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bement.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bement/Pods-Bement.release.xcconfig"; sourceTree = "<group>"; };
 		9C86ED8319AA6179D0029815 /* Pods_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B20326BE229B6074003BEB7F /* FacebookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookTableViewController.swift; sourceTree = "<group>"; };
+		B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTableViewController.swift; sourceTree = "<group>"; };
 		B20326C0229B60C7003BEB7F /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
-		B20326C2229B6AC4003BEB7F /* FacebookWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookWithImageTableViewCell.swift; sourceTree = "<group>"; };
-		B20326C4229B70FF003BEB7F /* FacebookWithoutImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookWithoutImageTableViewCell.swift; sourceTree = "<group>"; };
+		B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterWithImageTableViewCell.swift; sourceTree = "<group>"; };
+		B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterWithoutImageTableViewCell.swift; sourceTree = "<group>"; };
 		B2045D8921297F7000272036 /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		B2045D8B2129818800272036 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		B2045DF1212A7DF700272036 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -259,9 +259,9 @@
 		B20326BD229B6043003BEB7F /* Social Media Feeds */ = {
 			isa = PBXGroup;
 			children = (
-				B20326BE229B6074003BEB7F /* FacebookTableViewController.swift */,
-				B20326C2229B6AC4003BEB7F /* FacebookWithImageTableViewCell.swift */,
-				B20326C4229B70FF003BEB7F /* FacebookWithoutImageTableViewCell.swift */,
+				B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */,
+				B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */,
+				B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */,
 				B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */,
 				B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */,
 				B299D8AE229CB1580071B688 /* InstagramWithoutTableViewCell.swift */,
@@ -668,7 +668,7 @@
 				B282979D21D1BB59004EAB6C /* UIImage+Blur.swift in Sources */,
 				B2720439211D78590066AC5E /* MessagesTableViewController.swift in Sources */,
 				B272043B211D7DAF0066AC5E /* QuickSubmitViewController.swift in Sources */,
-				B20326C3229B6AC4003BEB7F /* FacebookWithImageTableViewCell.swift in Sources */,
+				B20326C3229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift in Sources */,
 				B282978021D1BA54004EAB6C /* UIImageView+Calculations.swift in Sources */,
 				B282978521D1BA54004EAB6C /* PopupDialogOverlayView.swift in Sources */,
 				B282978121D1BA54004EAB6C /* UIView+Animations.swift in Sources */,
@@ -690,7 +690,7 @@
 				B299D8AD229CB13C0071B688 /* InstagramWithImageTableViewCell.swift in Sources */,
 				B282978921D1BA54004EAB6C /* PopupDialog+Keyboard.swift in Sources */,
 				B268D40B21195B06001D7BF1 /* ViewController.swift in Sources */,
-				B20326C5229B70FF003BEB7F /* FacebookWithoutImageTableViewCell.swift in Sources */,
+				B20326C5229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift in Sources */,
 				B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */,
 				B282978821D1BA54004EAB6C /* TransitionAnimator.swift in Sources */,
 				B282978E21D1BA54004EAB6C /* PopupDialogContainerView.swift in Sources */,
@@ -719,7 +719,7 @@
 				B282979921D1BB59004EAB6C /* CGImage+Accelerate.swift in Sources */,
 				B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */,
 				B282978A21D1BA54004EAB6C /* PopupDialogDefaultViewController.swift in Sources */,
-				B20326BF229B6074003BEB7F /* FacebookTableViewController.swift in Sources */,
+				B20326BF229B6074003BEB7F /* TwitterTableViewController.swift in Sources */,
 				B2E97A23211AFFF70005BEA9 /* ForgotViewController.swift in Sources */,
 				B251C7F72297585500566842 /* LunchViewController.swift in Sources */,
 				B299D8AF229CB1580071B688 /* InstagramWithoutTableViewCell.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  FacebookWithoutImageTableViewCell.swift
+//  TwitterWithoutImageTableViewCell.swift
 //  Bement
 //
 //  Created by Runkai Zhang on 5/26/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FacebookWithoutImageTableViewCell: UITableViewCell {
+class TwitterWithoutImageTableViewCell: UITableViewCell {
 
     @IBOutlet var dateOfPub: UILabel!
     @IBOutlet var content: UITextView!
