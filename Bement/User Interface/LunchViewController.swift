@@ -30,7 +30,7 @@ class LunchViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://bementorg.finalsite.com/uploaded/PDF_Links/weeklymenu.pdf")!
+        let url = URL(string: "http://bementorg.finalsite.com/uploaded/PDF_Links/weeklymenu.pdf")!
         webView.load(URLRequest(url: url))
     }
     

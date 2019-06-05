@@ -16,8 +16,6 @@ class TwitterTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 450
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

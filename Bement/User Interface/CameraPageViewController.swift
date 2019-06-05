@@ -10,7 +10,7 @@ import UIKit
 import MobileCoreServices
 import CoreML
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var titleLabel: ShiftMaskableLabel!

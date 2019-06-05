@@ -7,15 +7,11 @@
 //
 
 import Foundation
-import CloudKit
 
 struct globalVariable {
-    public static var messageRecordsName = [CKRecord]()
-    public static var messageCategory = [Int : [CKRecord]]()
     public static var row = Int()
     public static var section = Int()
     public static var catalogGrade = String()
-    public static var errorRecordsName = [CKRecord]()
     public static var firstTimeIndicator = false
     public static var calenderLink = String()
 }

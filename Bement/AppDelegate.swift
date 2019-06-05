@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Foundation
 import AlamofireRSSParser
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

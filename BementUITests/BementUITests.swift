@@ -3,7 +3,7 @@
 //  BementUITests
 //
 //  Created by Runkai Zhang on 10/28/18.
-//  Copyright © 2019 Numeric Design. All rights reserved.
+//  Copyright © 2019 Runkai Zhang. All rights reserved.
 //
 
 import XCTest
