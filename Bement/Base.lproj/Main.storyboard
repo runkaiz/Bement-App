@@ -566,7 +566,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GH-9Y-ndM">
-                                <rect key="frame" x="45" y="138" width="125" height="125"/>
+                                <rect key="frame" x="45" y="133" width="125" height="125"/>
                                 <color key="backgroundColor" red="0.077296398579999995" green="0.21700689200000001" blue="0.49005788560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6GH-9Y-ndM" secondAttribute="height" multiplier="1:1" id="21v-o7-cGa"/>
@@ -576,7 +576,7 @@
                                 <state key="normal" title="Inquire"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1Y-C0-2tm">
-                                <rect key="frame" x="205" y="138" width="125" height="125"/>
+                                <rect key="frame" x="205" y="133" width="125" height="125"/>
                                 <color key="backgroundColor" red="0.077296398579999995" green="0.21700689200000001" blue="0.49005788560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W1Y-C0-2tm" secondAttribute="height" multiplier="1:1" id="qLB-n4-pRU"/>
@@ -595,7 +595,7 @@
                             <constraint firstItem="W1Y-C0-2tm" firstAttribute="bottom" secondItem="6GH-9Y-ndM" secondAttribute="bottom" id="PBK-gv-u52"/>
                             <constraint firstItem="W1Y-C0-2tm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6GH-9Y-ndM" secondAttribute="trailing" constant="35" id="RGQ-hg-7Oh"/>
                             <constraint firstItem="W1Y-C0-2tm" firstAttribute="width" secondItem="6GH-9Y-ndM" secondAttribute="width" id="Sch-Eu-sFX"/>
-                            <constraint firstItem="W1Y-C0-2tm" firstAttribute="top" secondItem="T17-AT-Ndf" secondAttribute="top" constant="50" id="XtS-dF-aT9"/>
+                            <constraint firstItem="W1Y-C0-2tm" firstAttribute="top" secondItem="T17-AT-Ndf" secondAttribute="top" constant="45" id="XtS-dF-aT9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="W1Y-C0-2tm" secondAttribute="trailing" constant="29" id="dub-1y-d8n"/>
                             <constraint firstItem="W1Y-C0-2tm" firstAttribute="top" secondItem="6GH-9Y-ndM" secondAttribute="top" id="nDJ-bb-jcp"/>
                         </constraints>
@@ -620,16 +620,16 @@
             </objects>
             <point key="canvasLocation" x="3740" y="1052.9556650246307"/>
         </scene>
-        <!--View Controller-->
+        <!--Contacts-->
         <scene sceneID="dRy-al-xEp">
             <objects>
-                <viewController id="6rK-zh-FAM" sceneMemberID="viewController">
+                <viewController id="6rK-zh-FAM" customClass="SpeedContactViewController" customModule="Bement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZU-eu-LED">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pc-wc-Xe9">
-                                <rect key="frame" x="30" y="138" width="315" height="125"/>
+                                <rect key="frame" x="30" y="133" width="315" height="125"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toni Costa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvb-sT-r4I">
                                         <rect key="frame" x="14.999999999999993" y="14.999999999999998" width="100.33333333333331" height="26.333333333333329"/>
@@ -652,6 +652,9 @@
                                         <state key="normal" title="Phone">
                                             <color key="titleColor" red="0.077296398579999995" green="0.21700689200000001" blue="0.49005788560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="constaPhoneClicked:" destination="6rK-zh-FAM" eventType="touchUpInside" id="j2z-hZ-6l2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtJ-jh-cyy">
                                         <rect key="frame" x="182.66666666666666" y="76" width="105.33333333333334" height="34"/>
@@ -659,6 +662,9 @@
                                         <state key="normal" title="Email">
                                             <color key="titleColor" red="0.077296398579999995" green="0.21700689200000001" blue="0.49005788560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="constaEmailClicked:" destination="6rK-zh-FAM" eventType="touchUpInside" id="UjR-Xe-QU2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.077296398579999995" green="0.21700689200000001" blue="0.49005788560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -685,12 +691,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="73V-wD-gKc" firstAttribute="trailing" secondItem="1pc-wc-Xe9" secondAttribute="trailing" constant="30" id="Jn6-W6-j5O"/>
-                            <constraint firstItem="1pc-wc-Xe9" firstAttribute="top" secondItem="73V-wD-gKc" secondAttribute="top" constant="50" id="Qsh-qI-6eV"/>
+                            <constraint firstItem="1pc-wc-Xe9" firstAttribute="top" secondItem="73V-wD-gKc" secondAttribute="top" constant="45" id="Qsh-qI-6eV"/>
                             <constraint firstItem="1pc-wc-Xe9" firstAttribute="centerX" secondItem="wZU-eu-LED" secondAttribute="centerX" id="T1i-gs-ILb"/>
                             <constraint firstItem="1pc-wc-Xe9" firstAttribute="leading" secondItem="73V-wD-gKc" secondAttribute="leading" constant="30" id="fQL-au-G7H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="73V-wD-gKc"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="qmG-QL-zQO"/>
+                    <connections>
+                        <outlet property="constaCard" destination="1pc-wc-Xe9" id="TX5-Kf-PfI"/>
+                        <outlet property="constaEmail" destination="QtJ-jh-cyy" id="hkO-Xe-EeT"/>
+                        <outlet property="constaPhone" destination="DeG-WQ-wg7" id="qcM-sA-EYD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSM-oO-skd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

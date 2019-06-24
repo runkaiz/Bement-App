@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05CCBC7DD4D637ACB6FBD794 /* Pods_BementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23074EAADDC2DFE075C4583 /* Pods_BementUITests.framework */; };
 		3E347874D50C7C7505E62724 /* Pods_Bement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F8E08F84FEB82BE13C51 /* Pods_Bement.framework */; };
+		B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */; };
 		B20326BF229B6074003BEB7F /* TwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */; };
 		B20326C1229B60C7003BEB7F /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C0229B60C7003BEB7F /* RSSParser.swift */; };
 		B20326C3229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */; };
@@ -113,6 +114,7 @@
 /* Begin PBXFileReference section */
 		547218A1E45794FF0CDA8259 /* Pods-Bement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bement.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bement/Pods-Bement.release.xcconfig"; sourceTree = "<group>"; };
 		9C86ED8319AA6179D0029815 /* Pods_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedContactViewController.swift; sourceTree = "<group>"; };
 		B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTableViewController.swift; sourceTree = "<group>"; };
 		B20326C0229B60C7003BEB7F /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterWithImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				B282976A21D186AC004EAB6C /* CameraPageViewController.swift */,
 				B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */,
 				B2B42D8E22A73398001BDF8C /* ContactBementViewController.swift */,
+				B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				B282979921D1BB59004EAB6C /* CGImage+Accelerate.swift in Sources */,
 				B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */,
 				B282978A21D1BA54004EAB6C /* PopupDialogDefaultViewController.swift in Sources */,
+				B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */,
 				B20326BF229B6074003BEB7F /* TwitterTableViewController.swift in Sources */,
 				B251C7F72297585500566842 /* LunchViewController.swift in Sources */,
 				B251C7F522974F8400566842 /* CatalogWebViewController.swift in Sources */,
