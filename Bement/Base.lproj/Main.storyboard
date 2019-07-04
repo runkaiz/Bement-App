@@ -36,7 +36,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hZr-Xj-0LE"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="NB6-v9-Eve"/>
+                    <navigationItem key="navigationItem" title="Title" largeTitleDisplayMode="never" id="NB6-v9-Eve"/>
                     <connections>
                         <outlet property="web" destination="d08-w6-bGt" id="wR7-1c-Kox"/>
                     </connections>
