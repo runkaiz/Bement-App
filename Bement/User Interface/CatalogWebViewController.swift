@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class CatalogWebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
-
+    
     @IBOutlet var web: WKWebView!
     @objc func canRotate() -> Void {}
     var activityIndicator: UIActivityIndicatorView!

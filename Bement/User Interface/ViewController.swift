@@ -27,7 +27,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         ATCWalkthroughModel(title: "Quick Responses", subtitle: "This system have lightning respond time and can provide you first hand data withour delay.", icon: "lighting"),
         ATCWalkthroughModel(title: "Calender Feeds", subtitle: "Extremely convenient calender system by using Apple's native calender app, keeping you up to date.", icon: "Straight"),
         ATCWalkthroughModel(title: "Get Notified", subtitle: "Receive notifications when a term report is released to stay on top of everything.", icon: "bell"),
-        ]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +106,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                         print(error)
                     }
                 }
-            }.resume()
+                }.resume()
         }
     }
     

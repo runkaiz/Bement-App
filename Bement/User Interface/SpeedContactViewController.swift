@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 
 class SpeedContactViewController: UIViewController, MFMailComposeViewControllerDelegate {
-
+    
     @IBOutlet var constaCard: UIView!
     @IBOutlet var constaPhone: UIButton!
     @IBOutlet var constaEmail: UIButton!

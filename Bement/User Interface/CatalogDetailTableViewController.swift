@@ -9,7 +9,7 @@
 import UIKit
 
 class CatalogDetailTableViewController: UITableViewController {
-
+    
     @IBOutlet weak var titleTextDetail: UINavigationItem!
     var segueData = Int()
     var catalogs = [String()]
@@ -49,13 +49,13 @@ class CatalogDetailTableViewController: UITableViewController {
             print("This should not happen!")
         }
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return catalogs.count
     }

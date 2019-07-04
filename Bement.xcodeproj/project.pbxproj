@@ -380,6 +380,7 @@
 				B2045D8921297F7000272036 /* GlobalVariable.swift */,
 				B2395B4F2159A67F006B7F0A /* CatalogResources.swift */,
 				B21218A921B0B5440025438F /* Extension */,
+				B2EDFA7A22CDA667006F7475 /* Custom Objects */,
 				B282976821D18342004EAB6C /* Bement Buildings.mlmodel */,
 				B2BA44D820EB9FD1009437A7 /* Main.storyboard */,
 				B26C0F112119861100750545 /* LaunchScreen.storyboard */,
@@ -387,7 +388,6 @@
 				B2B46E7B212B046600CA7480 /* Localizable.strings */,
 				B2B78C5D21B0BAE300B39C71 /* Libraries */,
 				B2BA44E020EB9FD6009437A7 /* Info.plist */,
-				B2AAE8CF22C42BEF001E1D17 /* InquireRecord.swift */,
 			);
 			path = Bement;
 			sourceTree = "<group>";
@@ -431,6 +431,14 @@
 				D23074EAADDC2DFE075C4583 /* Pods_BementUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2EDFA7A22CDA667006F7475 /* Custom Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B2AAE8CF22C42BEF001E1D17 /* InquireRecord.swift */,
+			);
+			path = "Custom Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

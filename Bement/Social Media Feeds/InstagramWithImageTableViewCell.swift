@@ -9,7 +9,7 @@
 import UIKit
 
 class InstagramWithImageTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var dateOfPub: UILabel!
     @IBOutlet var contentImage: UIImageView!
     @IBOutlet var content: UITextView!
@@ -26,5 +26,5 @@ class InstagramWithImageTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-
+    
 }

@@ -11,22 +11,22 @@ import UIKit
 class CatalogTableViewController: UITableViewController {
     
     var indexRow = Int()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
-
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 1:
