@@ -59,7 +59,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                 }
             } else {
                 self.hourTitle.text = "There is no school tomorrow."
-                self.startHour.text = "Have a great day!"
+                self.startHour.text = "Have a great summer!"
                 self.endHour.isHidden = true
             }
         } else {
