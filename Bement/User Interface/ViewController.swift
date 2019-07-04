@@ -44,7 +44,27 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         tools.beautifulButton(calendersButton)
         tools.beautifulButton(socialButton)
         
-        self.getSchoolHours()
+        let myCalendar = Calendar(identifier: .gregorian)
+        let month = myCalendar.component(.month, from: Date())
+        let day = myCalendar.component(.day, from: Date())
+        
+        if month >= 6 && month <= 8 {
+            if month == 6 {
+                if day >= 7 {
+                    self.hourTitle.text = "There is no school tomorrow."
+                    self.startHour.text = "Have a great summer!"
+                    self.endHour.isHidden = true
+                } else {
+                    self.getSchoolHours()
+                }
+            } else {
+                self.hourTitle.text = "There is no school tomorrow."
+                self.startHour.text = "Have a great day!"
+                self.endHour.isHidden = true
+            }
+        } else {
+            self.getSchoolHours()
+        }
         
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
             self.getSchoolHours()
