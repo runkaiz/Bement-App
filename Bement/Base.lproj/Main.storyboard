@@ -649,9 +649,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Inquire"/>
-                                <connections>
-                                    <segue destination="c1P-KG-fie" kind="show" id="Y0V-El-DLv"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1Y-C0-2tm">
                                 <rect key="frame" x="205" y="113" width="125" height="125"/>
@@ -691,6 +688,7 @@
                     <connections>
                         <outlet property="contactButton" destination="W1Y-C0-2tm" id="jgF-cS-wj4"/>
                         <outlet property="inquireButton" destination="6GH-9Y-ndM" id="M3p-Mz-WJw"/>
+                        <segue destination="c1P-KG-fie" kind="show" identifier="toComplete" id="O32-ae-umh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhS-Hk-nvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -710,7 +708,7 @@
                                 <rect key="frame" x="45" y="113" width="285" height="591"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Uq-tx-htw">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="94.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="102.66666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPH-rq-2yR">
                                                 <rect key="frame" x="8" y="8" width="172.33333333333334" height="24"/>
@@ -727,10 +725,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDd-Ua-lJl">
-                                        <rect key="frame" x="0.0" y="139.33333333333334" width="285" height="94.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="147.66666666666669" width="285" height="103"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Household Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfb-3H-atM">
-                                                <rect key="frame" x="8" y="7.9999999999999716" width="198" height="24"/>
+                                                <rect key="frame" x="8" y="8" width="198" height="24"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -745,7 +743,7 @@
                                         <viewLayoutGuide key="safeArea" id="Vrv-Bd-ap2"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZoZ-1j-bLJ">
-                                        <rect key="frame" x="0.0" y="278.66666666666669" width="285" height="94"/>
+                                        <rect key="frame" x="0.0" y="295.66666666666669" width="285" height="102.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parent/Guardian Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ey-3C-lK5">
                                                 <rect key="frame" x="7.9999999999999858" y="8" width="244.66666666666663" height="24"/>
@@ -763,7 +761,7 @@
                                         <viewLayoutGuide key="safeArea" id="ZD6-be-XTO"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDH-OV-sx2">
-                                        <rect key="frame" x="0.0" y="417.66666666666663" width="285" height="94.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="443.33333333333337" width="285" height="102.66666666666663"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqf-U9-att">
                                                 <rect key="frame" x="8" y="8" width="191" height="24"/>
@@ -780,7 +778,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSJ-Mc-Ljm">
-                                        <rect key="frame" x="0.0" y="557" width="285" height="34"/>
+                                        <rect key="frame" x="0.0" y="591" width="285" height="0.0"/>
                                         <color key="backgroundColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="34" id="cMG-tW-aS5"/>
