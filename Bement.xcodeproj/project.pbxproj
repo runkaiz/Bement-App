@@ -15,6 +15,7 @@
 		B20326C3229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */; };
 		B20326C5229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */; };
 		B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2045D8921297F7000272036 /* GlobalVariable.swift */; };
+		B215F02A22DE805A0079E426 /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215F02922DE805A0079E426 /* InquiryViewController.swift */; };
 		B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */; };
 		B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4F2159A67F006B7F0A /* CatalogResources.swift */; };
 		B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E651922DD5A550028889E /* HamburgerButton.swift */; };
@@ -123,6 +124,7 @@
 		B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterWithoutImageTableViewCell.swift; sourceTree = "<group>"; };
 		B2045D8921297F7000272036 /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		B2045DF1212A7DF700272036 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B215F02922DE805A0079E426 /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewController.swift; sourceTree = "<group>"; };
 		B2395B4F2159A67F006B7F0A /* CatalogResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResources.swift; sourceTree = "<group>"; };
 		B23E651922DD5A550028889E /* HamburgerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */,
 				B2B42D8E22A73398001BDF8C /* ContactBementViewController.swift */,
 				B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */,
+				B215F02922DE805A0079E426 /* InquiryViewController.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				B282978321D1BA54004EAB6C /* PopupDialog.swift in Sources */,
 				B2B78C5A21B0BADC00B39C71 /* Shiftable.swift in Sources */,
 				B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */,
+				B215F02A22DE805A0079E426 /* InquiryViewController.swift in Sources */,
 				B20326C1229B60C7003BEB7F /* RSSParser.swift in Sources */,
 				B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */,
 				B2D667C321861FBF00CF8428 /* ATCWalkthroughModel.swift in Sources */,

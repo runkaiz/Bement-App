@@ -134,11 +134,11 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                     // print(self.data.center.x)
                     // print("Passed hide")
                 } else {
-                    UIView.animate(withDuration: 0.4) {
+                    UIView.animate(withDuration: 0.5) {
                         self.data.center.x -= self.view.bounds.width
                         self.data.alpha = 0
                     }
-                    UIView.animate(withDuration: 0.5) {
+                    UIView.animate(withDuration: 0.4) {
                         self.identity.center.x -= self.view.bounds.width
                         self.identity.alpha = 0
                     }
@@ -167,12 +167,12 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                 self.identity.alpha = 1
             }
         } else {
-            UIView.animate(withDuration: 0.4) {
+            UIView.animate(withDuration: 0.5) {
                 self.data.center.x -= self.view.bounds.width
                 self.data.alpha = 0
                 // print(self.data.center.x)
             }
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.4) {
                 self.identity.center.x -= self.view.bounds.width
                 self.identity.alpha = 0
             }
