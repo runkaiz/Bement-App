@@ -13,6 +13,10 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
     private var observer: NSObjectProtocol?
     
+    var passed = false
+    var passed2 = false
+    var started = false
+    
     @IBOutlet var socialButton: UIButton!
     @IBOutlet var calendersButton: UIButton!
     @IBOutlet var lunchButton: UIButton!
@@ -21,6 +25,11 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     @IBOutlet var hourTitle: UILabel!
     @IBOutlet var startHour: UILabel!
     @IBOutlet var endHour: UILabel!
+    @IBOutlet var data: UIButton!
+    @IBOutlet var identity: UIButton!
+    
+    var button: HamburgerButton! = nil
+    @IBOutlet var buttonView: UIView!
     
     let walkthroughs = [
         ATCWalkthroughModel(title: "Efficienct Login System", subtitle: "This login system is very user-friendly and 100% secure when handling your data.", icon: "Real"),
@@ -37,6 +46,21 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
             walkthroughVC.delegate = self
             self.addChildViewControllerWithView(walkthroughVC)
         }
+        
+        button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
+        button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
+        
+        buttonView.addSubview(button)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: buttonView.topAnchor),
+            button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
+            button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
+            button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
+            button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
+            ])
         
         tools.beautifulButton(supportButton)
         tools.beautifulButton(reportsButton)
@@ -68,6 +92,90 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
             self.getSchoolHours()
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if button.showsMenu {
+            if passed {
+                passed = false
+                // print("Passed is false")
+                
+                self.data.center.x -= self.view.bounds.width
+                self.identity.center.x -= self.view.bounds.width
+                
+                // print("Passed show")
+                passed2 = false
+            } else {
+                UIView.animate(withDuration: 0.4) {
+                    self.data.center.x += self.view.bounds.width
+                    self.data.alpha = 1
+                }
+                UIView.animate(withDuration: 0.5) {
+                    self.identity.center.x += self.view.bounds.width
+                    self.identity.alpha = 1
+                }
+            }
+        } else {
+            if !started {
+                started = true
+                self.data.center.x -= self.view.bounds.width
+                self.identity.center.x -= self.view.bounds.width
+                self.data.alpha = 0
+                self.identity.alpha = 0
+            } else {
+                if passed {
+                    passed = false
+                    // print("Passed is false")
+                    self.data.center.x -= self.view.bounds.width
+                    self.identity.center.x -= self.view.bounds.width
+                    // print(self.data.center.x)
+                    // print("Passed hide")
+                } else {
+                    UIView.animate(withDuration: 0.4) {
+                        self.data.center.x -= self.view.bounds.width
+                        self.data.alpha = 0
+                    }
+                    UIView.animate(withDuration: 0.5) {
+                        self.identity.center.x -= self.view.bounds.width
+                        self.identity.alpha = 0
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc func toggle(_ sender: AnyObject!) {
+        button.showsMenu = !button.showsMenu
+        // print(self.data.center.x)
+        
+        if button.showsMenu {
+            if passed2 {
+                passed2 = false
+                self.data.center.x -= self.view.bounds.width
+                self.identity.center.x -= self.view.bounds.width
+            }
+            UIView.animate(withDuration: 0.4) {
+                self.data.center.x += self.view.bounds.width
+                self.data.alpha = 1
+                // print(self.data.center.x)
+            }
+            UIView.animate(withDuration: 0.5) {
+                self.identity.center.x += self.view.bounds.width
+                self.identity.alpha = 1
+            }
+        } else {
+            UIView.animate(withDuration: 0.4) {
+                self.data.center.x -= self.view.bounds.width
+                self.data.alpha = 0
+                // print(self.data.center.x)
+            }
+            UIView.animate(withDuration: 0.5) {
+                self.identity.center.x -= self.view.bounds.width
+                self.identity.alpha = 0
+            }
         }
     }
     
@@ -117,8 +225,9 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     }
     
     @IBAction func done(_ segue: UIStoryboardSegue) {
-        //print("Popping back to this view controller!")
-        // reset UI elements etc here
+        passed = true
+        passed2 = true
+        // print("Passed is true")
     }
     
     @IBAction func support(_ sender: Any) {
@@ -147,8 +256,6 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
     fileprivate func walkthroughVC() -> ATCWalkthroughViewController {
         let viewControllers = walkthroughs.map { ATCClassicWalkthroughViewController(model: $0, nibName: "ATCClassicWalkthroughViewController", bundle: nil) }
-        return ATCWalkthroughViewController(nibName: "ATCWalkthroughViewController",
-                                            bundle: nil,
-                                            viewControllers: viewControllers)
+        return ATCWalkthroughViewController(nibName: "ATCWalkthroughViewController", bundle: nil, viewControllers: viewControllers)
     }
 }

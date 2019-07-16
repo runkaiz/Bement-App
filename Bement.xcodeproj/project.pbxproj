@@ -17,6 +17,7 @@
 		B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2045D8921297F7000272036 /* GlobalVariable.swift */; };
 		B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */; };
 		B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4F2159A67F006B7F0A /* CatalogResources.swift */; };
+		B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E651922DD5A550028889E /* HamburgerButton.swift */; };
 		B241A2AE2298908F00ABD14E /* CalendersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */; };
 		B251C7F522974F8400566842 /* CatalogWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7F422974F8400566842 /* CatalogWebViewController.swift */; };
 		B251C7F72297585500566842 /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7F62297585500566842 /* LunchViewController.swift */; };
@@ -124,6 +125,7 @@
 		B2045DF1212A7DF700272036 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewController.swift; sourceTree = "<group>"; };
 		B2395B4F2159A67F006B7F0A /* CatalogResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResources.swift; sourceTree = "<group>"; };
+		B23E651922DD5A550028889E /* HamburgerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
 		B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendersTableViewController.swift; sourceTree = "<group>"; };
 		B251C7F422974F8400566842 /* CatalogWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogWebViewController.swift; sourceTree = "<group>"; };
 		B251C7F62297585500566842 /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		B21218A921B0B5440025438F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B23E651922DD5A550028889E /* HamburgerButton.swift */,
 				B20326C0229B60C7003BEB7F /* RSSParser.swift */,
 				B28396592161A7A200034DA4 /* UIViewExtensions.swift */,
 				B2D667B521861F3C00CF8428 /* UIColor.swift */,
@@ -641,6 +644,7 @@
 				B282978B21D1BA54004EAB6C /* TransitionAnimations.swift in Sources */,
 				B282979B21D1BB59004EAB6C /* CaptureQuality.swift in Sources */,
 				B282978D21D1BA54004EAB6C /* PresentationManager.swift in Sources */,
+				B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */,
 				B2B78C5821B0BADC00B39C71 /* ShiftUI_ObcjCompatible.swift in Sources */,
 				B2D667B821861F3D00CF8428 /* UIColor.swift in Sources */,
 				B2AAE8D022C42BEF001E1D17 /* InquireRecord.swift in Sources */,
