@@ -9,18 +9,35 @@
 import UIKit
 import MessageUI
 
-class InquiryViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class InquiryViewController: UIViewController, MFMailComposeViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var pickerDataSource = ["2020-2021", "2021-2022", "2022-2023", "2023-2024", "2024-2025", "2025-2026"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerDataSource[row] as String
+    }
+    
 
     @IBOutlet var nameField: UITextField!
+    @IBOutlet var parentNameField: UITextField!
     @IBOutlet var emailField: UITextField!
-    @IBOutlet var phoneField: UITextField!
     @IBOutlet var streetField: UITextField!
     @IBOutlet var cityField: UITextField!
     @IBOutlet var stateField: UITextField!
     @IBOutlet var countryField: UITextField!
-    @IBOutlet var applyField: UITextField!
-    @IBOutlet var currentField: UITextField!
     @IBOutlet var sendButton: UIButton!
+    @IBOutlet var yearApplying: UIButton!
+    @IBOutlet var gradeApplying: UIButton!
+    @IBOutlet var currentGrade: UIButton!
+    @IBOutlet var howLearned: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,21 +46,22 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
     }
 
     @IBAction func sendClicked(_ sender: Any) {
-        
-        if nameField.text?.replacingOccurrences(of: " ", with: "") != "" || emailField.text?.replacingOccurrences(of:" ", with: "") != "" || phoneField.text?.replacingOccurrences(of:" ", with: "") != "" || streetField.text?.replacingOccurrences(of:" ", with: "") != "" || cityField.text?.replacingOccurrences(of:" ", with: "") != "" || stateField.text?.replacingOccurrences(of:" ", with: "") != "" || countryField.text?.replacingOccurrences(of:" ", with: "") != "" || applyField.text?.replacingOccurrences(of:" ", with: "") != "" || currentField.text?.replacingOccurrences(of:" ", with: "") != "" {
+        if nameField.text!.replacingOccurrences(of: " ", with: "") != "" && parentNameField.text?.replacingOccurrences(of: " ", with: "") != "" && emailField.text!.replacingOccurrences(of:" ", with: "") != "" && countryField.text?.replacingOccurrences(of:" ", with: "") != "" && gradeApplying.title(for: .normal) != "Please select the grade" && yearApplying.title(for: .normal) != "Please select the year" {
             
             let message = """
                         <h1>Inquiry Submission</h1>
-                        <p>My name is \(nameField.text ?? "") and here is my information for the inquiry:</p>
-                        <p>Email: \(emailField.text ?? "")</p>
-                        <p>Phone number: \(phoneField.text ?? "")</p>
+                        <p>My name is \(nameField.text ?? "") and my parent/guardian's name is \(parentNameField.text ?? "N/A")</p>
+                        <p>My email is: \(emailField.text ?? "N/A")</p>
                         <p>Address:</p>
-                        <p>\(streetField.text ?? "")</p>
-                        <p>\(cityField.text ?? "")</p>
-                        <p>\(stateField.text ?? "")</p>
-                        <p>\(countryField.text ?? "")</p>
-                        <p>I am apply for \(applyField.text ?? "") and my current grade is \(currentField.text ?? "")</p>
+                        <p>\(streetField.text ?? "N/A")</p>
+                        <p>\(cityField.text ?? "N/A")</p>
+                        <p>\(stateField.text ?? "N/A")</p>
+                        <p>\(countryField.text ?? "N/A")</p>
+                        <p>I am applying for grade \(gradeApplying.title(for: .normal) ?? "N/A") in \(yearApplying.title(for: .normal) ?? "N/A"). I am currently a \(currentGrade.title(for: .normal) ?? "N/A") grader.</p>
+                        <p>How I learned about Bement?</p>
+                        <p>\(howLearned.text ?? "N/A")</p>
                         """
+            print(message)
             sendEmail(with: message)
         } else {
             let alert = UIAlertController(title: "Error", message: "You must fill all the fields!", preferredStyle: .alert)
@@ -59,7 +77,7 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["you@yoursite.com"])
+            mail.setToRecipients(["admit@bement.org"])
             mail.setMessageBody(input, isHTML: true)
             
             present(mail, animated: true)
@@ -75,5 +93,65 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
+    }
+    
+    @IBAction func applyForYear(_ sender: Any) {
+        let myPicker: UIPickerView = UIPickerView()
+        
+        pickerDataSource = ["2020-2021", "2021-2022", "2022-2023", "2023-2024", "2024-2025", "2025-2026"]
+        
+        myPicker.delegate = self
+        myPicker.dataSource = self
+        myPicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .alert)
+        alertController.view.addSubview(myPicker)
+        let set = UIAlertAction(title: "Set", style: .default) { action in
+            self.yearApplying.setTitle(self.pickerDataSource[myPicker.selectedRow(inComponent: 0)], for: .normal)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(set)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true)
+    }
+    
+    @IBAction func applyForGrade(_ sender: Any) {
+        let myPicker: UIPickerView = UIPickerView()
+        
+        pickerDataSource = ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        
+        myPicker.delegate = self
+        myPicker.dataSource = self
+        myPicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .alert)
+        alertController.view.addSubview(myPicker)
+        let set = UIAlertAction(title: "Set", style: .default) { action in
+            self.gradeApplying.setTitle(self.pickerDataSource[myPicker.selectedRow(inComponent: 0)], for: .normal)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(set)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true)
+    }
+    
+    @IBAction func setCurrentGradeAttending(_ sender: Any) {
+        let myPicker: UIPickerView = UIPickerView()
+        
+        pickerDataSource = ["PK", "K", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        
+        myPicker.delegate = self
+        myPicker.dataSource = self
+        myPicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
+        
+        let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .alert)
+        alertController.view.addSubview(myPicker)
+        let set = UIAlertAction(title: "Set", style: .default) { action in
+            self.currentGrade.setTitle(self.pickerDataSource[myPicker.selectedRow(inComponent: 0)], for: .normal)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(set)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true)
     }
 }

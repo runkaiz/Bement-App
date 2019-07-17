@@ -11,25 +11,25 @@ import MessageUI
 
 class SpeedContactViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
-    @IBOutlet var constaCard: UIView!
-    @IBOutlet var constaPhone: UIButton!
-    @IBOutlet var constaEmail: UIButton!
+    @IBOutlet var costaCard: UIView!
+    @IBOutlet var costaPhone: UIButton!
+    @IBOutlet var costaEmail: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        constaCard.layer.cornerRadius = 15
+        costaCard.layer.cornerRadius = 15
         
-        constaPhone.layer.cornerRadius = 7
-        constaEmail.layer.cornerRadius = 7
+        costaPhone.layer.cornerRadius = 7
+        costaEmail.layer.cornerRadius = 7
     }
     
-    @IBAction func constaPhoneClicked(_ sender: Any) {
-        guard let number = URL(string: "tel://") else { return }
+    @IBAction func costaPhoneClicked(_ sender: Any) {
+        guard let number = URL(string: "tel://4137747061") else { return }
         UIApplication.shared.open(number)
     }
     
-    @IBAction func constaEmailClicked(_ sender: Any) {
+    @IBAction func costaEmailClicked(_ sender: Any) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
