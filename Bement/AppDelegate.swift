@@ -20,16 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public static var instagramItems: [RSSItem] = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        RSSParser.getRSSFeedResponse(path: "https://zapier.com/engine/rss/4349992/BementTwitterProduction/") { (response, status: NetworkResponseStatus) in
-            if let feed: RSSFeed = response {
-                for item in feed.items {
-                    AppDelegate.twitterItems.append(item)
-                    //print(item)
-                }
-            }
-        }
-        
         RSSParser.getRSSFeedResponse(path: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml") { (response, status: NetworkResponseStatus) in
             if let feed: RSSFeed = response {
                 for item in feed.items {

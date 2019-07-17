@@ -10,10 +10,7 @@
 		05CCBC7DD4D637ACB6FBD794 /* Pods_BementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23074EAADDC2DFE075C4583 /* Pods_BementUITests.framework */; };
 		3E347874D50C7C7505E62724 /* Pods_Bement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF6F8E08F84FEB82BE13C51 /* Pods_Bement.framework */; };
 		B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */; };
-		B20326BF229B6074003BEB7F /* TwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */; };
 		B20326C1229B60C7003BEB7F /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C0229B60C7003BEB7F /* RSSParser.swift */; };
-		B20326C3229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */; };
-		B20326C5229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */; };
 		B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2045D8921297F7000272036 /* GlobalVariable.swift */; };
 		B215F02A22DE805A0079E426 /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215F02922DE805A0079E426 /* InquiryViewController.swift */; };
 		B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */; };
@@ -118,10 +115,7 @@
 		547218A1E45794FF0CDA8259 /* Pods-Bement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bement.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bement/Pods-Bement.release.xcconfig"; sourceTree = "<group>"; };
 		9C86ED8319AA6179D0029815 /* Pods_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedContactViewController.swift; sourceTree = "<group>"; };
-		B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterTableViewController.swift; sourceTree = "<group>"; };
 		B20326C0229B60C7003BEB7F /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
-		B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterWithImageTableViewCell.swift; sourceTree = "<group>"; };
-		B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterWithoutImageTableViewCell.swift; sourceTree = "<group>"; };
 		B2045D8921297F7000272036 /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		B2045DF1212A7DF700272036 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B215F02922DE805A0079E426 /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
@@ -240,9 +234,6 @@
 		B20326BD229B6043003BEB7F /* Social Media Feeds */ = {
 			isa = PBXGroup;
 			children = (
-				B20326BE229B6074003BEB7F /* TwitterTableViewController.swift */,
-				B20326C2229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift */,
-				B20326C4229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift */,
 				B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */,
 				B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */,
 			);
@@ -637,7 +628,6 @@
 			files = (
 				B28297A021D1BB59004EAB6C /* DynamicBlurView.swift in Sources */,
 				B282979D21D1BB59004EAB6C /* UIImage+Blur.swift in Sources */,
-				B20326C3229B6AC4003BEB7F /* TwitterWithImageTableViewCell.swift in Sources */,
 				B282978021D1BA54004EAB6C /* UIImageView+Calculations.swift in Sources */,
 				B282978521D1BA54004EAB6C /* PopupDialogOverlayView.swift in Sources */,
 				B282978121D1BA54004EAB6C /* UIView+Animations.swift in Sources */,
@@ -659,7 +649,6 @@
 				B299D8AD229CB13C0071B688 /* InstagramWithImageTableViewCell.swift in Sources */,
 				B282978921D1BA54004EAB6C /* PopupDialog+Keyboard.swift in Sources */,
 				B268D40B21195B06001D7BF1 /* ViewController.swift in Sources */,
-				B20326C5229B70FF003BEB7F /* TwitterWithoutImageTableViewCell.swift in Sources */,
 				B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */,
 				B282978821D1BA54004EAB6C /* TransitionAnimator.swift in Sources */,
 				B282978E21D1BA54004EAB6C /* PopupDialogContainerView.swift in Sources */,
@@ -685,7 +674,6 @@
 				B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */,
 				B282978A21D1BA54004EAB6C /* PopupDialogDefaultViewController.swift in Sources */,
 				B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */,
-				B20326BF229B6074003BEB7F /* TwitterTableViewController.swift in Sources */,
 				B251C7F72297585500566842 /* LunchViewController.swift in Sources */,
 				B251C7F522974F8400566842 /* CatalogWebViewController.swift in Sources */,
 				B282978C21D1BA54004EAB6C /* PopupDialogDefaultButtons.swift in Sources */,

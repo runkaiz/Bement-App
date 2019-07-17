@@ -41,8 +41,7 @@ class InstagramTableViewController: UITableViewController {
             with: url,
             options: [
                 .processor(processor),
-                .scaleFactor(UIScreen.main.scale),
-                .cacheOriginalImage
+                .scaleFactor(UIScreen.main.scale)
             ])
         {
             result in
