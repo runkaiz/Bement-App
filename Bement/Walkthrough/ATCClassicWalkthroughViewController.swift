@@ -41,6 +41,6 @@ class ATCClassicWalkthroughViewController: UIViewController {
         subtitleLabel.font = UIFont.systemFont(ofSize: 14.0)
         subtitleLabel.textColor = .white
         
-        containerView.backgroundColor = UIColor(hexString: "#3068CC")
+        containerView.backgroundColor = #colorLiteral(red: 0.1882352941, green: 0.4078431373, blue: 0.8, alpha: 1)
     }
 }

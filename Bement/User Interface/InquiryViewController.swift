@@ -8,8 +8,9 @@
 
 import UIKit
 import MessageUI
+import IQKeyboardManagerSwift
 
-class InquiryViewController: UIViewController, MFMailComposeViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class InquiryViewController: UIViewController, MFMailComposeViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     var pickerDataSource = ["2020-2021", "2021-2022", "2022-2023", "2023-2024", "2024-2025", "2025-2026"]
     
@@ -24,7 +25,6 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerDataSource[row] as String
     }
-    
 
     @IBOutlet var nameField: UITextField!
     @IBOutlet var parentNameField: UITextField!
@@ -42,7 +42,24 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if traitCollection.userInterfaceStyle == .dark {
+            IQKeyboardManager.shared.enable = true
+            IQKeyboardManager.shared.toolbarTintColor = .white
+        } else {
+            IQKeyboardManager.shared.enable = true
+            IQKeyboardManager.shared.toolbarTintColor = .black
+        }
+        
         tools.beautifulButton(sendButton)
+        
+        nameField.delegate = self
+        parentNameField.delegate = self
+        emailField.delegate = self
+        streetField.delegate = self
+        cityField.delegate = self
+        stateField.delegate = self
+        countryField.delegate = self
+        howLearned.delegate = self
     }
 
     @IBAction func sendClicked(_ sender: Any) {
@@ -78,6 +95,7 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["admit@bement.org"])
+            mail.setSubject("Inquiry Submission")
             mail.setMessageBody(input, isHTML: true)
             
             present(mail, animated: true)
@@ -153,5 +171,44 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
         alertController.addAction(set)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+                
+        if userInterfaceStyle == .dark {
+            self.view.backgroundColor = .black
+            nameField.textColor = .white
+            parentNameField.textColor = .white
+            emailField.textColor = .white
+            streetField.textColor = .white
+            cityField.textColor = .white
+            stateField.textColor = .white
+            countryField.textColor = .white
+            howLearned.textColor = .white
+            
+            IQKeyboardManager.shared.enable = true
+            IQKeyboardManager.shared.toolbarTintColor = .white
+        } else {
+            self.view.backgroundColor = .white
+            nameField.textColor = .black
+            parentNameField.textColor = .black
+            emailField.textColor = .black
+            streetField.textColor = .black
+            cityField.textColor = .black
+            stateField.textColor = .black
+            countryField.textColor = .black
+            howLearned.textColor = .black
+            
+            IQKeyboardManager.shared.enable = true
+            IQKeyboardManager.shared.toolbarTintColor = .black
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+       textField.resignFirstResponder()
+       return true
     }
 }

@@ -63,8 +63,6 @@ class CatalogDetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CatalogTableViewCell
         
-        cell.title.text = catalogs[indexPath.row]
-        
         return cell
     }
     
@@ -93,5 +91,17 @@ class CatalogDetailTableViewController: UITableViewController {
             print("This should not happen!")
         }
         self.performSegue(withIdentifier: "toWeb", sender: self)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+            
+        if userInterfaceStyle == .dark {
+            self.view.backgroundColor = .black
+        } else {
+            self.view.backgroundColor = .white
+        }
     }
 }

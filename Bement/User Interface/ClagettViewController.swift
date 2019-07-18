@@ -22,7 +22,7 @@ class ClagettViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
         view = libraryView
         
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        activityIndicator.style = UIActivityIndicatorView.Style.medium
         activityIndicator.hidesWhenStopped = true
         let barButton = UIBarButtonItem(customView: activityIndicator)
         self.navigationItem.setRightBarButton(barButton, animated: true)
@@ -44,6 +44,18 @@ class ClagettViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
             UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
         }
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+            super.traitCollectionDidChange(previousTraitCollection)
+
+            let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+            
+            if userInterfaceStyle == .dark {
+                self.view.backgroundColor = .black
+            } else {
+                self.view.backgroundColor = .white
+            }
+        }
     
     func showActivityIndicator(show: Bool) {
         if show {

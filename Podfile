@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '12.2'
+platform :ios, '13'
  use_frameworks!
 
 target 'Bement' do
@@ -10,6 +10,7 @@ target 'Bement' do
   pod 'Fuzi', '~> 3.1.0'
   pod 'SwiftyJSON'
   pod 'Kingfisher', '~> 5.0'
+  pod 'IQKeyboardManagerSwift'
   
   target 'BementUITests' do
     inherit! :search_paths

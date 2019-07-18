@@ -50,4 +50,16 @@ class SpeedContactViewController: UIViewController, MFMailComposeViewControllerD
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+                super.traitCollectionDidChange(previousTraitCollection)
+
+                let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+                
+                if userInterfaceStyle == .dark {
+                    self.view.backgroundColor = .black
+                } else {
+                    self.view.backgroundColor = .white
+                }
+            }
 }

@@ -27,4 +27,15 @@ class InstagramWithImageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+                super.traitCollectionDidChange(previousTraitCollection)
+
+                let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+                
+                if userInterfaceStyle == .dark {
+                    self.contentView.backgroundColor = .black
+                } else {
+                    self.contentView.backgroundColor = .white
+                }
+            }
 }

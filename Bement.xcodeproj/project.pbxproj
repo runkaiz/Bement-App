@@ -67,7 +67,6 @@
 		B2D035A3218A850F00F79DBF /* CatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D035A2218A850E00F79DBF /* CatalogTableViewCell.swift */; };
 		B2D035A5218A89C600F79DBF /* DeviceKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D035A4218A89C600F79DBF /* DeviceKit.swift */; };
 		B2D667B721861F3D00CF8428 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667B421861F3C00CF8428 /* UIImage.swift */; };
-		B2D667B821861F3D00CF8428 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667B521861F3C00CF8428 /* UIColor.swift */; };
 		B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667B621861F3C00CF8428 /* UIViewController.swift */; };
 		B2D667BE21861F4A00CF8428 /* ATCWalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D667BA21861F4900CF8428 /* ATCWalkthroughViewController.xib */; };
 		B2D667BF21861F4A00CF8428 /* ATCClassicWalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D667BB21861F4900CF8428 /* ATCClassicWalkthroughViewController.xib */; };
@@ -180,7 +179,6 @@
 		B2D035A2218A850E00F79DBF /* CatalogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewCell.swift; sourceTree = "<group>"; };
 		B2D035A4218A89C600F79DBF /* DeviceKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceKit.swift; sourceTree = "<group>"; };
 		B2D667B421861F3C00CF8428 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		B2D667B521861F3C00CF8428 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B2D667B621861F3C00CF8428 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B2D667BA21861F4900CF8428 /* ATCWalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCWalkthroughViewController.xib; sourceTree = "<group>"; };
 		B2D667BB21861F4900CF8428 /* ATCClassicWalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicWalkthroughViewController.xib; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				B23E651922DD5A550028889E /* HamburgerButton.swift */,
 				B20326C0229B60C7003BEB7F /* RSSParser.swift */,
 				B28396592161A7A200034DA4 /* UIViewExtensions.swift */,
-				B2D667B521861F3C00CF8428 /* UIColor.swift */,
 				B2D667B421861F3C00CF8428 /* UIImage.swift */,
 				B2D667B621861F3C00CF8428 /* UIViewController.swift */,
 			);
@@ -639,7 +636,6 @@
 				B282978D21D1BA54004EAB6C /* PresentationManager.swift in Sources */,
 				B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */,
 				B2B78C5821B0BADC00B39C71 /* ShiftUI_ObcjCompatible.swift in Sources */,
-				B2D667B821861F3D00CF8428 /* UIColor.swift in Sources */,
 				B2AAE8D022C42BEF001E1D17 /* InquireRecord.swift in Sources */,
 				B282979E21D1BB59004EAB6C /* BlurLayer.swift in Sources */,
 				B282977F21D1BA54004EAB6C /* PresentationController.swift in Sources */,

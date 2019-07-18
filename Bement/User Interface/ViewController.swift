@@ -13,9 +13,8 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
     private var observer: NSObjectProtocol?
     
-    var passed = false
-    var passed2 = false
-    var started = false
+    var originalLocation: CGFloat?
+    var originalLocationMoved: CGFloat?
     
     @IBOutlet var socialButton: UIButton!
     @IBOutlet var calendersButton: UIButton!
@@ -46,21 +45,6 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
             walkthroughVC.delegate = self
             self.addChildViewControllerWithView(walkthroughVC)
         }
-        
-        button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
-        button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
-        
-        buttonView.addSubview(button)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: buttonView.topAnchor),
-            button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
-            button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
-            button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
-            button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
-            ])
         
         tools.beautifulButton(supportButton)
         tools.beautifulButton(reportsButton)
@@ -93,57 +77,167 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
             self.getSchoolHours()
         }
+
+        originalLocationMoved = data.center.x
+        originalLocation = data.center.x - view.bounds.width
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
+        button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
+                        
+        buttonView.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+                button.topAnchor.constraint(equalTo: buttonView.topAnchor),
+                button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
+                button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
+                button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
+                button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+                button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
+            ])
+        
+        if button.showsMenu {
+            while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                        data.center.x -= view.bounds.width
+                                                        identity.center.x -= view.bounds.width
+                                                        
+                                                        while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                            data.center.x += view.bounds.width
+                                                            identity.center.x += view.bounds.width
+                                                        }
+                                                    }
+                                                    
+                                                    while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                        data.center.x += view.bounds.width
+                                                        identity.center.x += view.bounds.width
+                                                        
+                                                        while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                            data.center.x -= view.bounds.width
+                                                            identity.center.x -= view.bounds.width
+                                                        }
+            }
+        } else {
+            while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                        data.center.x -= view.bounds.width
+                        identity.center.x -= view.bounds.width
+                        
+                        while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                            data.center.x += view.bounds.width
+                            identity.center.x += view.bounds.width
+                        }
+                    }
+                    
+                    while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                        data.center.x += view.bounds.width
+                        identity.center.x += view.bounds.width
+                        
+                        while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                            data.center.x -= view.bounds.width
+                            identity.center.x -= view.bounds.width
+                        }
+                    }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if button.showsMenu {
-            if passed {
-                passed = false
-                // print("Passed is false")
-                
-                self.data.center.x -= self.view.bounds.width
-                self.identity.center.x -= self.view.bounds.width
-                
-                // print("Passed show")
-                passed2 = false
-            } else {
-                UIView.animate(withDuration: 0.4) {
-                    self.data.center.x += self.view.bounds.width
-                    self.data.alpha = 1
-                }
-                UIView.animate(withDuration: 0.5) {
-                    self.identity.center.x += self.view.bounds.width
-                    self.identity.alpha = 1
-                }
-            }
-        } else {
-            if !started {
-                started = true
-                self.data.center.x -= self.view.bounds.width
-                self.identity.center.x -= self.view.bounds.width
-                self.data.alpha = 0
-                self.identity.alpha = 0
-            } else {
-                if passed {
-                    passed = false
-                    // print("Passed is false")
-                    self.data.center.x -= self.view.bounds.width
-                    self.identity.center.x -= self.view.bounds.width
-                    // print(self.data.center.x)
-                    // print("Passed hide")
+                    while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                data.center.x -= view.bounds.width
+                                                                identity.center.x -= view.bounds.width
+                                                                
+                                                                while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                    data.center.x += view.bounds.width
+                                                                    identity.center.x += view.bounds.width
+                                                                }
+                                                            }
+                                                            
+                                                            while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                data.center.x += view.bounds.width
+                                                                identity.center.x += view.bounds.width
+                                                                
+                                                                while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                    data.center.x -= view.bounds.width
+                                                                    identity.center.x -= view.bounds.width
+                                                                }
+                                                            }
                 } else {
-                    UIView.animate(withDuration: 0.5) {
-                        self.data.center.x -= self.view.bounds.width
-                        self.data.alpha = 0
-                    }
-                    UIView.animate(withDuration: 0.4) {
-                        self.identity.center.x -= self.view.bounds.width
-                        self.identity.alpha = 0
-                    }
+                    while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                                data.center.x -= view.bounds.width
+                                identity.center.x -= view.bounds.width
+                                
+                                while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                                    data.center.x += view.bounds.width
+                                    identity.center.x += view.bounds.width
+                                }
+                            }
+                            
+                            while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                                data.center.x += view.bounds.width
+                                identity.center.x += view.bounds.width
+                                
+                                while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                                    data.center.x -= view.bounds.width
+                                    identity.center.x -= view.bounds.width
+                                }
+                            }
                 }
-            }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if button.showsMenu {
+                    while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                data.center.x -= view.bounds.width
+                                                                identity.center.x -= view.bounds.width
+                                                                
+                                                                while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                    data.center.x += view.bounds.width
+                                                                    identity.center.x += view.bounds.width
+                                                                }
+                                                            }
+                                                            
+                                                            while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                data.center.x += view.bounds.width
+                                                                identity.center.x += view.bounds.width
+                                                                
+                                                                while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                                    data.center.x -= view.bounds.width
+                                                                    identity.center.x -= view.bounds.width
+                                                                }
+                                                            }
+                } else {
+                    while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                                data.center.x -= view.bounds.width
+                                identity.center.x -= view.bounds.width
+                                
+                                while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                                    data.center.x += view.bounds.width
+                                    identity.center.x += view.bounds.width
+                                }
+                            }
+                            
+                            while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                                data.center.x += view.bounds.width
+                                identity.center.x += view.bounds.width
+                                
+                                while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                                    data.center.x -= view.bounds.width
+                                    identity.center.x -= view.bounds.width
+                                }
+                            }
+                }
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+        
+        if userInterfaceStyle == .dark {
+            self.view.backgroundColor = .black
+        } else {
+            self.view.backgroundColor = .white
         }
     }
     
@@ -152,11 +246,6 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         // print(self.data.center.x)
         
         if button.showsMenu {
-            if passed2 {
-                passed2 = false
-                self.data.center.x -= self.view.bounds.width
-                self.identity.center.x -= self.view.bounds.width
-            }
             UIView.animate(withDuration: 0.4) {
                 self.data.center.x += self.view.bounds.width
                 self.data.alpha = 1
@@ -225,9 +314,48 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     }
     
     @IBAction func done(_ segue: UIStoryboardSegue) {
-        passed = true
-        passed2 = true
-        // print("Passed is true")
+       if button.showsMenu {
+            while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                            data.center.x -= view.bounds.width
+                                            identity.center.x -= view.bounds.width
+                                            
+                                            while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                data.center.x += view.bounds.width
+                                                identity.center.x += view.bounds.width
+                                            }
+                                        }
+                                        
+                                        while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                            data.center.x += view.bounds.width
+                                            identity.center.x += view.bounds.width
+                                            
+                                            while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
+                                                data.center.x -= view.bounds.width
+                                                identity.center.x -= view.bounds.width
+                                            }
+                                        }
+        
+                } else {
+                    while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                                data.center.x -= view.bounds.width
+                                identity.center.x -= view.bounds.width
+                                
+                                while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                                    data.center.x += view.bounds.width
+                                    identity.center.x += view.bounds.width
+                                }
+                            }
+                            
+                            while data.center.x < originalLocation! && data.center.x != originalLocation! {
+                                data.center.x += view.bounds.width
+                                identity.center.x += view.bounds.width
+                                
+                                while data.center.x > originalLocation! && data.center.x != originalLocation! {
+                                    data.center.x -= view.bounds.width
+                                    identity.center.x -= view.bounds.width
+                                }
+                            }
+                }
     }
     
     @IBAction func support(_ sender: Any) {

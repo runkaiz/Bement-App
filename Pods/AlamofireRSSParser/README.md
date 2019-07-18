@@ -6,13 +6,14 @@
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireRSSParser.svg?style=flat)](http://cocoapods.org/pods/AlamofireRSSParser)
 
 ## Requirements
-- Xcode 9.0+
-- Swift 4.0+
-- Alamofire 4.5+
+- Xcode 10.0+
+- Swift 4.2+
+- Alamofire 4.7.3+
 
 #### Legacy Swift Support
 _If you need to support an earlier version of Swift, please either download the zip or point your Podfile at the coresponding tag:_
 
+- **Swift 4.0**: tag "Swift 4.0 Final"
 - **Swift 3.x**: tag "2.0.1"
 - **Swift 2.2**: tag "Swift 2.2 Final"
 - **Swift 2.3**: tag "Swift 2.3 Final"

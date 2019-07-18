@@ -20,7 +20,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet var titleBackground: UIView!
     
     var newMedia: Bool?
-    let model = Bement_Buildings_1()
+    let model = Bement_Buildings()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,7 +119,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
                 UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
             }
             
-            guard let buildingIdOutput = try? model.prediction(input: Bement_Buildings_1Input(image: buffer(from: image)!)) else {
+            guard let buildingIdOutput = try? model.prediction(input: Bement_BuildingsInput(image: buffer(from: image)!)) else {
                 fatalError("Unexpected runtime error.")
             }
             
@@ -185,5 +185,25 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+        
+        if userInterfaceStyle == .dark {
+            self.view.backgroundColor = .black
+            welcomeLabel.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7549198972)
+            titleBackground.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7549198972)
+            infoLabel.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7549198972)
+            infoLabel.textColor = .white
+        } else {
+            self.view.backgroundColor = .white
+            welcomeLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7549198972)
+            titleBackground.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7549198972)
+            infoLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7549198972)
+            infoLabel.textColor = .black
+        }
     }
 }

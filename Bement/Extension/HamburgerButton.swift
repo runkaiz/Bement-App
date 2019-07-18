@@ -51,7 +51,11 @@ class HamburgerButton : UIButton {
         
         for layer in [ self.top, self.middle, self.bottom ] {
             layer?.fillColor = nil
-            layer?.strokeColor = #colorLiteral(red: 0, green: 0.2209205627, blue: 0.5083626509, alpha: 1)
+            if traitCollection.userInterfaceStyle == .dark {
+                layer?.strokeColor = UIColor.white.cgColor
+            } else {
+                layer?.strokeColor = #colorLiteral(red: 0, green: 0.2209205627, blue: 0.5083626509, alpha: 1)
+            }
             layer?.lineWidth = 4
             layer?.miterLimit = 4
             layer?.lineCap = CAShapeLayerLineCap.round
@@ -79,6 +83,56 @@ class HamburgerButton : UIButton {
         
         self.bottom.anchorPoint = CGPoint(x: 28.0 / 30.0, y: 0.5)
         self.bottom.position = CGPoint(x: 40, y: 36)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        let userInterfaceStyle = traitCollection.userInterfaceStyle
+        
+        if userInterfaceStyle == .light {
+            for layer in [ self.top, self.middle, self.bottom ] {
+                layer?.fillColor = nil
+                layer?.strokeColor = #colorLiteral(red: 0, green: 0.2209205627, blue: 0.5083626509, alpha: 1)
+                layer?.lineWidth = 4
+                layer?.miterLimit = 4
+                layer?.lineCap = CAShapeLayerLineCap.round
+                layer?.masksToBounds = true
+                            
+                let strokingPath = CGPath(__byStroking: (layer?.path!)!, transform: nil, lineWidth: 4, lineCap: .round, lineJoin: .miter, miterLimit: 4)
+                    
+                layer?.bounds = (strokingPath?.boundingBoxOfPath)!
+                
+                layer?.actions = [
+                    "strokeStart": NSNull(),
+                    "strokeEnd": NSNull(),
+                    "transform": NSNull()
+                    ]
+                            
+                self.layer.addSublayer(layer!)
+            }
+        } else {
+            for layer in [ self.top, self.middle, self.bottom ] {
+                layer?.fillColor = nil
+                            layer?.strokeColor = UIColor.white.cgColor
+                            layer?.lineWidth = 4
+                            layer?.miterLimit = 4
+                            layer?.lineCap = CAShapeLayerLineCap.round
+                            layer?.masksToBounds = true
+                            
+                            let strokingPath = CGPath(__byStroking: (layer?.path!)!, transform: nil, lineWidth: 4, lineCap: .round, lineJoin: .miter, miterLimit: 4)
+                            
+                            layer?.bounds = (strokingPath?.boundingBoxOfPath)!
+                            
+                            layer?.actions = [
+                                "strokeStart": NSNull(),
+                                "strokeEnd": NSNull(),
+                                "transform": NSNull()
+                            ]
+                            
+                            self.layer.addSublayer(layer!)
+            }
+        }
     }
     
     var showsMenu: Bool = false {
