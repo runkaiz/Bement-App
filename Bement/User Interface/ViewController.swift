@@ -12,6 +12,13 @@ import SwiftyJSON
 class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
     private var observer: NSObjectProtocol?
+    var isMenuOpen: Bool = false {
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.adjustMenuItem()
+            }
+        }
+    }
     
     var originalLocation: CGFloat?
     var originalLocationMoved: CGFloat?
@@ -80,158 +87,40 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
 
         originalLocationMoved = data.center.x
         originalLocation = data.center.x - view.bounds.width
+        print(originalLocation)
+        print(originalLocationMoved)
+        
+        button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
+                button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
+                                
+                buttonView.addSubview(button)
+                button.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                        button.topAnchor.constraint(equalTo: buttonView.topAnchor),
+                        button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
+                        button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
+                        button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
+                        button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+                        button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
+                    ])
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
-        button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
-                        
-        buttonView.addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-                button.topAnchor.constraint(equalTo: buttonView.topAnchor),
-                button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
-                button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
-                button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
-                button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
-                button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
-            ])
-        
-        if button.showsMenu {
-            while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                        data.center.x -= view.bounds.width
-                                                        identity.center.x -= view.bounds.width
-                                                        
-                                                        while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                            data.center.x += view.bounds.width
-                                                            identity.center.x += view.bounds.width
-                                                        }
-                                                    }
-                                                    
-                                                    while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                        data.center.x += view.bounds.width
-                                                        identity.center.x += view.bounds.width
-                                                        
-                                                        while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                            data.center.x -= view.bounds.width
-                                                            identity.center.x -= view.bounds.width
-                                                        }
-            }
-        } else {
-            while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                        data.center.x -= view.bounds.width
-                        identity.center.x -= view.bounds.width
-                        
-                        while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                            data.center.x += view.bounds.width
-                            identity.center.x += view.bounds.width
-                        }
-                    }
-                    
-                    while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                        data.center.x += view.bounds.width
-                        identity.center.x += view.bounds.width
-                        
-                        while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                            data.center.x -= view.bounds.width
-                            identity.center.x -= view.bounds.width
-                        }
-                    }
-        }
+        adjustMenuItem()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if button.showsMenu {
-                    while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                data.center.x -= view.bounds.width
-                                                                identity.center.x -= view.bounds.width
-                                                                
-                                                                while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                    data.center.x += view.bounds.width
-                                                                    identity.center.x += view.bounds.width
-                                                                }
-                                                            }
-                                                            
-                                                            while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                data.center.x += view.bounds.width
-                                                                identity.center.x += view.bounds.width
-                                                                
-                                                                while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                    data.center.x -= view.bounds.width
-                                                                    identity.center.x -= view.bounds.width
-                                                                }
-                                                            }
-                } else {
-                    while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                                data.center.x -= view.bounds.width
-                                identity.center.x -= view.bounds.width
-                                
-                                while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                                    data.center.x += view.bounds.width
-                                    identity.center.x += view.bounds.width
-                                }
-                            }
-                            
-                            while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                                data.center.x += view.bounds.width
-                                identity.center.x += view.bounds.width
-                                
-                                while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                                    data.center.x -= view.bounds.width
-                                    identity.center.x -= view.bounds.width
-                                }
-                            }
-                }
+        adjustMenuItem()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         
-        if button.showsMenu {
-                    while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                data.center.x -= view.bounds.width
-                                                                identity.center.x -= view.bounds.width
-                                                                
-                                                                while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                    data.center.x += view.bounds.width
-                                                                    identity.center.x += view.bounds.width
-                                                                }
-                                                            }
-                                                            
-                                                            while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                data.center.x += view.bounds.width
-                                                                identity.center.x += view.bounds.width
-                                                                
-                                                                while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                                    data.center.x -= view.bounds.width
-                                                                    identity.center.x -= view.bounds.width
-                                                                }
-                                                            }
-                } else {
-                    while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                                data.center.x -= view.bounds.width
-                                identity.center.x -= view.bounds.width
-                                
-                                while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                                    data.center.x += view.bounds.width
-                                    identity.center.x += view.bounds.width
-                                }
-                            }
-                            
-                            while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                                data.center.x += view.bounds.width
-                                identity.center.x += view.bounds.width
-                                
-                                while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                                    data.center.x -= view.bounds.width
-                                    identity.center.x -= view.bounds.width
-                                }
-                            }
-                }
+        adjustMenuItem()
         let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
         
         if userInterfaceStyle == .dark {
@@ -314,48 +203,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     }
     
     @IBAction func done(_ segue: UIStoryboardSegue) {
-       if button.showsMenu {
-            while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                            data.center.x -= view.bounds.width
-                                            identity.center.x -= view.bounds.width
-                                            
-                                            while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                data.center.x += view.bounds.width
-                                                identity.center.x += view.bounds.width
-                                            }
-                                        }
-                                        
-                                        while data.center.x < originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                            data.center.x += view.bounds.width
-                                            identity.center.x += view.bounds.width
-                                            
-                                            while data.center.x > originalLocationMoved! && data.center.x != originalLocationMoved! {
-                                                data.center.x -= view.bounds.width
-                                                identity.center.x -= view.bounds.width
-                                            }
-                                        }
-        
-                } else {
-                    while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                                data.center.x -= view.bounds.width
-                                identity.center.x -= view.bounds.width
-                                
-                                while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                                    data.center.x += view.bounds.width
-                                    identity.center.x += view.bounds.width
-                                }
-                            }
-                            
-                            while data.center.x < originalLocation! && data.center.x != originalLocation! {
-                                data.center.x += view.bounds.width
-                                identity.center.x += view.bounds.width
-                                
-                                while data.center.x > originalLocation! && data.center.x != originalLocation! {
-                                    data.center.x -= view.bounds.width
-                                    identity.center.x -= view.bounds.width
-                                }
-                            }
-                }
+       adjustMenuItem()
     }
     
     @IBAction func support(_ sender: Any) {
@@ -385,5 +233,35 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     fileprivate func walkthroughVC() -> ATCWalkthroughViewController {
         let viewControllers = walkthroughs.map { ATCClassicWalkthroughViewController(model: $0, nibName: "ATCClassicWalkthroughViewController", bundle: nil) }
         return ATCWalkthroughViewController(nibName: "ATCWalkthroughViewController", bundle: nil, viewControllers: viewControllers)
+    }
+    
+    @IBAction func sCanceled(_ sender: Any) {
+        isMenuOpen = !isMenuOpen
+    }
+    @IBAction func cCanceled(_ sender: Any) {
+        isMenuOpen = !isMenuOpen
+    }
+    @IBAction func lCanceled(_ sender: Any) {
+        isMenuOpen = !isMenuOpen
+    }
+    @IBAction func tCanceled(_ sender: Any) {
+        isMenuOpen = !isMenuOpen
+    }
+    @IBAction func bCanceled(_ sender: Any) {
+        isMenuOpen = !isMenuOpen
+    }
+    
+    func adjustMenuItem() {
+        if button.showsMenu {
+            self.data.center.x = originalLocationMoved!
+            self.identity.center.x = originalLocationMoved!
+            self.data.alpha = 1
+            self.identity.alpha = 1
+        } else {
+            self.data.center.x = originalLocation!
+            self.identity.center.x = originalLocation!
+            self.data.alpha = 0
+            self.identity.alpha = 0
+        }
     }
 }

@@ -399,6 +399,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="bCanceled:" destination="vhr-DB-jCY" eventType="touchDragExit" id="ZNe-7L-fsC"/>
                                     <action selector="support:" destination="vhr-DB-jCY" eventType="touchUpInside" id="gs3-Qf-C65"/>
                                     <segue destination="YJY-5t-Djc" kind="show" id="5JJ-Ez-IfG"/>
                                 </connections>
@@ -417,6 +418,7 @@
                                 </state>
                                 <connections>
                                     <action selector="support:" destination="vhr-DB-jCY" eventType="touchUpInside" id="ATJ-ho-zuk"/>
+                                    <action selector="tCanceled:" destination="vhr-DB-jCY" eventType="touchDragExit" id="q1z-Yr-RGX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-eu-8Cn">
@@ -432,6 +434,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="lCanceled:" destination="vhr-DB-jCY" eventType="touchDragExit" id="rNE-ob-RUH"/>
                                     <action selector="support:" destination="vhr-DB-jCY" eventType="touchUpInside" id="usC-Wi-dSF"/>
                                     <segue destination="o72-3g-jbA" kind="show" id="w49-l6-BqF"/>
                                 </connections>
@@ -449,6 +452,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="cCanceled:" destination="vhr-DB-jCY" eventType="touchDragExit" id="7eh-BI-VqI"/>
                                     <action selector="support:" destination="vhr-DB-jCY" eventType="touchUpInside" id="2yf-hH-Ha8"/>
                                     <segue destination="OGI-SF-2ET" kind="show" id="BmP-aE-LYt"/>
                                 </connections>
@@ -466,6 +470,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="sCanceled:" destination="vhr-DB-jCY" eventType="touchDragExit" id="JmV-lY-pfE"/>
                                     <action selector="support:" destination="vhr-DB-jCY" eventType="touchUpInside" id="6PN-kg-AEV"/>
                                     <segue destination="E5n-ug-ovF" kind="show" id="IZt-Jc-qNP"/>
                                 </connections>
@@ -626,6 +631,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r8-NZ-kjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fJM-dG-Cgs">
+                    <connections>
+                        <action selector="touch:" destination="vhr-DB-jCY" id="nHM-Nj-pgl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2797.5999999999999" y="348.02955665024632"/>
         </scene>
