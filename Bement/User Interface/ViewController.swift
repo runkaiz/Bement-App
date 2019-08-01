@@ -8,17 +8,13 @@
 
 import UIKit
 import SwiftyJSON
+import Firebase
 
 class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
     private var observer: NSObjectProtocol?
-    var isMenuOpen: Bool = false {
-        didSet {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.adjustMenuItem()
-            }
-        }
-    }
+    
+    var remoteConfig: RemoteConfig!
     
     var originalLocation: CGFloat?
     var originalLocationMoved: CGFloat?
@@ -47,6 +43,16 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        remoteConfig = RemoteConfig.remoteConfig()
+        
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig.configSettings = settings
+        
+        remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
+        
+        fetchConfig()
+        
         if isAppAlreadyLaunchedOnce() == false {
             let walkthroughVC = self.walkthroughVC()
             walkthroughVC.delegate = self
@@ -59,10 +65,35 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         tools.beautifulButton(calendersButton)
         tools.beautifulButton(socialButton)
         
+        fetchData()
+        
+        observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
+            self.fetchData()
+        }
+
+        originalLocationMoved = data.center.x
+        originalLocation = data.center.x - view.bounds.width
+        
+        button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
+                button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
+                                
+                buttonView.addSubview(button)
+                button.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                        button.topAnchor.constraint(equalTo: buttonView.topAnchor),
+                        button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
+                        button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
+                        button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
+                        button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+                        button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
+                    ])
+    }
+    
+    func fetchData() {
         let myCalendar = Calendar(identifier: .gregorian)
         let month = myCalendar.component(.month, from: Date())
         let day = myCalendar.component(.day, from: Date())
-        
+                    
         if month >= 6 && month <= 8 {
             if month == 6 {
                 if day >= 7 {
@@ -80,34 +111,35 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         } else {
             self.getSchoolHours()
         }
-        
-        observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
-            self.getSchoolHours()
-        }
-
-        originalLocationMoved = data.center.x
-        originalLocation = data.center.x - view.bounds.width
-        print(originalLocation)
-        print(originalLocationMoved)
-        
-        button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
-                button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
-                                
-                buttonView.addSubview(button)
-                button.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                        button.topAnchor.constraint(equalTo: buttonView.topAnchor),
-                        button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
-                        button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
-                        button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
-                        button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
-                        button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
-                    ])
     }
+    
+    private func fetchConfig() {
+        let isSnowDay = remoteConfig["snow_day_enabled"].boolValue
+        
+        remoteConfig.fetch() { (status, error) -> Void in
+          if status == .success {
+            print("Config fetched!")
+            self.remoteConfig.activate(completionHandler: { (error) in
+                if isSnowDay {
+                    DispatchQueue.main.sync {
+                        self.hourTitle.text = "Tomorrow is a snow day."
+                        self.startHour.text = "Stay safe!"
+                        self.endHour.isHidden = true
+                    }
+                }
+            })
+          } else {
+            print("Config not fetched")
+            print("Error: \(error?.localizedDescription ?? "No error available.")")
+          }
+        }
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        fetchConfig()
         adjustMenuItem()
     }
     
@@ -131,8 +163,10 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     }
     
     @objc func toggle(_ sender: AnyObject!) {
+        
+        //print("Toggle")
+        adjustMenuItem()
         button.showsMenu = !button.showsMenu
-        // print(self.data.center.x)
         
         if button.showsMenu {
             UIView.animate(withDuration: 0.4) {
@@ -192,7 +226,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                         print(error)
                     }
                 }
-                }.resume()
+            }.resume()
         }
     }
     
@@ -204,11 +238,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
     @IBAction func done(_ segue: UIStoryboardSegue) {
        adjustMenuItem()
-    }
-    
-    @IBAction func support(_ sender: Any) {
-        globalVariable.firstTimeIndicator = true
-    }
+    } 
     
     func isAppAlreadyLaunchedOnce()-> Bool {
         let defaults = UserDefaults.standard
@@ -235,23 +265,8 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         return ATCWalkthroughViewController(nibName: "ATCWalkthroughViewController", bundle: nil, viewControllers: viewControllers)
     }
     
-    @IBAction func sCanceled(_ sender: Any) {
-        isMenuOpen = !isMenuOpen
-    }
-    @IBAction func cCanceled(_ sender: Any) {
-        isMenuOpen = !isMenuOpen
-    }
-    @IBAction func lCanceled(_ sender: Any) {
-        isMenuOpen = !isMenuOpen
-    }
-    @IBAction func tCanceled(_ sender: Any) {
-        isMenuOpen = !isMenuOpen
-    }
-    @IBAction func bCanceled(_ sender: Any) {
-        isMenuOpen = !isMenuOpen
-    }
-    
     func adjustMenuItem() {
+        //print("Adjusted")
         if button.showsMenu {
             self.data.center.x = originalLocationMoved!
             self.identity.center.x = originalLocationMoved!
@@ -263,5 +278,13 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
             self.data.alpha = 0
             self.identity.alpha = 0
         }
+    }
+    
+    @IBAction func lookaheadClicked(_ sender: Any) {
+        let alert = UIAlertController(title: "Oops!", message: "The Look Ahead feature is not completed yet.", preferredStyle: .alert)
+        let button = UIAlertAction(title: "Alright", style: .cancel, handler: nil)
+        
+        alert.addAction(button)
+        self.present(alert, animated: true, completion: nil)
     }
 }

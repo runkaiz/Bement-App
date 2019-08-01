@@ -10,21 +10,24 @@ import UIKit
 import Foundation
 import AlamofireRSSParser
 import Alamofire
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    public static var twitterItems: [RSSItem] = []
     public static var instagramItems: [RSSItem] = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        FirebaseApp.configure()
+        
         RSSParser.getRSSFeedResponse(path: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml") { (response, status: NetworkResponseStatus) in
             if let feed: RSSFeed = response {
                 for item in feed.items {
                     AppDelegate.instagramItems.append(item)
-                    //print(item)
+                    // print(item)
                 }
             }
         }

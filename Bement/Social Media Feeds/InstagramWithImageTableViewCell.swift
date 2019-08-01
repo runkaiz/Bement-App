@@ -12,7 +12,7 @@ class InstagramWithImageTableViewCell: UITableViewCell {
     
     @IBOutlet var dateOfPub: UILabel!
     @IBOutlet var contentImage: UIImageView!
-    @IBOutlet var content: UITextView!
+    @IBOutlet var content: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

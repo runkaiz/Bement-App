@@ -14,7 +14,6 @@ class InstagramTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,7 +33,7 @@ class InstagramTableViewController: UITableViewController {
         
         let cellWithImage = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as! InstagramWithImageTableViewCell
         
-        let url = URL(string: "\(AppDelegate.instagramItems[indexPath.row].imagesFromDescription!.first!)?_nc_ht=scontent-iad3-1.cdninstagram.com")
+        let url = URL(string: "\(AppDelegate.instagramItems[indexPath.row].imagesFromDescription!.first!)?_nc_ht=scontent-lga3-1.cdninstagram.com")
         let processor = DownsamplingImageProcessor(size: cellWithImage.contentImage.frame.size)
             >> RoundCornerImageProcessor(cornerRadius: 15)
         cellWithImage.contentImage.kf.setImage(
@@ -43,9 +42,8 @@ class InstagramTableViewController: UITableViewController {
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale)
             ])
-        {
-            result in
-            
+        { result in
+            //print(result)
         }
         
         cellWithImage.dateOfPub.text = "Date: \(datePub)"
@@ -55,14 +53,14 @@ class InstagramTableViewController: UITableViewController {
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-                super.traitCollectionDidChange(previousTraitCollection)
-
-                let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
-                
-                if userInterfaceStyle == .dark {
-                    self.view.backgroundColor = .black
-                } else {
-                    self.view.backgroundColor = .white
-                }
-            }
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+        
+        if userInterfaceStyle == .dark {
+            self.view.backgroundColor = .black
+        } else {
+            self.view.backgroundColor = .white
+        }
+    }
 }

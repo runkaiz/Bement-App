@@ -12,6 +12,5 @@ struct globalVariable {
     public static var row = Int()
     public static var section = Int()
     public static var catalogGrade = String()
-    public static var firstTimeIndicator = false
     public static var calenderLink = String()
 }

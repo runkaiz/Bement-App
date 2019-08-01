@@ -11,6 +11,9 @@ target 'Bement' do
   pod 'SwiftyJSON'
   pod 'Kingfisher', '~> 5.0'
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'  
   
   target 'BementUITests' do
     inherit! :search_paths
