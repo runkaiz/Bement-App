@@ -279,12 +279,4 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
             self.identity.alpha = 0
         }
     }
-    
-    @IBAction func lookaheadClicked(_ sender: Any) {
-        let alert = UIAlertController(title: "Oops!", message: "The Look Ahead feature is not completed yet.", preferredStyle: .alert)
-        let button = UIAlertAction(title: "Alright", style: .cancel, handler: nil)
-        
-        alert.addAction(button)
-        self.present(alert, animated: true, completion: nil)
-    }
 }
