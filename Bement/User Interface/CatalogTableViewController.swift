@@ -28,6 +28,7 @@ class CatalogTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         switch indexPath.row {
         case 1:
             indexRow = indexPath.row
