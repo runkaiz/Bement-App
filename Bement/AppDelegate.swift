@@ -8,27 +8,29 @@
 
 import UIKit
 import Foundation
-import AlamofireRSSParser
-import Alamofire
 import Firebase
+import FeedKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    public static var instagramItems: [RSSItem] = []
+    public static var instagramItems: [RSSFeedItem] = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         FirebaseApp.configure()
         
-        RSSParser.getRSSFeedResponse(path: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml") { (response, status: NetworkResponseStatus) in
-            if let feed: RSSFeed = response {
-                for item in feed.items {
+        let feedURL = URL(string: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml")!
+        let parser = FeedParser(URL: feedURL)
+        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+            if result.isSuccess {
+                for item in result.rssFeed!.items! {
                     AppDelegate.instagramItems.append(item)
-                    // print(item)
                 }
+            } else {
+                print(result.error!)
             }
         }
         

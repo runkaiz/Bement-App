@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Fuzi
 import WebKit
+import Fuzi
 
 class LookAheadViewController: UIViewController {
 

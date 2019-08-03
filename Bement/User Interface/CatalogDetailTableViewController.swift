@@ -48,22 +48,33 @@ class CatalogDetailTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return catalogs.count
+        switch segueData {
+        case 1: return catalog.Gradek3.count
+        case 2: return catalog.Gradek3.count
+        case 3: return catalog.Gradek3.count
+        case 4: return catalog.Gradek3.count
+        case 5: return catalog.Grade45.count
+        case 6: return catalog.Grade45.count
+        case 7: return catalog.Grade6.count
+        case 8: return catalog.Grade789.count
+        case 9: return catalog.Grade789.count
+        default: return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath) as! DetailTableViewCell
         
         switch segueData {
-        case 1: cell.textLabel?.text = catalog.Gradek3[indexPath.row]
-        case 2: cell.textLabel?.text = catalog.Gradek3[indexPath.row]
-        case 3: cell.textLabel?.text = catalog.Gradek3[indexPath.row]
-        case 4: cell.textLabel?.text = catalog.Gradek3[indexPath.row]
-        case 5: cell.textLabel?.text = catalog.Grade45[indexPath.row]
-        case 6: cell.textLabel?.text = catalog.Grade45[indexPath.row]
-        case 7: cell.textLabel?.text = catalog.Grade6[indexPath.row]
-        case 8: cell.textLabel?.text = catalog.Grade789[indexPath.row]
-        case 9: cell.textLabel?.text = catalog.Grade789[indexPath.row]
+        case 1: cell.title.text = catalog.Gradek3[indexPath.row]
+        case 2: cell.title.text = catalog.Gradek3[indexPath.row]
+        case 3: cell.title.text = catalog.Gradek3[indexPath.row]
+        case 4: cell.title.text = catalog.Gradek3[indexPath.row]
+        case 5: cell.title.text = catalog.Grade45[indexPath.row]
+        case 6: cell.title.text = catalog.Grade45[indexPath.row]
+        case 7: cell.title.text = catalog.Grade6[indexPath.row]
+        case 8: cell.title.text = catalog.Grade789[indexPath.row]
+        case 9: cell.title.text = catalog.Grade789[indexPath.row]
         default:
             print("This should not happen!")
         }

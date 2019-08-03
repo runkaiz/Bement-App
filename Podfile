@@ -5,19 +5,16 @@ platform :ios, '13'
 target 'Bement' do
 
   # Pods for Bement
-  pod 'Alamofire'
-  pod "AlamofireRSSParser"
-  pod 'Fuzi', '~> 3.1.0'
-  pod 'SwiftyJSON'
-  pod 'Kingfisher', '~> 5.0'
-  pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/RemoteConfig'  
+  pod 'Fuzi'
+  pod 'Kingfisher'
+  pod 'PopupDialog', '~> 1.1'
+  pod "Shift"
+end
   
-  target 'BementUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'BementUITests' do
+  inherit! :search_paths
+  # Pods for testing
 end

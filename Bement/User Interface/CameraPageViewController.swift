@@ -9,6 +9,8 @@
 import UIKit
 import MobileCoreServices
 import CoreML
+import PopupDialog
+import Shift
 
 class CameraPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -34,6 +36,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
         titleLabel.end(shiftPoint: .right)
         titleLabel.animationDuration(3.0)
         titleLabel.maskToText = true
+        
         shootButton.layer.cornerRadius = 20
         
         if ViewController().isAppAlreadyLaunchedOnce() != true {

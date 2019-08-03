@@ -114,23 +114,23 @@ class HamburgerButton : UIButton {
         } else {
             for layer in [ self.top, self.middle, self.bottom ] {
                 layer?.fillColor = nil
-                            layer?.strokeColor = UIColor.white.cgColor
-                            layer?.lineWidth = 4
-                            layer?.miterLimit = 4
-                            layer?.lineCap = CAShapeLayerLineCap.round
-                            layer?.masksToBounds = true
+                layer?.strokeColor = UIColor.white.cgColor
+                layer?.lineWidth = 4
+                layer?.miterLimit = 4
+                layer?.lineCap = CAShapeLayerLineCap.round
+                layer?.masksToBounds = true
                             
-                            let strokingPath = CGPath(__byStroking: (layer?.path!)!, transform: nil, lineWidth: 4, lineCap: .round, lineJoin: .miter, miterLimit: 4)
+                let strokingPath = CGPath(__byStroking: (layer?.path!)!, transform: nil, lineWidth: 4, lineCap: .round, lineJoin: .miter, miterLimit: 4)
+                    
+                layer?.bounds = (strokingPath?.boundingBoxOfPath)!
+                    
+                layer?.actions = [
+                "strokeStart": NSNull(),
+                "strokeEnd": NSNull(),
+                "transform": NSNull()
+                ]
                             
-                            layer?.bounds = (strokingPath?.boundingBoxOfPath)!
-                            
-                            layer?.actions = [
-                                "strokeStart": NSNull(),
-                                "strokeEnd": NSNull(),
-                                "transform": NSNull()
-                            ]
-                            
-                            self.layer.addSublayer(layer!)
+                self.layer.addSublayer(layer!)
             }
         }
     }

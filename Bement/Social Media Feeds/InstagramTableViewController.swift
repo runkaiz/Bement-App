@@ -8,7 +8,6 @@
 
 import UIKit
 import Kingfisher
-import AlamofireRSSParser
 
 class InstagramTableViewController: UITableViewController {
     
@@ -33,7 +32,7 @@ class InstagramTableViewController: UITableViewController {
         
         let cellWithImage = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as! InstagramWithImageTableViewCell
         
-        let url = URL(string: "\(AppDelegate.instagramItems[indexPath.row].imagesFromDescription!.first!)?_nc_ht=scontent-lga3-1.cdninstagram.com")
+        let url = URL(string: (AppDelegate.instagramItems[indexPath.row].enclosure?.attributes!.url)!)
         let processor = DownsamplingImageProcessor(size: cellWithImage.contentImage.frame.size)
             >> RoundCornerImageProcessor(cornerRadius: 15)
         cellWithImage.contentImage.kf.setImage(
@@ -43,7 +42,7 @@ class InstagramTableViewController: UITableViewController {
                 .scaleFactor(UIScreen.main.scale)
             ])
         { result in
-            //print(result)
+            // print(result)
         }
         
         cellWithImage.dateOfPub.text = "Date: \(datePub)"
