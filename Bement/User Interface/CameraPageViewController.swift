@@ -129,7 +129,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
             let output = buildingIdOutput.classLabelProbs
             let result = buildingIdOutput.classLabel
             
-            if (output[result]!) <= 0.8 {
+            if (output[result]!) <= 0.65 {
                 //print("None of the them is a Bement Building")
                 let alert = PopupDialog(title: "Sorry", message: "I cannot identify what building it is")
                 let button = PopupDialogButton(title: "Ok", action: nil)
