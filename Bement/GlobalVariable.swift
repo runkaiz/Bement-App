@@ -10,7 +10,6 @@ import Foundation
 
 struct globalVariable {
     public static var row = Int()
-    public static var section = Int()
     public static var catalogGrade = String()
     public static var calenderLink = String()
 }
