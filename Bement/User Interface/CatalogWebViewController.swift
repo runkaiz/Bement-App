@@ -109,14 +109,14 @@ class CatalogWebViewController: UIViewController, WKUIDelegate, WKNavigationDele
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-                super.traitCollectionDidChange(previousTraitCollection)
+        super.traitCollectionDidChange(previousTraitCollection)
 
-                let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
-                
-                if userInterfaceStyle == .dark {
-                    self.view.backgroundColor = .black
-                } else {
-                    self.view.backgroundColor = .white
-                }
-            }
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+        
+        if userInterfaceStyle == .dark {
+            self.view.backgroundColor = .black
+        } else {
+            self.view.backgroundColor = .white
+        }
+    }
 }

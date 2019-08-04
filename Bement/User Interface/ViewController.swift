@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Firebase
 
-class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
+class ViewController: UIViewController {
     
     private var observer: NSObjectProtocol?
     
@@ -33,13 +33,6 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     var button: HamburgerButton! = nil
     @IBOutlet var buttonView: UIView!
     
-    let walkthroughs = [
-        ATCWalkthroughModel(title: "Efficienct Login System", subtitle: "This login system is very user-friendly and 100% secure when handling your data.", icon: "Real"),
-        ATCWalkthroughModel(title: "Quick Responses", subtitle: "This system have lightning respond time and can provide you first hand data withour delay.", icon: "lighting"),
-        ATCWalkthroughModel(title: "Calender Feeds", subtitle: "Extremely convenient calender system by using Apple's native calender app, keeping you up to date.", icon: "Straight"),
-        ATCWalkthroughModel(title: "Get Notified", subtitle: "Receive notifications when a term report is released to stay on top of everything.", icon: "bell"),
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,13 +43,6 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         remoteConfig.configSettings = settings
         
         remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
-        
-        
-        if isAppAlreadyLaunchedOnce() == false {
-            let walkthroughVC = self.walkthroughVC()
-            walkthroughVC.delegate = self
-            self.addChildViewControllerWithView(walkthroughVC)
-        }
         
         tools.beautifulButton(supportButton)
         tools.beautifulButton(reportsButton)
@@ -252,27 +238,14 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
     
     func isAppAlreadyLaunchedOnce()-> Bool {
         let defaults = UserDefaults.standard
-        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
             //print("App already launched")
             return true
-        }else{
+        } else {
             defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
             //print("App launched first time")
             return false
         }
-    }
-    
-    func walkthroughViewControllerDidFinishFlow(_ vc: ATCWalkthroughViewController) {
-        UIView.transition(with: self.view, duration: 1, options: .transitionFlipFromLeft, animations: {
-            vc.view.removeFromSuperview()
-            let viewControllerToBePresented = UIViewController()
-            self.view.addSubview(viewControllerToBePresented.view)
-        }, completion: nil)
-    }
-    
-    fileprivate func walkthroughVC() -> ATCWalkthroughViewController {
-        let viewControllers = walkthroughs.map { ATCClassicWalkthroughViewController(model: $0, nibName: "ATCClassicWalkthroughViewController", bundle: nil) }
-        return ATCWalkthroughViewController(nibName: "ATCWalkthroughViewController", bundle: nil, viewControllers: viewControllers)
     }
     
     func adjustMenuItem() {

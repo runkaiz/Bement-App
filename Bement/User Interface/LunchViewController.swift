@@ -13,6 +13,7 @@ import WebKit
 class LunchViewController: UIViewController, WKNavigationDelegate {
     
     var webView: WKWebView!
+    @objc func canRotate() -> Void {}
     var activityIndicator: UIActivityIndicatorView!
     
     override func loadView() {
@@ -44,6 +45,14 @@ class LunchViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+            
+        if (self.isMovingFromParent) {
+            UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
+        }
+    }
+    
     //MARK:- WKNavigationDelegate
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         showActivityIndicator(show: true)
@@ -66,12 +75,12 @@ class LunchViewController: UIViewController, WKNavigationDelegate {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
                 super.traitCollectionDidChange(previousTraitCollection)
 
-                let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
                 
-                if userInterfaceStyle == .dark {
-                    self.view.backgroundColor = .black
-                } else {
-                    self.view.backgroundColor = .white
-                }
-            }
+        if userInterfaceStyle == .dark {
+            self.view.backgroundColor = .black
+        } else {
+            self.view.backgroundColor = .white
+        }
+    }
 }

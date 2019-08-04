@@ -32,7 +32,6 @@
 		B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28396592161A7A200034DA4 /* UIViewExtensions.swift */; };
 		B299D8AD229CB13C0071B688 /* InstagramWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */; };
 		B299D8B1229CB16D0071B688 /* InstagramTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */; };
-		B2AAE8D022C42BEF001E1D17 /* InquireRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AAE8CF22C42BEF001E1D17 /* InquireRecord.swift */; };
 		B2B42D8F22A73398001BDF8C /* ContactBementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B42D8E22A73398001BDF8C /* ContactBementViewController.swift */; };
 		B2B46E79212B046600CA7480 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2B46E7B212B046600CA7480 /* Localizable.strings */; };
 		B2BA44D520EB9FD1009437A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BA44D420EB9FD1009437A7 /* AppDelegate.swift */; };
@@ -42,11 +41,6 @@
 		B2D035A1218A700500F79DBF /* CatalogDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D035A0218A700500F79DBF /* CatalogDetailTableViewController.swift */; };
 		B2D667B721861F3D00CF8428 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667B421861F3C00CF8428 /* UIImage.swift */; };
 		B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667B621861F3C00CF8428 /* UIViewController.swift */; };
-		B2D667BE21861F4A00CF8428 /* ATCWalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D667BA21861F4900CF8428 /* ATCWalkthroughViewController.xib */; };
-		B2D667BF21861F4A00CF8428 /* ATCClassicWalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D667BB21861F4900CF8428 /* ATCClassicWalkthroughViewController.xib */; };
-		B2D667C021861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667BC21861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift */; };
-		B2D667C121861F4A00CF8428 /* ATCWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667BD21861F4A00CF8428 /* ATCWalkthroughViewController.swift */; };
-		B2D667C321861FBF00CF8428 /* ATCWalkthroughModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667C221861FBF00CF8428 /* ATCWalkthroughModel.swift */; };
 		B2D667CB21862E8700CF8428 /* BementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667CA21862E8700CF8428 /* BementUITests.swift */; };
 		B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35211215C5B3300E0F436 /* ClagettViewController.swift */; };
 /* End PBXBuildFile section */
@@ -122,7 +116,6 @@
 		B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramWithImageTableViewCell.swift; sourceTree = "<group>"; };
 		B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTableViewController.swift; sourceTree = "<group>"; };
 		B2A4E660212D98AC0079C7E6 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
-		B2AAE8CF22C42BEF001E1D17 /* InquireRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquireRecord.swift; sourceTree = "<group>"; };
 		B2B42D8E22A73398001BDF8C /* ContactBementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactBementViewController.swift; sourceTree = "<group>"; };
 		B2B46E7A212B046600CA7480 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2B46E7C212B046A00CA7480 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -135,11 +128,6 @@
 		B2D035A0218A700500F79DBF /* CatalogDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailTableViewController.swift; sourceTree = "<group>"; };
 		B2D667B421861F3C00CF8428 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		B2D667B621861F3C00CF8428 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		B2D667BA21861F4900CF8428 /* ATCWalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCWalkthroughViewController.xib; sourceTree = "<group>"; };
-		B2D667BB21861F4900CF8428 /* ATCClassicWalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATCClassicWalkthroughViewController.xib; sourceTree = "<group>"; };
-		B2D667BC21861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCClassicWalkthroughViewController.swift; sourceTree = "<group>"; };
-		B2D667BD21861F4A00CF8428 /* ATCWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWalkthroughViewController.swift; sourceTree = "<group>"; };
-		B2D667C221861FBF00CF8428 /* ATCWalkthroughModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATCWalkthroughModel.swift; sourceTree = "<group>"; };
 		B2D667C821862E8700CF8428 /* BementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BementUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D667CA21862E8700CF8428 /* BementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BementUITests.swift; sourceTree = "<group>"; };
 		B2D667CC21862E8700CF8428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,18 +196,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		B2333AA621A4DB2400340B88 /* Walkthrough */ = {
-			isa = PBXGroup;
-			children = (
-				B2D667C221861FBF00CF8428 /* ATCWalkthroughModel.swift */,
-				B2D667BC21861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift */,
-				B2D667BB21861F4900CF8428 /* ATCClassicWalkthroughViewController.xib */,
-				B2D667BD21861F4A00CF8428 /* ATCWalkthroughViewController.swift */,
-				B2D667BA21861F4900CF8428 /* ATCWalkthroughViewController.xib */,
-			);
-			path = Walkthrough;
-			sourceTree = "<group>";
-		};
 		B2B78C5D21B0BAE300B39C71 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,12 +230,10 @@
 				B2BA44D420EB9FD1009437A7 /* AppDelegate.swift */,
 				B2C96A4621AE242F00480AB8 /* User Interface */,
 				B20326BD229B6043003BEB7F /* Social Media Feeds */,
-				B2333AA621A4DB2400340B88 /* Walkthrough */,
 				B26C0F0921196ACB00750545 /* Tools.swift */,
 				B2045D8921297F7000272036 /* GlobalVariable.swift */,
 				B2395B4F2159A67F006B7F0A /* CatalogResources.swift */,
 				B21218A921B0B5440025438F /* Extension */,
-				B2EDFA7A22CDA667006F7475 /* Custom Objects */,
 				B282976821D18342004EAB6C /* Bement Buildings.mlmodel */,
 				B2BA44D820EB9FD1009437A7 /* Main.storyboard */,
 				B26C0F112119861100750545 /* LaunchScreen.storyboard */,
@@ -325,14 +299,6 @@
 				D23074EAADDC2DFE075C4583 /* Pods_BementUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B2EDFA7A22CDA667006F7475 /* Custom Objects */ = {
-			isa = PBXGroup;
-			children = (
-				B2AAE8CF22C42BEF001E1D17 /* InquireRecord.swift */,
-			);
-			path = "Custom Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,9 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2D667BF21861F4A00CF8428 /* ATCClassicWalkthroughViewController.xib in Resources */,
 				B267041922E4B02C009328D2 /* GoogleService-Info.plist in Resources */,
-				B2D667BE21861F4A00CF8428 /* ATCWalkthroughViewController.xib in Resources */,
 				B26C0F122119861100750545 /* LaunchScreen.storyboard in Resources */,
 				B2B46E79212B046600CA7480 /* Localizable.strings in Resources */,
 				B2BA44DC20EB9FD6009437A7 /* Assets.xcassets in Resources */,
@@ -536,13 +500,10 @@
 				B223967022F600910044DBC1 /* DetailTableViewCell.swift in Sources */,
 				B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */,
 				B2CBE5EC22F26A240026B803 /* LookAheadViewController.swift in Sources */,
-				B2AAE8D022C42BEF001E1D17 /* InquireRecord.swift in Sources */,
-				B2D667C121861F4A00CF8428 /* ATCWalkthroughViewController.swift in Sources */,
 				B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */,
 				B299D8AD229CB13C0071B688 /* InstagramWithImageTableViewCell.swift in Sources */,
 				B268D40B21195B06001D7BF1 /* ViewController.swift in Sources */,
 				B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */,
-				B2D667C021861F4A00CF8428 /* ATCClassicWalkthroughViewController.swift in Sources */,
 				B2D667B721861F3D00CF8428 /* UIImage.swift in Sources */,
 				B2BA44D520EB9FD1009437A7 /* AppDelegate.swift in Sources */,
 				B26C0F0A21196ACB00750545 /* Tools.swift in Sources */,
@@ -552,7 +513,6 @@
 				B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */,
 				B215F02A22DE805A0079E426 /* InquiryViewController.swift in Sources */,
 				B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */,
-				B2D667C321861FBF00CF8428 /* ATCWalkthroughModel.swift in Sources */,
 				B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */,
 				B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */,
 				B251C7F72297585500566842 /* LunchViewController.swift in Sources */,
@@ -732,7 +692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.bement.Bement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -752,7 +712,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.bement.Bement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
