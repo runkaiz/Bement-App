@@ -51,7 +51,6 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         
         remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
         
-        fetchConfig()
         
         if isAppAlreadyLaunchedOnce() == false {
             let walkthroughVC = self.walkthroughVC()
@@ -87,6 +86,7 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
                         button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
                         button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
                     ])
+        fetchConfig()
     }
     
     func fetchData() {
@@ -94,19 +94,29 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
         let month = myCalendar.component(.month, from: Date())
         let day = myCalendar.component(.day, from: Date())
                     
-        if month >= 6 && month <= 8 {
+        if month >= 6 && month <= 9 {
             if month == 6 {
                 if day >= 7 {
-                    self.hourTitle.text = "There is no school tomorrow."
-                    self.startHour.text = "Have a great summer!"
+                    self.hourTitle.text = NSLocalizedString("noSchool", comment: "")
+                    self.startHour.text = NSLocalizedString("summer", comment: "")
                     self.endHour.isHidden = true
                 } else {
                     self.getSchoolHours()
                 }
             } else {
-                self.hourTitle.text = "There is no school tomorrow."
-                self.startHour.text = "Have a great summer!"
+                self.hourTitle.text = NSLocalizedString("noSchool", comment: "")
+                self.startHour.text = NSLocalizedString("summer", comment: "")
                 self.endHour.isHidden = true
+            }
+            
+            if month == 9 {
+                if day < 4 {
+                    self.hourTitle.text = NSLocalizedString("noSchool", comment: "")
+                    self.startHour.text = NSLocalizedString("summer", comment: "")
+                    self.endHour.isHidden = true
+                } else {
+                    self.getSchoolHours()
+                }
             }
         } else {
             self.getSchoolHours()
@@ -122,8 +132,8 @@ class ViewController: UIViewController, ATCWalkthroughViewControllerDelegate {
             self.remoteConfig.activate(completionHandler: { (error) in
                 if isSnowDay {
                     DispatchQueue.main.sync {
-                        self.hourTitle.text = "Tomorrow is a snow day."
-                        self.startHour.text = "Stay safe!"
+                        self.hourTitle.text = NSLocalizedString("snowTitle", comment: "")
+                        self.startHour.text = NSLocalizedString("snowSubtitle", comment: "")
                         self.endHour.isHidden = true
                     }
                 }

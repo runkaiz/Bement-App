@@ -22,6 +22,9 @@ class SpeedContactViewController: UIViewController, MFMailComposeViewControllerD
         
         costaPhone.layer.cornerRadius = 7
         costaEmail.layer.cornerRadius = 7
+        
+        costaEmail.setTitle(NSLocalizedString("email", comment: ""), for: .normal)
+        costaPhone.setTitle(NSLocalizedString("phone", comment: ""), for: .normal)
     }
     
     @IBAction func costaPhoneClicked(_ sender: Any) {

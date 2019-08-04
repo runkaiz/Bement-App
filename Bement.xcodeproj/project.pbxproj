@@ -114,10 +114,10 @@
 		B268D40A21195B06001D7BF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B26C0F0921196ACB00750545 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		B26C0F112119861100750545 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B26DFC9A22F750B400D2E7D1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		B282976821D18342004EAB6C /* Bement Buildings.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Bement Buildings.mlmodel"; sourceTree = "<group>"; };
 		B282976A21D186AC004EAB6C /* CameraPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPageViewController.swift; sourceTree = "<group>"; };
 		B28396592161A7A200034DA4 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
-		B284DC39212EA58F0052AD67 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		B296EEDF229B46C00086244B /* SwifteriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwifteriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramWithImageTableViewCell.swift; sourceTree = "<group>"; };
 		B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTableViewController.swift; sourceTree = "<group>"; };
@@ -594,7 +594,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B2BA44D920EB9FD1009437A7 /* Base */,
-				B284DC39212EA58F0052AD67 /* zh-Hans */,
+				B26DFC9A22F750B400D2E7D1 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
