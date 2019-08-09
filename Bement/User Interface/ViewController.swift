@@ -8,13 +8,11 @@
 
 import UIKit
 import SwiftyJSON
-import Firebase
+import CloudKit
 
 class ViewController: UIViewController {
     
     private var observer: NSObjectProtocol?
-    
-    var remoteConfig: RemoteConfig!
     
     var originalLocation: CGFloat?
     var originalLocationMoved: CGFloat?
@@ -29,20 +27,13 @@ class ViewController: UIViewController {
     @IBOutlet var endHour: UILabel!
     @IBOutlet var data: UIButton!
     @IBOutlet var identity: UIButton!
+    @IBOutlet var admin: UIButton!
     
     var button: HamburgerButton! = nil
     @IBOutlet var buttonView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        remoteConfig = RemoteConfig.remoteConfig()
-        
-        let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
-        remoteConfig.configSettings = settings
-        
-        remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
         
         tools.beautifulButton(supportButton)
         tools.beautifulButton(reportsButton)
@@ -60,88 +51,60 @@ class ViewController: UIViewController {
         originalLocation = data.center.x - view.bounds.width
         
         button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
-                button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
+        button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
                                 
-                buttonView.addSubview(button)
-                button.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                        button.topAnchor.constraint(equalTo: buttonView.topAnchor),
-                        button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
-                        button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
-                        button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
-                        button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
-                        button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
-                    ])
-        fetchConfig()
+        buttonView.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+                button.topAnchor.constraint(equalTo: buttonView.topAnchor),
+                button.bottomAnchor.constraint(equalTo: buttonView.bottomAnchor),
+                button.leftAnchor.constraint(equalTo: buttonView.leftAnchor),
+                button.rightAnchor.constraint(equalTo: buttonView.rightAnchor),
+                button.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+                button.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor)
+        ])
     }
     
     func fetchData() {
-        let myCalendar = Calendar(identifier: .gregorian)
-        let month = myCalendar.component(.month, from: Date())
-        let day = myCalendar.component(.day, from: Date())
-                    
-        if month >= 6 && month <= 9 {
-            if month == 6 {
-                if day >= 7 {
-                    self.hourTitle.text = NSLocalizedString("noSchool", comment: "")
-                    self.startHour.text = NSLocalizedString("summer", comment: "")
-                    self.endHour.isHidden = true
-                } else {
-                    self.getSchoolHours()
+        let publicDatabase = CKContainer.default().publicCloudDatabase
+        let recordID = CKRecord.ID(recordName: "0")
+        publicDatabase.fetch(withRecordID: recordID, completionHandler: { record, error in
+            if error != nil {
+                DispatchQueue.main.sync {
+                    self.hourTitle.text = "They are no special"
+                    self.startHour.text = "announcements at this moment."
+                    self.endHour.text = ""
                 }
             } else {
-                self.hourTitle.text = NSLocalizedString("noSchool", comment: "")
-                self.startHour.text = NSLocalizedString("summer", comment: "")
-                self.endHour.isHidden = true
-            }
-            
-            if month == 9 {
-                if day < 4 {
-                    self.hourTitle.text = NSLocalizedString("noSchool", comment: "")
-                    self.startHour.text = NSLocalizedString("summer", comment: "")
-                    self.endHour.isHidden = true
-                } else {
-                    self.getSchoolHours()
-                }
-            }
-        } else {
-            self.getSchoolHours()
-        }
-    }
-    
-    private func fetchConfig() {
-        let isSnowDay = remoteConfig["snow_day_enabled"].boolValue
-        
-        remoteConfig.fetch() { (status, error) -> Void in
-          if status == .success {
-            print("Config fetched!")
-            self.remoteConfig.activate(completionHandler: { (error) in
-                if isSnowDay {
+                if Bool(truncating: (record!["display"] as! Int) as NSNumber) == true {
                     DispatchQueue.main.sync {
-                        self.hourTitle.text = NSLocalizedString("snowTitle", comment: "")
-                        self.startHour.text = NSLocalizedString("snowSubtitle", comment: "")
-                        self.endHour.isHidden = true
+                        self.hourTitle.text = record!["titleString"]
+                        self.startHour.text = record?["firstLine"] ?? ""
+                        self.endHour.text = record?["secondLine"] ?? ""
+                    }
+                } else {
+                    DispatchQueue.main.sync {
+                        self.hourTitle.text = "They are no special"
+                        self.startHour.text = "announcements at this moment."
+                        self.endHour.text = ""
                     }
                 }
-            })
-          } else {
-            print("Config not fetched")
-            print("Error: \(error?.localizedDescription ?? "No error available.")")
-          }
-        }
-    }
+            }
+        })
 
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchConfig()
+        fetchData()
         adjustMenuItem()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        fetchData()
         adjustMenuItem()
     }
     
@@ -160,80 +123,41 @@ class ViewController: UIViewController {
     
     @objc func toggle(_ sender: AnyObject!) {
         
-        //print("Toggle")
         adjustMenuItem()
         button.showsMenu = !button.showsMenu
         
         if button.showsMenu {
-            UIView.animate(withDuration: 0.4) {
+            UIView.animate(withDuration: 0.3) {
                 self.data.center.x += self.view.bounds.width
                 self.data.alpha = 1
-                // print(self.data.center.x)
             }
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.4) {
                 self.identity.center.x += self.view.bounds.width
                 self.identity.alpha = 1
             }
-        } else {
             UIView.animate(withDuration: 0.5) {
+                self.admin.center.x += self.view.bounds.width
+                self.admin.alpha = 1
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
                 self.data.center.x -= self.view.bounds.width
                 self.data.alpha = 0
-                // print(self.data.center.x)
             }
             UIView.animate(withDuration: 0.4) {
                 self.identity.center.x -= self.view.bounds.width
                 self.identity.alpha = 0
             }
+            UIView.animate(withDuration: 0.5) {
+                self.admin.center.x -= self.view.bounds.width
+                self.admin.alpha = 0
+            }
         }
     }
     
-    func getSchoolHours() {
-        var request = URLRequest(url: URL(string: "http://207.246.85.80:3000/time")!)
-        request.httpMethod = "GET"
-        let session = URLSession.shared
-        
-        if self.getDayOfWeek(Date()) == 7 || self.getDayOfWeek(Date()) == 6 {
-            self.hourTitle.text = "There is no school tomorrow."
-            self.startHour.text = "Have a great day!"
-            self.endHour.isHidden = true
-        } else {
-            session.dataTask(with: request) {data, response, err in
-                DispatchQueue.main.async {
-                    do {
-                        self.hourTitle.isHidden = false
-                        self.startHour.isHidden = false
-                        self.endHour.isHidden = false
-                        
-                        let formatter = DateFormatter()
-                        formatter.dateStyle = .short
-                        let today = Date()
-                        let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today)
-                        let date = formatter.string(from: tomorrow!)
-                        
-                        self.hourTitle.text = "School hours for \(date):"
-                        let json = try JSON(data: data!)
-                        if let start = json["startTime"].string {
-                            self.startHour.text = "Starts at \(start)"
-                            if let end = json["endTime"].string {
-                                self.endHour.text = "Dismisses at \(end)"
-                            }
-                        }
-                    } catch {
-                        print(error)
-                    }
-                }
-            }.resume()
-        }
-    }
-    
-    func getDayOfWeek(_ date:Date) -> Int? {
-        let myCalendar = Calendar(identifier: .gregorian)
-        let weekDay = myCalendar.component(.weekday, from: date)
-        return weekDay
-    }
-    
-    @IBAction func done(_ segue: UIStoryboardSegue) {
-       adjustMenuItem()
+    @IBAction func backToMain(_ unwindSegue: UIStoryboardSegue) {
+        fetchData()
+        adjustMenuItem()
     } 
     
     func isAppAlreadyLaunchedOnce()-> Bool {
@@ -253,13 +177,75 @@ class ViewController: UIViewController {
         if button.showsMenu {
             self.data.center.x = originalLocationMoved!
             self.identity.center.x = originalLocationMoved!
+            self.admin.center.x = originalLocationMoved!
             self.data.alpha = 1
             self.identity.alpha = 1
+            self.admin.alpha = 1
         } else {
             self.data.center.x = originalLocation!
             self.identity.center.x = originalLocation!
+            self.admin.center.x = originalLocation!
             self.data.alpha = 0
             self.identity.alpha = 0
+            self.admin.alpha = 0
+        }
+    }
+    
+    @IBAction func sTouchedDown(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4,
+        animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        },
+        completion: { _ in
+            
+        })
+    }
+    
+    @IBAction func sExit(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4) {
+            sender.transform = CGAffineTransform.identity
+        }
+    }
+    
+    @IBAction func cTouchedDown(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4,
+        animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        },
+        completion: { _ in })
+    }
+    
+    @IBAction func cExit(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4) {
+            sender.transform = CGAffineTransform.identity
+        }
+    }
+    
+    @IBAction func wTouchedDown(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4,
+        animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        },
+        completion: { _ in })
+    }
+    
+    @IBAction func wExit(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4) {
+            sender.transform = CGAffineTransform.identity
+        }
+    }
+    
+    @IBAction func tTouchedDown(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4,
+        animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        },
+        completion: { _ in })
+    }
+    
+    @IBAction func tExit(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.4) {
+            sender.transform = CGAffineTransform.identity
         }
     }
 }

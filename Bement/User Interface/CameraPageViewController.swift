@@ -9,7 +9,6 @@
 import UIKit
 import MobileCoreServices
 import CoreML
-import PopupDialog
 import Shift
 
 class CameraPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -38,22 +37,6 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
         titleLabel.maskToText = true
         
         shootButton.layer.cornerRadius = 20
-        
-        if ViewController().isAppAlreadyLaunchedOnce() != true {
-            
-            let title = "You found Identify!"
-            let message = "Identify is a tool designed to help you identify each building by taking a photo!"
-            
-            let popup = PopupDialog(title: title, message: message)
-            
-            let ok = DefaultButton(title: "Oh, I am surprised!", height: 60) {
-                
-            }
-            
-            popup.addButtons([ok])
-            
-            self.present(popup, animated: true, completion: nil)
-        }
         
         titleBackground.layer.cornerRadius = 15
         welcomeLabel.layer.cornerRadius = 15
@@ -131,15 +114,17 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
             
             if (output[result]!) <= 0.65 {
                 //print("None of the them is a Bement Building")
-                let alert = PopupDialog(title: "Sorry", message: "I cannot identify what building it is")
-                let button = PopupDialogButton(title: "Ok", action: nil)
-                alert.addButton(button)
+                let alert = UIAlertController(title: "Sorry", message: "I cannot identify what building it is", preferredStyle: .alert)
+                let button = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                
+                alert.addAction(button)
                 self.present(alert, animated: true)
             } else {
                 //print(result)
-                let alert = PopupDialog(title: "Congrats!", message: "You found \(result)")
-                let button = PopupDialogButton(title: "Yeah!", action: nil)
-                alert.addButton(button)
+                let alert = UIAlertController(title: "Congrats!", message: "You found \(result)", preferredStyle: .alert)
+                let button = UIAlertAction(title: "Yeah!", style: .cancel, handler: nil)
+                
+                alert.addAction(button)
                 self.present(alert, animated: true)
             }
         }

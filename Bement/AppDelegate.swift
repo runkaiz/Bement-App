@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import Firebase
 import FeedKit
 
 @UIApplicationMain
@@ -19,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public static var instagramItems: [RSSFeedItem] = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        FirebaseApp.configure()
         
         let feedURL = URL(string: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml")!
         let parser = FeedParser(URL: feedURL)

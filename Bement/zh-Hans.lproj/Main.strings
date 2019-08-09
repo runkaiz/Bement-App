@@ -292,7 +292,7 @@
 "lin-QC-5dc.text" = "国家";
 
 /* Class = "UILabel"; text = "Lunch Schedule"; ObjectID = "mkO-cE-uaf"; */
-"mkO-cE-uaf.text" = "午餐安排";
+"mkO-cE-uaf.text" = "餐饮安排";
 
 /* Class = "UILabel"; text = "Upper School Calendar"; ObjectID = "n5U-Z8-RSH"; */
 "n5U-Z8-RSH.text" = "中学日历";

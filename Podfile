@@ -5,12 +5,8 @@ platform :ios, '13'
 target 'Bement' do
 
   # Pods for Bement
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Database'
-  pod 'Firebase/RemoteConfig'  
   pod 'Fuzi'
   pod 'Kingfisher'
-  pod 'PopupDialog', '~> 1.1'
   pod "Shift"
 end
   
