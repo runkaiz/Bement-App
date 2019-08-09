@@ -58,14 +58,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cells" id="0Ew-Tz-UxP" customClass="DetailTableViewCell" customModule="Bement" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="42.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ew-Tz-UxP" id="IMH-jr-nkp">
-                                    <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="42.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVy-ef-e4S">
-                                            <rect key="frame" x="16" y="11.000000000000002" width="323.66666666666669" height="21.666666666666671"/>
+                                            <rect key="frame" x="16" y="11.000000000000002" width="323.66666666666669" height="20.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -446,11 +446,12 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="bCanceled:" destination="vhr-DB-jCY" eventType="touchDragExit" id="ZNe-7L-fsC"/>
+                                    <action selector="touchExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="JWx-Ed-Q06"/>
+                                    <action selector="touchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="RMJ-3B-s7R"/>
                                     <segue destination="YJY-5t-Djc" kind="show" id="5JJ-Ez-IfG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G05-VN-bQJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G05-VN-bQJ">
                                 <rect key="frame" x="191.66666666666663" y="562.66666666666663" width="167.33333333333337" height="100.33333333333337"/>
                                 <color key="backgroundColor" red="0.07729639858007431" green="0.21700689196586609" blue="0.49005788564682007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -463,12 +464,12 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="tExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="pre-7L-7Pw"/>
-                                    <action selector="tTouchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="r5C-Ql-6Sq"/>
+                                    <action selector="touchExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="j5N-DP-IpU"/>
+                                    <action selector="touchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="cWn-mW-yXs"/>
                                     <segue destination="b8g-TP-mtR" kind="show" id="R40-vN-cUL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-eu-8Cn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-eu-8Cn">
                                 <rect key="frame" x="16" y="562.66666666666663" width="167.66666666666666" height="100.33333333333337"/>
                                 <color key="backgroundColor" red="0.07729639858007431" green="0.21700689196586609" blue="0.49005788564682007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -481,12 +482,12 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="wExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="08H-7b-5Ew"/>
-                                    <action selector="wTouchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="5KF-yg-N62"/>
+                                    <action selector="touchExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="968-uE-PWl"/>
+                                    <action selector="touchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="RVh-jd-RxY"/>
                                     <segue destination="o72-3g-jbA" kind="show" id="w49-l6-BqF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJd-2N-w2i">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJd-2N-w2i">
                                 <rect key="frame" x="191.66666666666663" y="427.33333333333331" width="167.33333333333337" height="100.33333333333331"/>
                                 <color key="backgroundColor" red="0.07729639858007431" green="0.21700689196586609" blue="0.49005788564682007" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -499,12 +500,12 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="pHD-Lo-yjh"/>
-                                    <action selector="cTouchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="rdQ-PV-rZ0"/>
+                                    <action selector="touchExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="TNj-TZ-eXo"/>
+                                    <action selector="touchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="c6r-0a-IoI"/>
                                     <segue destination="OGI-SF-2ET" kind="show" id="BmP-aE-LYt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InF-yX-tXM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InF-yX-tXM">
                                 <rect key="frame" x="16" y="427.33333333333331" width="167.66666666666666" height="100.33333333333331"/>
                                 <color key="backgroundColor" red="0.077296398579999995" green="0.21700689200000001" blue="0.49005788560000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -517,8 +518,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="sExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="AmV-r5-3xS"/>
-                                    <action selector="sTouchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="TTB-vn-Mry"/>
+                                    <action selector="touchExit:" destination="vhr-DB-jCY" eventType="touchDragExit" id="tc6-HN-9kP"/>
+                                    <action selector="touchedDown:" destination="vhr-DB-jCY" eventType="touchDown" id="V14-Tu-HFe"/>
                                     <segue destination="PKq-qf-Hqu" kind="show" id="iMK-EH-NRY"/>
                                 </connections>
                             </button>

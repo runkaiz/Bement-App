@@ -158,6 +158,14 @@ class ViewController: UIViewController {
     @IBAction func backToMain(_ unwindSegue: UIStoryboardSegue) {
         fetchData()
         adjustMenuItem()
+        
+        UIView.animate(withDuration: 0.4) {
+            self.socialButton.transform = CGAffineTransform.identity
+            self.calendersButton.transform = CGAffineTransform.identity
+            self.lunchButton.transform = CGAffineTransform.identity
+            self.reportsButton.transform = CGAffineTransform.identity
+            self.supportButton.transform = CGAffineTransform.identity
+        }
     } 
     
     func isAppAlreadyLaunchedOnce()-> Bool {
@@ -191,60 +199,15 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func sTouchedDown(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4,
-        animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+    @IBAction func touchedDown(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         },
-        completion: { _ in
-            
-        })
+        completion: { _ in  })
     }
     
-    @IBAction func sExit(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4) {
-            sender.transform = CGAffineTransform.identity
-        }
-    }
-    
-    @IBAction func cTouchedDown(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4,
-        animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        },
-        completion: { _ in })
-    }
-    
-    @IBAction func cExit(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4) {
-            sender.transform = CGAffineTransform.identity
-        }
-    }
-    
-    @IBAction func wTouchedDown(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4,
-        animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        },
-        completion: { _ in })
-    }
-    
-    @IBAction func wExit(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4) {
-            sender.transform = CGAffineTransform.identity
-        }
-    }
-    
-    @IBAction func tTouchedDown(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4,
-        animations: {
-            sender.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-        },
-        completion: { _ in })
-    }
-    
-    @IBAction func tExit(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.4) {
+    @IBAction func touchExit(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3) {
             sender.transform = CGAffineTransform.identity
         }
     }
