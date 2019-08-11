@@ -43,7 +43,6 @@
 		B2BFDE0222FB97E900A737F7 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BFDE0122FB97E900A737F7 /* Announcement.swift */; };
 		B2BFDE0422FB9C0C00A737F7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BFDE0322FB9C0C00A737F7 /* CloudKit.framework */; };
 		B2BFDE0722FB9FA200A737F7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = B2BFDE0622FB9FA200A737F7 /* Reachability */; };
-		B2C6011A22FF904D006B174D /* arts.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C6011922FF904D006B174D /* arts.scnassets */; };
 		B2CBE5EC22F26A240026B803 /* LookAheadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBE5EB22F26A240026B803 /* LookAheadViewController.swift */; };
 		B2D035A1218A700500F79DBF /* CatalogDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D035A0218A700500F79DBF /* CatalogDetailTableViewController.swift */; };
 		B2D667B721861F3D00CF8428 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667B421861F3C00CF8428 /* UIImage.swift */; };
@@ -137,7 +136,6 @@
 		B2BFDDFF22FB93B000A737F7 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		B2BFDE0122FB97E900A737F7 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Announcement.swift; path = Bement/Announcement.swift; sourceTree = SOURCE_ROOT; };
 		B2BFDE0322FB9C0C00A737F7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		B2C6011922FF904D006B174D /* arts.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = arts.scnassets; sourceTree = "<group>"; };
 		B2CBE5EB22F26A240026B803 /* LookAheadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAheadViewController.swift; sourceTree = "<group>"; };
 		B2D035A0218A700500F79DBF /* CatalogDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailTableViewController.swift; sourceTree = "<group>"; };
 		B2D667B421861F3C00CF8428 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -248,7 +246,6 @@
 				B2BA44D820EB9FD1009437A7 /* Main.storyboard */,
 				B26C0F112119861100750545 /* LaunchScreen.storyboard */,
 				B2BA44DB20EB9FD6009437A7 /* Assets.xcassets */,
-				B2C6011922FF904D006B174D /* arts.scnassets */,
 				B2B46E7B212B046600CA7480 /* Localizable.strings */,
 				B2BEE37C22FDBF9F0064CEFB /* AnimationControllers */,
 				B2BEE37F22FDC0D40064CEFB /* Helpers */,
@@ -453,7 +450,6 @@
 			files = (
 				B267041922E4B02C009328D2 /* GoogleService-Info.plist in Resources */,
 				B26C0F122119861100750545 /* LaunchScreen.storyboard in Resources */,
-				B2C6011A22FF904D006B174D /* arts.scnassets in Resources */,
 				B2B46E79212B046600CA7480 /* Localizable.strings in Resources */,
 				B2BA44DC20EB9FD6009437A7 /* Assets.xcassets in Resources */,
 				B2BA44DA20EB9FD1009437A7 /* Main.storyboard in Resources */,

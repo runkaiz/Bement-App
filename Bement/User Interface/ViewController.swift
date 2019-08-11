@@ -200,14 +200,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchedDown(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             sender.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
         },
         completion: { _ in  })
     }
     
     @IBAction func touchExit(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.2) {
             sender.transform = CGAffineTransform.identity
         }
     }
