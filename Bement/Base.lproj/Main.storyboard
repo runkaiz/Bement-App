@@ -2166,7 +2166,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEy-1l-uVm">
-                                <rect key="frame" x="16" y="585" width="343" height="34"/>
+                                <rect key="frame" x="16" y="575" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -2183,7 +2183,7 @@
                             <constraint firstItem="jMa-Pb-2Ud" firstAttribute="trailing" secondItem="mh9-b3-fbZ" secondAttribute="trailing" constant="16" id="YLj-aa-cnM"/>
                             <constraint firstItem="mh9-b3-fbZ" firstAttribute="bottom" secondItem="jMa-Pb-2Ud" secondAttribute="bottom" constant="-25" id="eD7-i1-hRM"/>
                             <constraint firstItem="dEy-1l-uVm" firstAttribute="leading" secondItem="jMa-Pb-2Ud" secondAttribute="leading" constant="16" id="fde-c7-YVg"/>
-                            <constraint firstItem="mh9-b3-fbZ" firstAttribute="top" secondItem="dEy-1l-uVm" secondAttribute="bottom" constant="15" id="n6X-6a-6Ea"/>
+                            <constraint firstItem="mh9-b3-fbZ" firstAttribute="top" secondItem="dEy-1l-uVm" secondAttribute="bottom" constant="25" id="n6X-6a-6Ea"/>
                             <constraint firstItem="cYK-IM-wRk" firstAttribute="centerX" secondItem="uvQ-cu-fuk" secondAttribute="centerX" id="y1J-ms-QPx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jMa-Pb-2Ud"/>
