@@ -276,7 +276,7 @@ class ViewController: UIViewController {
                                         self.weatherIcon.image = UIImage(systemName: "sun.max")
                                         self.weatherIcon.tintColor = UIColor.systemYellow
                                     case "clear-night":
-                                        self.weatherIcon.image = UIImage(systemName: "moon")
+                                        self.weatherIcon.image = UIImage(systemName: "moon.fill")
                                         self.weatherIcon.tintColor = UIColor.systemYellow
                                     case "rain":
                                         self.weatherIcon.image = UIImage(systemName: "cloud.rain")

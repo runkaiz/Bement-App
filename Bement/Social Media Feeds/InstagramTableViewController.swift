@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SkeletonView
 
 class InstagramTableViewController: UITableViewController {
     
@@ -37,6 +38,8 @@ class InstagramTableViewController: UITableViewController {
         cellWithImage.dateOfPub.text = "Date: \(datePub)"
         cellWithImage.content.text = AppDelegate.instagramItems[indexPath.row].title!
         
+        cellWithImage.contentImage.showAnimatedSkeleton()
+        
         let url = URL(string: (AppDelegate.instagramItems[indexPath.row].enclosure?.attributes!.url)!)
         cellWithImage.contentImage.kf.setImage(
             with: url,
@@ -44,7 +47,7 @@ class InstagramTableViewController: UITableViewController {
                 .scaleFactor(UIScreen.main.scale)
             ])
         { result in
-            // print(result)
+            cellWithImage.contentImage.hideSkeleton()
         }
         
         if indexPath.row == 4 && !reloaded {

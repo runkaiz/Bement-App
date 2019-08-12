@@ -8,6 +8,8 @@ target 'Bement' do
   pod 'Fuzi'
   pod 'Kingfisher'
   pod "Shift"
+  pod 'SwiftLint'
+  pod "SkeletonView"
 end
   
 target 'BementUITests' do
