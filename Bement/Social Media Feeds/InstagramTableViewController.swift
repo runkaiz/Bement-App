@@ -11,6 +11,8 @@ import Kingfisher
 
 class InstagramTableViewController: UITableViewController {
     
+    var reloaded = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,23 +34,29 @@ class InstagramTableViewController: UITableViewController {
         
         let cellWithImage = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as! InstagramWithImageTableViewCell
         
+        cellWithImage.dateOfPub.text = "Date: \(datePub)"
+        cellWithImage.content.text = AppDelegate.instagramItems[indexPath.row].title!
+        
         let url = URL(string: (AppDelegate.instagramItems[indexPath.row].enclosure?.attributes!.url)!)
-        let processor = DownsamplingImageProcessor(size: cellWithImage.contentImage.frame.size)
-            >> RoundCornerImageProcessor(cornerRadius: 15)
         cellWithImage.contentImage.kf.setImage(
             with: url,
             options: [
-                .processor(processor),
                 .scaleFactor(UIScreen.main.scale)
             ])
         { result in
             // print(result)
         }
         
-        cellWithImage.dateOfPub.text = "Date: \(datePub)"
-        cellWithImage.content.text = AppDelegate.instagramItems[indexPath.row].title!
+        if indexPath.row == 4 && !reloaded {
+            tableView.reloadData()
+            reloaded = true
+        }
         
         return cellWithImage
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.estimatedRowHeight
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -57,9 +65,7 @@ class InstagramTableViewController: UITableViewController {
         let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
         
         if userInterfaceStyle == .dark {
-            self.view.backgroundColor = .black
         } else {
-            self.view.backgroundColor = .white
         }
     }
 }

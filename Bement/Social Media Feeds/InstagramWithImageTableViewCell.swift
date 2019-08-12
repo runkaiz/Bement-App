@@ -13,6 +13,7 @@ class InstagramWithImageTableViewCell: UITableViewCell {
     @IBOutlet var dateOfPub: UILabel!
     @IBOutlet var contentImage: UIImageView!
     @IBOutlet var content: UILabel!
+    @IBOutlet var gradientVIEW: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,14 +29,14 @@ class InstagramWithImageTableViewCell: UITableViewCell {
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-                super.traitCollectionDidChange(previousTraitCollection)
+        super.traitCollectionDidChange(previousTraitCollection)
 
-                let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
+        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
                 
-                if userInterfaceStyle == .dark {
-                    self.contentView.backgroundColor = .black
-                } else {
-                    self.contentView.backgroundColor = .white
-                }
-            }
+        if userInterfaceStyle == .dark {
+            self.contentView.backgroundColor = .black
+        } else {
+            self.contentView.backgroundColor = .white
+        }
+    }
 }

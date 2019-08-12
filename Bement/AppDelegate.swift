@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import FeedKit
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 for item in result.rssFeed!.items! {
                     AppDelegate.instagramItems.append(item)
                 }
+                ViewController.instagramRetrieved = true
             } else {
+                ViewController.instagramRetrieved = false
                 print(result.error!)
             }
         }

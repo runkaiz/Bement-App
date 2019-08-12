@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     
     private var observer: NSObjectProtocol?
     
+    var weather: WeatherStore?
+    public static var instagramRetrieved = false
+    
     var originalLocation: CGFloat?
     var originalLocationMoved: CGFloat?
     
@@ -28,6 +31,10 @@ class ViewController: UIViewController {
     @IBOutlet var data: UIButton!
     @IBOutlet var identity: UIButton!
     @IBOutlet var admin: UIButton!
+    @IBOutlet var weatherIcon: UIImageView!
+    @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var uvBackground: UIView!
+    @IBOutlet var uvLabel: UILabel!
     
     var button: HamburgerButton! = nil
     @IBOutlet var buttonView: UIView!
@@ -35,13 +42,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchData()
+        
         tools.beautifulButton(supportButton)
         tools.beautifulButton(reportsButton)
         tools.beautifulButton(lunchButton)
         tools.beautifulButton(calendersButton)
         tools.beautifulButton(socialButton)
         
-        fetchData()
+        uvBackground.layer.cornerRadius = 5
         
         observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
             self.fetchData()
@@ -66,6 +75,8 @@ class ViewController: UIViewController {
     }
     
     func fetchData() {
+        retrieveWeatherData()
+        
         let publicDatabase = CKContainer.default().publicCloudDatabase
         let recordID = CKRecord.ID(recordName: "0")
         publicDatabase.fetch(withRecordID: recordID, completionHandler: { record, error in
@@ -210,5 +221,112 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             sender.transform = CGAffineTransform.identity
         }
+    }
+    
+    @IBAction func instagramPressed(_ sender: Any) {
+        if ViewController.instagramRetrieved {
+            self.performSegue(withIdentifier: "instagram", sender: self)
+        } else {
+            let alert = UIAlertController(title: "Please wait", message: "The social media data are still being retrieved.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: .none)
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func retrieveWeatherData() {
+        let apiKey = URL(string: "https://api.darksky.net/forecast/149da9678f344c568394d88cf55289f2/42.5482866,-72.6059389")
+        
+        if let url = apiKey {
+             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+             if let error = error {
+                  print(error)
+             } else {
+                    if let usableData = data {
+                        do {
+                            let json = try JSON(data: usableData)
+                            if let result = json.dictionary!["currently"]?.dictionary {
+                                let uvIndex = result["uvIndex"]?.int
+                                let temperature = result["temperature"]?.int
+                                let summary = result["summary"]?.string
+                                let icon = result["icon"]?.string
+
+                                self.weather = WeatherStore(uvIndex: uvIndex!, temperature: temperature!, summary: summary!, icon: icon!)
+                                DispatchQueue.main.sync {
+                                    self.temperatureLabel.text = "\(self.weather!.temperature)°"
+                                    self.uvLabel.text = "UV \(self.weather!.uvIndex)"
+                                    switch self.weather!.uvIndex {
+                                    case 0: self.uvBackground.backgroundColor = UIColor.systemGreen
+                                    case 1: self.uvBackground.backgroundColor = UIColor.systemGreen
+                                    case 2: self.uvBackground.backgroundColor = UIColor.systemGreen
+                                    case 3: self.uvBackground.backgroundColor = UIColor.systemYellow
+                                    case 4: self.uvBackground.backgroundColor = UIColor.systemYellow
+                                    case 5: self.uvBackground.backgroundColor = UIColor.systemYellow
+                                    case 6: self.uvBackground.backgroundColor = UIColor.systemOrange
+                                    case 7: self.uvBackground.backgroundColor = UIColor.systemOrange
+                                    case 8: self.uvBackground.backgroundColor = UIColor.systemRed
+                                    case 9: self.uvBackground.backgroundColor = UIColor.systemRed
+                                    case 10: self.uvBackground.backgroundColor = UIColor.systemRed
+                                    case 11: self.uvBackground.backgroundColor = UIColor.systemPurple
+                                    case 12: self.uvBackground.backgroundColor = UIColor.systemPurple
+                                    default: self.uvBackground.backgroundColor = UIColor.systemPurple
+                                    }
+                                    switch self.weather!.icon {
+                                    case "clear-day":
+                                        self.weatherIcon.image = UIImage(systemName: "sun.max")
+                                        self.weatherIcon.tintColor = UIColor.systemYellow
+                                    case "clear-night":
+                                        self.weatherIcon.image = UIImage(systemName: "moon")
+                                        self.weatherIcon.tintColor = UIColor.systemYellow
+                                    case "rain":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud.rain")
+                                        self.weatherIcon.tintColor = UIColor.systemTeal
+                                    case "snow":
+                                        self.weatherIcon.image = UIImage(systemName: "snow")
+                                        self.weatherIcon.tintColor = UIColor.systemTeal
+                                    case "sleet":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud.sleet")
+                                        self.weatherIcon.tintColor = UIColor.systemTeal
+                                    case "wind":
+                                        self.weatherIcon.image = UIImage(systemName: "wind")
+                                        self.weatherIcon.tintColor = UIColor.systemTeal
+                                    case "fog":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud.fog")
+                                        self.weatherIcon.tintColor = UIColor.systemGray
+                                    case "cloudy":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud")
+                                        self.weatherIcon.tintColor = UIColor.systemGray
+                                    case "partly-cloudy-day":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud.sun")
+                                        self.weatherIcon.tintColor = UIColor.systemYellow
+                                    case "partly-cloudy-night":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud.moon")
+                                        self.weatherIcon.tintColor = UIColor.systemBlue
+                                    case "hail":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud.hail")
+                                        self.weatherIcon.tintColor = UIColor.systemBlue
+                                    case "thunderstorm":
+                                        self.weatherIcon.image = UIImage(systemName: "cloud.bolt.rain")
+                                        self.weatherIcon.tintColor = UIColor.systemBlue
+                                    case "tornado":
+                                        self.weatherIcon.image = UIImage(systemName: "tornado")
+                                        self.weatherIcon.tintColor = UIColor.systemBlue
+                                    default:print("This should not happen!")
+                                    }
+                                }
+                            }
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    @IBAction func darksky(_ sender: Any) {
+        guard let url = URL(string: "https://darksky.net/poweredby/") else { return }
+        UIApplication.shared.open(url)
     }
 }
