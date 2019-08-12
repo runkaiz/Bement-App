@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InstagramWithImageTableViewCell: UITableViewCell {
+class FacebookWithImageTableViewCell: UITableViewCell {
     
     @IBOutlet var dateOfPub: UILabel!
     @IBOutlet var contentImage: UIImageView!

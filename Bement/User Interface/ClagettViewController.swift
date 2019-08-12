@@ -51,9 +51,7 @@ class ClagettViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
             let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
             
             if userInterfaceStyle == .dark {
-                self.view.backgroundColor = .black
             } else {
-                self.view.backgroundColor = .white
             }
         }
     

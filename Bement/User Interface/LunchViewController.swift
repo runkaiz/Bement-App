@@ -71,16 +71,4 @@ class LunchViewController: UIViewController, WKNavigationDelegate {
         print(error.localizedDescription)
         showActivityIndicator(show: false)
     }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-                super.traitCollectionDidChange(previousTraitCollection)
-
-        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
-                
-        if userInterfaceStyle == .dark {
-            self.view.backgroundColor = .black
-        } else {
-            self.view.backgroundColor = .white
-        }
-    }
 }

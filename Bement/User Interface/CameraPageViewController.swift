@@ -181,17 +181,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
         let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
         
         if userInterfaceStyle == .dark {
-            self.view.backgroundColor = .black
-            welcomeLabel.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7549198972)
-            titleBackground.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7549198972)
-            infoLabel.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.7549198972)
-            infoLabel.textColor = .white
         } else {
-            self.view.backgroundColor = .white
-            welcomeLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7549198972)
-            titleBackground.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7549198972)
-            infoLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.7549198972)
-            infoLabel.textColor = .black
         }
     }
 }

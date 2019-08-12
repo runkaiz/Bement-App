@@ -17,12 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     public static var instagramItems: [RSSFeedItem] = []
+    public static var twitterItems: [RSSFeedItem] = []
+    public static var facebookItems: [RSSFeedItem] = []
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        let feedURL = URL(string: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml")!
-        let parser = FeedParser(URL: feedURL)
-        parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+        let instaURL = URL(string: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml")!
+        let instaParser = FeedParser(URL: instaURL)
+        instaParser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
             if result.isSuccess {
                 for item in result.rssFeed!.items! {
                     AppDelegate.instagramItems.append(item)
@@ -30,6 +32,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 ViewController.instagramRetrieved = true
             } else {
                 ViewController.instagramRetrieved = false
+                print(result.error!)
+            }
+        }
+        
+        let twitterURL = URL(string: "https://rss.app/feeds/3r2kmUvEXa9v77jH.xml")!
+        let twitterParser = FeedParser(URL: twitterURL)
+        twitterParser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+            if result.isSuccess {
+                for item in result.rssFeed!.items! {
+                    AppDelegate.twitterItems.append(item)
+                }
+                ViewController.twitterRetrieved = true
+            } else {
+                ViewController.twitterRetrieved = false
+                print(result.error!)
+            }
+        }
+        
+        let facebookURL = URL(string: "https://rss.app/feeds/q0MUQ8lpZOqiLsHx.xml")!
+        let facebookParser = FeedParser(URL: facebookURL)
+        facebookParser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
+            if result.isSuccess {
+                for item in result.rssFeed!.items! {
+                    AppDelegate.facebookItems.append(item)
+                }
+                ViewController.facebookRecieved = true
+            } else {
+                ViewController.facebookRecieved = false
                 print(result.error!)
             }
         }

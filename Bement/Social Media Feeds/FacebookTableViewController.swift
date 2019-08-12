@@ -11,7 +11,7 @@ import Kingfisher
 import SkeletonView
 import Fuzi
 
-class InstagramTableViewController: UITableViewController {
+class FacebookTableViewController: UITableViewController {
     
     var reloaded = false
     
@@ -25,37 +25,40 @@ class InstagramTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return AppDelegate.instagramItems.count
+        return AppDelegate.facebookItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        let datePub = formatter.string(from: AppDelegate.instagramItems[indexPath.row].pubDate!)
+        let datePub = formatter.string(from: AppDelegate.facebookItems[indexPath.row].pubDate!)
         
-        let cellWithImage = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as! InstagramWithImageTableViewCell
+        let cellWithImage = tableView.dequeueReusableCell(withIdentifier: "cellWithImage", for: indexPath) as! FacebookWithImageTableViewCell
         
         cellWithImage.dateOfPub.text = "Date: \(datePub)"
         
         do {
-            let doc = try HTMLDocument(string: AppDelegate.instagramItems[indexPath.row].description!, encoding: String.Encoding.utf8)
+            let doc = try HTMLDocument(string: AppDelegate.facebookItems[indexPath.row].description!, encoding: String.Encoding.utf8)
           
-            cellWithImage.content.text =  doc.body?.children[0].children[1].stringValue
+            cellWithImage.content.text = doc.body?.children[0].children[1].stringValue
         } catch let error {
             print(error)
         }
         
-        cellWithImage.contentImage.showAnimatedSkeleton()
-        
-        let url = URL(string: (AppDelegate.instagramItems[indexPath.row].enclosure?.attributes!.url)!)
-        cellWithImage.contentImage.kf.setImage(
-            with: url,
-            options: [
-                .scaleFactor(UIScreen.main.scale)
-            ])
-        { result in
-            cellWithImage.contentImage.hideSkeleton()
+        if let url = AppDelegate.facebookItems[indexPath.row].enclosure?.attributes!.url {
+            cellWithImage.contentImage.showAnimatedSkeleton()
+            cellWithImage.contentImage.kf.setImage(
+                with: URL(string: url),
+                options: [
+                
+                ])
+            { result in
+                cellWithImage.contentImage.hideSkeleton()
+            }
+        } else {
+            cellWithImage.contentImage.isHidden = true
+            cellWithImage.contentImage.removeConstraints(cellWithImage.contentImage.constraints)
         }
         
         if indexPath.row == 4 && !reloaded {

@@ -114,9 +114,7 @@ class CatalogWebViewController: UIViewController, WKUIDelegate, WKNavigationDele
         let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
         
         if userInterfaceStyle == .dark {
-            self.view.backgroundColor = .black
         } else {
-            self.view.backgroundColor = .white
         }
     }
 }

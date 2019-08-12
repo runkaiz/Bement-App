@@ -15,7 +15,10 @@ class ViewController: UIViewController {
     private var observer: NSObjectProtocol?
     
     var weather: WeatherStore?
+    
     public static var instagramRetrieved = false
+    public static var twitterRetrieved = false
+    public static var facebookRecieved = false
     
     var originalLocation: CGFloat?
     var originalLocationMoved: CGFloat?
@@ -123,13 +126,6 @@ class ViewController: UIViewController {
         super.traitCollectionDidChange(previousTraitCollection)
         
         adjustMenuItem()
-        let userInterfaceStyle = traitCollection.userInterfaceStyle // Either .unspecified, .light, or .dark
-        
-        if userInterfaceStyle == .dark {
-            self.view.backgroundColor = .black
-        } else {
-            self.view.backgroundColor = .white
-        }
     }
     
     @objc func toggle(_ sender: AnyObject!) {
@@ -224,8 +220,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func instagramPressed(_ sender: Any) {
-        if ViewController.instagramRetrieved {
-            self.performSegue(withIdentifier: "instagram", sender: self)
+        if ViewController.instagramRetrieved && ViewController.facebookRecieved && ViewController.twitterRetrieved {
+            self.performSegue(withIdentifier: "social", sender: self)
         } else {
             let alert = UIAlertController(title: "Please wait", message: "The social media data are still being retrieved.", preferredStyle: .alert)
             let action = UIAlertAction(title: "Ok", style: .default, handler: .none)

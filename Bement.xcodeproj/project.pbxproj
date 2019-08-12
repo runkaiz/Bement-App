@@ -51,6 +51,10 @@
 		B2D667CB21862E8700CF8428 /* BementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667CA21862E8700CF8428 /* BementUITests.swift */; };
 		B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35211215C5B3300E0F436 /* ClagettViewController.swift */; };
 		B2F5769E22F8CD5800494538 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5769D22F8CD5800494538 /* LoginViewController.swift */; };
+		B2F61DB32301F6BC0091AD1C /* FacebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DAF2301F6BC0091AD1C /* FacebookTableViewController.swift */; };
+		B2F61DB42301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DB02301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift */; };
+		B2F61DB52301F6BC0091AD1C /* TwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DB12301F6BC0091AD1C /* TwitterTableViewController.swift */; };
+		B2F61DB62301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DB22301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +152,10 @@
 		B2E97A26211B2B890005BEA9 /* Bement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bement.entitlements; sourceTree = "<group>"; };
 		B2F35211215C5B3300E0F436 /* ClagettViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClagettViewController.swift; sourceTree = "<group>"; };
 		B2F5769D22F8CD5800494538 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B2F61DAF2301F6BC0091AD1C /* FacebookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookTableViewController.swift; sourceTree = "<group>"; };
+		B2F61DB02301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookWithImageTableViewCell.swift; sourceTree = "<group>"; };
+		B2F61DB12301F6BC0091AD1C /* TwitterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterTableViewController.swift; sourceTree = "<group>"; };
+		B2F61DB22301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterWithImageTableViewCell.swift; sourceTree = "<group>"; };
 		C43408465FC5BCAEBB652920 /* Pods-Bement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bement/Pods-Bement.debug.xcconfig"; sourceTree = "<group>"; };
 		C836ACBBEB62D0DCB40A2562 /* Pods_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23074EAADDC2DFE075C4583 /* Pods_BementUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BementUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +206,10 @@
 			children = (
 				B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */,
 				B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */,
+				B2F61DAF2301F6BC0091AD1C /* FacebookTableViewController.swift */,
+				B2F61DB02301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift */,
+				B2F61DB12301F6BC0091AD1C /* TwitterTableViewController.swift */,
+				B2F61DB22301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift */,
 			);
 			path = "Social Media Feeds";
 			sourceTree = "<group>";
@@ -532,6 +544,8 @@
 				B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */,
 				B299D8AD229CB13C0071B688 /* InstagramWithImageTableViewCell.swift in Sources */,
 				B268D40B21195B06001D7BF1 /* ViewController.swift in Sources */,
+				B2F61DB62301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift in Sources */,
+				B2F61DB42301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift in Sources */,
 				B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */,
 				B2D667B721861F3D00CF8428 /* UIImage.swift in Sources */,
 				B2BA44D520EB9FD1009437A7 /* AppDelegate.swift in Sources */,
@@ -544,6 +558,7 @@
 				B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */,
 				B215F02A22DE805A0079E426 /* InquiryViewController.swift in Sources */,
 				B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */,
+				B2F61DB32301F6BC0091AD1C /* FacebookTableViewController.swift in Sources */,
 				B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */,
 				B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */,
 				B251C7F72297585500566842 /* LunchViewController.swift in Sources */,
@@ -551,6 +566,7 @@
 				B251C7F522974F8400566842 /* CatalogWebViewController.swift in Sources */,
 				B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */,
 				B282976921D18342004EAB6C /* Bement Buildings.mlmodel in Sources */,
+				B2F61DB52301F6BC0091AD1C /* TwitterTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
