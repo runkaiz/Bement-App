@@ -13,7 +13,7 @@ import WebKit
 class LunchViewController: UIViewController, WKNavigationDelegate {
     
     var webView: WKWebView!
-    @objc func canRotate() -> Void {}
+    @objc func canRotate() {}
     var activityIndicator: UIActivityIndicatorView!
     
     override func loadView() {
@@ -48,12 +48,12 @@ class LunchViewController: UIViewController, WKNavigationDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
             
-        if (self.isMovingFromParent) {
+        if self.isMovingFromParent {
             UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
         }
     }
     
-    //MARK:- WKNavigationDelegate
+    // MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         showActivityIndicator(show: true)
     }

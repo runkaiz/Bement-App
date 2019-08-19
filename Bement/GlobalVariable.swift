@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct globalVariable {
+struct GlobalVariable {
     public static var row = Int()
-    public static var catalogGrade = String()
+    public static var CatalogGrade = String()
     public static var calenderLink = String()
 }

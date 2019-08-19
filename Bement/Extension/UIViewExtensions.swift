@@ -20,16 +20,16 @@ extension UIView {
     func fadeOut() {
         UIView.animate(withDuration: 1.0, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
             self.alpha = 0.0
-        }) { bool in
+        }) { _ in
             self.isHidden = true
         }
     }
     
-    func applyGradient(colours: [UIColor]) -> Void {
+    func applyGradient(colours: [UIColor]) {
         self.applyGradient(colours: colours, locations: nil)
     }
     
-    func applyGradient(colours: [UIColor], locations: [NSNumber]?) -> Void {
+    func applyGradient(colours: [UIColor], locations: [NSNumber]?) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = colours.map { $0.cgColor }

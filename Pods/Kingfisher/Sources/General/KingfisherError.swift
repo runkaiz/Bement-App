@@ -30,7 +30,7 @@ extension Never {}
 
 /// Represents all the errors which can happen in Kingfisher framework.
 /// Kingfisher related methods always throw a `KingfisherError` or invoke the callback with `KingfisherError`
-/// as its error type. To handle errors from Kingfisher, you switch over the error to get a reason catalog,
+/// as its error type. To handle errors from Kingfisher, you switch over the error to get a reason Catalog,
 /// then switch over the reason to know error detail.
 public enum KingfisherError: Error {
 

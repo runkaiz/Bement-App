@@ -36,7 +36,7 @@ class Announcement {
         let myContainer = CKContainer.default()
         let publicDatabase = myContainer.publicCloudDatabase
             
-        publicDatabase.save(record) { (record, error) in
+        publicDatabase.save(record) { (_, error) in
             if let error = error {
                 print(error)
                 self.update(sender: sender)
@@ -59,10 +59,10 @@ class Announcement {
 
                 record.setObject(NSNumber(value: self.display), forKey: "display")
                 record.setObject(NSString(utf8String: self.titleString ?? ""), forKey: "titleString")
-                record.setObject(NSString(utf8String:self.firstLine ?? ""), forKey: "firstLine")
-                record.setObject(NSString(utf8String:self.secondLine ?? ""), forKey: "secondLine")
+                record.setObject(NSString(utf8String: self.firstLine ?? ""), forKey: "firstLine")
+                record.setObject(NSString(utf8String: self.secondLine ?? ""), forKey: "secondLine")
 
-                publicDatabase.save(record) { _, error in
+                publicDatabase.save(record) { _, _ in
                     DispatchQueue.main.sync {
                         let alert = UIAlertController(title: "Announcement Updated!", message: "Your changes has been saved", preferredStyle: .alert)
                         let ok = UIAlertAction(title: "Ok", style: .cancel, handler: nil)

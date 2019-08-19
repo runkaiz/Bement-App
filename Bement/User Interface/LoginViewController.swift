@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftUI
 import IQKeyboardManagerSwift
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
@@ -18,8 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tools.beautifulButton(login)
-        
+        Tools.beautifulButton(login)
         
         passworldField.delegate = self
         
@@ -56,7 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func loginClicked(_ sender: Any) {
-        if passworldField.text == "" {
+        if passworldField.text!.isEmpty {
             self.performSegue(withIdentifier: "loggedIn", sender: self)
         } else {
             let alert = UIAlertController(title: "Password Incorrect!", message: "Please try again.", preferredStyle: .alert)

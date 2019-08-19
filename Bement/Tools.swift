@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 import UserNotifications
 
-class tools {
+class Tools {
     
     /**
      Adding a `cornerRadius` of **15** onto a `UIButton` to encourage global styling.
     
      ```swift
-    tools.beautifulButton(someButton)
+    Tools.beautifulButton(someButton)
      ```
      Is all you need to do to implement this.
      
      - parameters:
         - object: `UIButton` that you are trying to modify.
     */
-    public static func beautifulButton(_ object:UIButton) {
+    public static func beautifulButton(_ object: UIButton) {
         object.layer.cornerRadius = 15
         object.layer.masksToBounds = true
     }
@@ -40,7 +40,7 @@ class tools {
         - repeating: Whether you want it to repeat by the `triggerInterval`.
         - id: The id of the notification.
     */
-    public static func push(title:String, subtitle:String, body:String, sound:UNNotificationSound, triggerInterval:TimeInterval, repeating:Bool, id:String) {
+    public static func push(title: String, subtitle: String, body: String, sound: UNNotificationSound, triggerInterval: TimeInterval, repeating: Bool, id: String) {
         
         //get the notification center
         let center =  UNUserNotificationCenter.current()
@@ -53,7 +53,7 @@ class tools {
         content.sound = sound
         
         //notification trigger can be based on time, calendar or location
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval:triggerInterval, repeats: repeating)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: triggerInterval, repeats: repeating)
         
         //create request to display
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
@@ -77,7 +77,7 @@ class tools {
         - repeating: Whether you want it to repeat by the `triggerInterval`.
         - id: The id of the notification.
     */
-    public static func pushScheduled(title:String, subtitle:String, body:String, sound:UNNotificationSound, date:DateComponents, repeating:Bool, id:String) {
+    public static func pushScheduled(title: String, subtitle: String, body: String, sound: UNNotificationSound, date: DateComponents, repeating: Bool, id: String) {
         
         //get the notification center
         let center =  UNUserNotificationCenter.current()

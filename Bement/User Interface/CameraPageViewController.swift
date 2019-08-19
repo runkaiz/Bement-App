@@ -84,7 +84,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
         
@@ -101,7 +101,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
             cameraView.image = image
             titleBackground.isHidden = true
             
-            if (newMedia == true) {
+            if newMedia == true {
                 UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
             }
             
@@ -132,9 +132,9 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
     
     func buffer(from image: UIImage) -> CVPixelBuffer? {
         let attrs = [kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue, kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue] as CFDictionary
-        var pixelBuffer : CVPixelBuffer?
+        var pixelBuffer: CVPixelBuffer?
         let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(image.size.width), Int(image.size.height), kCVPixelFormatType_32ARGB, attrs, &pixelBuffer)
-        guard (status == kCVReturnSuccess) else {
+        guard status == kCVReturnSuccess else {
             return nil
         }
         
@@ -155,7 +155,7 @@ class CameraPageViewController: UIViewController, UIImagePickerControllerDelegat
         return pixelBuffer
     }
     
-    @objc func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafeRawPointer) {
+    @objc func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         
         if error != nil {
             let alert = UIAlertController(title: "Save Failed",

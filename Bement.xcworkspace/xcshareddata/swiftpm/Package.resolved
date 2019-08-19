@@ -29,6 +29,15 @@
         }
       },
       {
+        "package": "RunkaiKit",
+        "repositoryURL": "https://github.com/1105420698/RunkaiKit.git",
+        "state": {
+          "branch": "beta",
+          "revision": "1bfbec799b9ef55623007e0b08f81b7aab81bb9e",
+          "version": null
+        }
+      },
+      {
         "package": "SwiftyJSON",
         "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON",
         "state": {

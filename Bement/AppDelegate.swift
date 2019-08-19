@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import FeedKit
 import SwiftyJSON
+import RunkaiKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public static var twitterItems: [RSSFeedItem] = []
     public static var facebookItems: [RSSFeedItem] = []
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         
         let instaURL = URL(string: "https://rss.app/feeds/vXhoCLgzZOUpWIhM.xml")!
         let instaParser = FeedParser(URL: instaURL)
@@ -35,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(result.error!)
             }
         }
-        
+
         let twitterURL = URL(string: "https://rss.app/feeds/3r2kmUvEXa9v77jH.xml")!
         let twitterParser = FeedParser(URL: twitterURL)
         twitterParser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
@@ -63,10 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(result.error!)
             }
         }
-        
+
         return true
     }
-    
+
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -88,26 +89,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         if let rootViewController = self.topViewControllerWithRootViewController(rootViewController: window?.rootViewController) {
-            if (rootViewController.responds(to: Selector(("canRotate")))) {
+            if rootViewController.responds(to: Selector(("canRotate"))) {
                 // Unlock landscape view orientations for this view controller
-                return .allButUpsideDown;
+                return .allButUpsideDown
             }
         }
         
         // Only allow portrait (standard behaviour)
-        return .portrait;
+        return .portrait
     }
     
     private func topViewControllerWithRootViewController(rootViewController: UIViewController!) -> UIViewController? {
-        if (rootViewController == nil) { return nil }
-        if (rootViewController.isKind(of: UITabBarController.self)) {
+        if rootViewController == nil { return nil }
+        if rootViewController.isKind(of: UITabBarController.self) {
             return topViewControllerWithRootViewController(rootViewController: (rootViewController as! UITabBarController).selectedViewController)
-        } else if (rootViewController.isKind(of: UINavigationController.self)) {
+        } else if rootViewController.isKind(of: UINavigationController.self) {
             return topViewControllerWithRootViewController(rootViewController: (rootViewController as! UINavigationController).visibleViewController)
-        } else if (rootViewController.presentedViewController != nil) {
+        } else if rootViewController.presentedViewController != nil {
             return topViewControllerWithRootViewController(rootViewController: rootViewController.presentedViewController)
         }
         return rootViewController

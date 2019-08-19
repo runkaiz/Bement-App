@@ -18,6 +18,7 @@
 		B223967022F600910044DBC1 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B223966F22F600910044DBC1 /* DetailTableViewCell.swift */; };
 		B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */; };
 		B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4F2159A67F006B7F0A /* CatalogResources.swift */; };
+		B2396532230A1A5E00F295C3 /* RunkaiKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2396531230A1A5E00F295C3 /* RunkaiKit */; };
 		B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E651922DD5A550028889E /* HamburgerButton.swift */; };
 		B241A2AE2298908F00ABD14E /* CalendersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */; };
 		B251C7F522974F8400566842 /* CatalogWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7F422974F8400566842 /* CatalogWebViewController.swift */; };
@@ -30,6 +31,7 @@
 		B282976921D18342004EAB6C /* Bement Buildings.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B282976821D18342004EAB6C /* Bement Buildings.mlmodel */; };
 		B282976B21D186AC004EAB6C /* CameraPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282976A21D186AC004EAB6C /* CameraPageViewController.swift */; };
 		B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28396592161A7A200034DA4 /* UIViewExtensions.swift */; };
+		B2885D50230A2076006A9108 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B2885D4F230A2076006A9108 /* .swiftlint.yml */; };
 		B299D8AD229CB13C0071B688 /* InstagramWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */; };
 		B299D8B1229CB16D0071B688 /* InstagramTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */; };
 		B2B42D8F22A73398001BDF8C /* ContactBementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B42D8E22A73398001BDF8C /* ContactBementViewController.swift */; };
@@ -124,6 +126,7 @@
 		B282976821D18342004EAB6C /* Bement Buildings.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Bement Buildings.mlmodel"; sourceTree = "<group>"; };
 		B282976A21D186AC004EAB6C /* CameraPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPageViewController.swift; sourceTree = "<group>"; };
 		B28396592161A7A200034DA4 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		B2885D4F230A2076006A9108 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B296EEDF229B46C00086244B /* SwifteriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwifteriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B299D8AC229CB13C0071B688 /* InstagramWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramWithImageTableViewCell.swift; sourceTree = "<group>"; };
 		B299D8B0229CB16D0071B688 /* InstagramTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramTableViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BFDE0422FB9C0C00A737F7 /* CloudKit.framework in Frameworks */,
+				B2396532230A1A5E00F295C3 /* RunkaiKit in Frameworks */,
 				B2BFDE0722FB9FA200A737F7 /* Reachability in Frameworks */,
 				B223966022F5226A0044DBC1 /* IQKeyboardManagerSwift in Frameworks */,
 				B223965A22F522000044DBC1 /* SwiftyJSON in Frameworks */,
@@ -228,6 +232,7 @@
 		B2BA44C820EB9FD1009437A7 = {
 			isa = PBXGroup;
 			children = (
+				B2885D4F230A2076006A9108 /* .swiftlint.yml */,
 				B2BA44D320EB9FD1009437A7 /* Bement */,
 				B2D667C921862E8700CF8428 /* BementUITests */,
 				B2BA44D220EB9FD1009437A7 /* Products */,
@@ -351,6 +356,7 @@
 				B23C8E50214C0E53007F1220 /* Embed App Extensions */,
 				B23C8E78214C14E2007F1220 /* Embed Watch Content */,
 				AD7E76EC25F827A6CF0926D7 /* [CP] Embed Pods Frameworks */,
+				B2E25CC8230A1F8B008F9BDC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -362,6 +368,7 @@
 				B223965F22F5226A0044DBC1 /* IQKeyboardManagerSwift */,
 				B223966222F5227D0044DBC1 /* FeedKit */,
 				B2BFDE0622FB9FA200A737F7 /* Reachability */,
+				B2396531230A1A5E00F295C3 /* RunkaiKit */,
 			);
 			productName = Bement;
 			productReference = B2BA44D120EB9FD1009437A7 /* Bement.app */;
@@ -439,6 +446,7 @@
 				B223965E22F5226A0044DBC1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				B223966122F5227D0044DBC1 /* XCRemoteSwiftPackageReference "FeedKit" */,
 				B2BFDE0522FB9FA200A737F7 /* XCRemoteSwiftPackageReference "Reachability" */,
+				B2396530230A1A5E00F295C3 /* XCRemoteSwiftPackageReference "RunkaiKit" */,
 			);
 			productRefGroup = B2BA44D220EB9FD1009437A7 /* Products */;
 			projectDirPath = "";
@@ -455,6 +463,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2885D50230A2076006A9108 /* .swiftlint.yml in Resources */,
 				B267041922E4B02C009328D2 /* GoogleService-Info.plist in Resources */,
 				B26C0F122119861100750545 /* LaunchScreen.storyboard in Resources */,
 				B2B46E79212B046600CA7480 /* Localizable.strings in Resources */,
@@ -525,6 +534,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bement/Pods-Bement-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B2E25CC8230A1F8B008F9BDC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -867,6 +893,14 @@
 				minimumVersion = 8.1.1;
 			};
 		};
+		B2396530230A1A5E00F295C3 /* XCRemoteSwiftPackageReference "RunkaiKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/1105420698/RunkaiKit.git";
+			requirement = {
+				branch = beta;
+				kind = branch;
+			};
+		};
 		B2BFDE0522FB9FA200A737F7 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
@@ -892,6 +926,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B223966122F5227D0044DBC1 /* XCRemoteSwiftPackageReference "FeedKit" */;
 			productName = FeedKit;
+		};
+		B2396531230A1A5E00F295C3 /* RunkaiKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2396530230A1A5E00F295C3 /* XCRemoteSwiftPackageReference "RunkaiKit" */;
+			productName = RunkaiKit;
 		};
 		B2BFDE0622FB9FA200A737F7 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;

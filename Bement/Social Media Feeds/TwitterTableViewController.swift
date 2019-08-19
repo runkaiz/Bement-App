@@ -52,8 +52,7 @@ class TwitterTableViewController: UITableViewController {
                 with: URL(string: url),
                 options: [
                     .scaleFactor(UIScreen.main.scale)
-                ])
-            { result in
+                ]) { _ in
                 cellWithImage.contentImage.hideSkeleton()
             }
         } else {

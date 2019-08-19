@@ -52,8 +52,7 @@ class FacebookTableViewController: UITableViewController {
                 with: URL(string: url),
                 options: [
                 
-                ])
-            { result in
+                ]) { _ in
                 cellWithImage.contentImage.hideSkeleton()
             }
         } else {

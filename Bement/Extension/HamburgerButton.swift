@@ -9,11 +9,11 @@ import CoreGraphics
 import QuartzCore
 import UIKit
 
-class HamburgerButton : UIButton {
+class HamburgerButton: UIButton {
     let shortStroke: CGPath = {
         let path = CGMutablePath()
         path.move(to: CGPoint(x: 2, y: 2))
-        path.addLine(to: CGPoint(x: 28, y:2))
+        path.addLine(to: CGPoint(x: 28, y: 2))
         
         return path
     }()
@@ -205,6 +205,6 @@ extension CALayer {
         }
         
         self.add(copy, forKey: copy.keyPath)
-        self.setValue(copy.toValue, forKeyPath:copy.keyPath!)
+        self.setValue(copy.toValue, forKeyPath: copy.keyPath!)
     }
 }

@@ -49,15 +49,15 @@ class CatalogDetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segueData {
-        case 1: return catalog.Gradek3.count
-        case 2: return catalog.Gradek3.count
-        case 3: return catalog.Gradek3.count
-        case 4: return catalog.Gradek3.count
-        case 5: return catalog.Grade45.count
-        case 6: return catalog.Grade45.count
-        case 7: return catalog.Grade6.count
-        case 8: return catalog.Grade789.count
-        case 9: return catalog.Grade789.count
+        case 1: return Catalog.Gradek3.count
+        case 2: return Catalog.Gradek3.count
+        case 3: return Catalog.Gradek3.count
+        case 4: return Catalog.Gradek3.count
+        case 5: return Catalog.Grade45.count
+        case 6: return Catalog.Grade45.count
+        case 7: return Catalog.Grade6.count
+        case 8: return Catalog.Grade789.count
+        case 9: return Catalog.Grade789.count
         default: return 0
         }
     }
@@ -66,15 +66,15 @@ class CatalogDetailTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cells", for: indexPath) as! DetailTableViewCell
         
         switch segueData {
-        case 1: cell.title.text = catalog.Gradek3[indexPath.row]
-        case 2: cell.title.text = catalog.Gradek3[indexPath.row]
-        case 3: cell.title.text = catalog.Gradek3[indexPath.row]
-        case 4: cell.title.text = catalog.Gradek3[indexPath.row]
-        case 5: cell.title.text = catalog.Grade45[indexPath.row]
-        case 6: cell.title.text = catalog.Grade45[indexPath.row]
-        case 7: cell.title.text = catalog.Grade6[indexPath.row]
-        case 8: cell.title.text = catalog.Grade789[indexPath.row]
-        case 9: cell.title.text = catalog.Grade789[indexPath.row]
+        case 1: cell.title.text = Catalog.Gradek3[indexPath.row]
+        case 2: cell.title.text = Catalog.Gradek3[indexPath.row]
+        case 3: cell.title.text = Catalog.Gradek3[indexPath.row]
+        case 4: cell.title.text = Catalog.Gradek3[indexPath.row]
+        case 5: cell.title.text = Catalog.Grade45[indexPath.row]
+        case 6: cell.title.text = Catalog.Grade45[indexPath.row]
+        case 7: cell.title.text = Catalog.Grade6[indexPath.row]
+        case 8: cell.title.text = Catalog.Grade789[indexPath.row]
+        case 9: cell.title.text = Catalog.Grade789[indexPath.row]
         default:
             print("This should not happen!")
         }
@@ -83,26 +83,26 @@ class CatalogDetailTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        globalVariable.row = indexPath.row
+        GlobalVariable.row = indexPath.row
         switch segueData {
         case 1:
-            globalVariable.catalogGrade = "Kindergarten"
+            GlobalVariable.CatalogGrade = "Kindergarten"
         case 2:
-            globalVariable.catalogGrade = "Grade 1"
+            GlobalVariable.CatalogGrade = "Grade 1"
         case 3:
-            globalVariable.catalogGrade = "Grade 2"
+            GlobalVariable.CatalogGrade = "Grade 2"
         case 4:
-            globalVariable.catalogGrade = "Grade 3"
+            GlobalVariable.CatalogGrade = "Grade 3"
         case 5:
-            globalVariable.catalogGrade = "Grade 4"
+            GlobalVariable.CatalogGrade = "Grade 4"
         case 6:
-            globalVariable.catalogGrade = "Grade 5"
+            GlobalVariable.CatalogGrade = "Grade 5"
         case 7:
-            globalVariable.catalogGrade = "Grade 6"
+            GlobalVariable.CatalogGrade = "Grade 6"
         case 8:
-            globalVariable.catalogGrade = "Grade 7"
+            GlobalVariable.CatalogGrade = "Grade 7"
         case 9:
-            globalVariable.catalogGrade = "Grade 8 & 9"
+            GlobalVariable.CatalogGrade = "Grade 8 & 9"
         default:
             print("This should not happen!")
         }

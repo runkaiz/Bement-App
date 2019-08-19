@@ -1,4 +1,3 @@
-
 //
 //  DetailTableViewCell.swift
 //  Bement
@@ -10,11 +9,8 @@
 import UIKit
 
 class DetailTableViewCell: UITableViewCell {
-
-    
     
     @IBOutlet var title: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

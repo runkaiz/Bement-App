@@ -17,8 +17,8 @@ class ContactBementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tools.beautifulButton(inquireButton)
-        tools.beautifulButton(contactButton)
+        Tools.beautifulButton(inquireButton)
+        Tools.beautifulButton(contactButton)
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

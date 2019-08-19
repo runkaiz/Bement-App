@@ -1,6 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '13'
- use_frameworks!
+use_frameworks!
+
+inhibit_all_warnings!
 
 target 'Bement' do
 

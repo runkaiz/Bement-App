@@ -12,7 +12,7 @@ import WebKit
 class CatalogWebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     @IBOutlet var web: WKWebView!
-    @objc func canRotate() -> Void {}
+    @objc func canRotate() {}
     var activityIndicator: UIActivityIndicatorView!
     
     override func loadView() {
@@ -32,34 +32,34 @@ class CatalogWebViewController: UIViewController, WKUIDelegate, WKNavigationDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        switch globalVariable.catalogGrade {
+        switch GlobalVariable.CatalogGrade {
         case "Kindergarten":
-            self.title = catalog.Gradek3[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Gradek3[globalVariable.row]]!)
+            self.title = Catalog.Gradek3[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Gradek3[GlobalVariable.row]]!)
         case "Grade 1":
-            self.title = catalog.Gradek3[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Gradek3[globalVariable.row]]!)
+            self.title = Catalog.Gradek3[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Gradek3[GlobalVariable.row]]!)
         case "Grade 2":
-            self.title = catalog.Gradek3[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Gradek3[globalVariable.row]]!)
+            self.title = Catalog.Gradek3[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Gradek3[GlobalVariable.row]]!)
         case "Grade 3":
-            self.title = catalog.Gradek3[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Gradek3[globalVariable.row]]!)
+            self.title = Catalog.Gradek3[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Gradek3[GlobalVariable.row]]!)
         case "Grade 4":
-            self.title = catalog.Grade45[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Grade45[globalVariable.row]]!)
+            self.title = Catalog.Grade45[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Grade45[GlobalVariable.row]]!)
         case "Grade 5":
-            self.title = catalog.Grade45[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Grade45[globalVariable.row]]!)
+            self.title = Catalog.Grade45[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Grade45[GlobalVariable.row]]!)
         case "Grade 6":
-            self.title = catalog.Grade6[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Grade6[globalVariable.row]]!)
+            self.title = Catalog.Grade6[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Grade6[GlobalVariable.row]]!)
         case "Grade 7":
-            self.title = catalog.Grade789[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Grade789[globalVariable.row]]!)
+            self.title = Catalog.Grade789[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Grade789[GlobalVariable.row]]!)
         case "Grade 8 & 9":
-            self.title = catalog.Grade789[globalVariable.row]
-            accessWeb(link: catalog.links[catalog.Grade789[globalVariable.row]]!)
+            self.title = Catalog.Grade789[GlobalVariable.row]
+            accessWeb(link: Catalog.links[Catalog.Grade789[GlobalVariable.row]]!)
         default:
             print("This should not happen!")
         }
@@ -68,7 +68,7 @@ class CatalogWebViewController: UIViewController, WKUIDelegate, WKNavigationDele
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if (self.isMovingFromParent) {
+        if self.isMovingFromParent {
             UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
         }
     }
@@ -89,7 +89,7 @@ class CatalogWebViewController: UIViewController, WKUIDelegate, WKNavigationDele
         }
     }
     
-    //MARK:- WKNavigationDelegate
+    // MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         showActivityIndicator(show: true)
     }

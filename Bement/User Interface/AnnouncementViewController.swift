@@ -22,11 +22,11 @@ class AnnouncementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tools.beautifulButton(saveButton)
+        Tools.beautifulButton(saveButton)
     }
     
     @IBAction func saveClicked(_ sender: Any) {
-        CKContainer.default().accountStatus(completionHandler: { accountStatus, error in
+        CKContainer.default().accountStatus(completionHandler: { accountStatus, _ in
             if accountStatus == .noAccount {
                 DispatchQueue.main.sync {
                     let alert = UIAlertController(title: "Sign in to iCloud", message: "Sign in to your iCloud account to write records. On the Home screen, launch Settings, tap iCloud, and enter your Apple ID. Turn iCloud Drive on. If you don't have an iCloud account, tap Create a new Apple ID.", preferredStyle: .alert)
@@ -36,7 +36,7 @@ class AnnouncementViewController: UIViewController {
             } else {
                 DispatchQueue.main.sync {
                     if self.announcementSwitch.isOn {
-                        if self.titleField.text != "" {
+                        if self.titleField.text!.isEmpty {
                             let data = Announcement(display: self.announcementSwitch.isOn, titleString: self.titleField.text!, firstLine: self.firstField.text, secondLine: self.secondField.text)
                             data.upload(sender: self)
                         } else {

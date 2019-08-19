@@ -47,15 +47,15 @@ class ViewController: UIViewController {
         
         fetchData()
         
-        tools.beautifulButton(supportButton)
-        tools.beautifulButton(reportsButton)
-        tools.beautifulButton(lunchButton)
-        tools.beautifulButton(calendersButton)
-        tools.beautifulButton(socialButton)
+        Tools.beautifulButton(supportButton)
+        Tools.beautifulButton(reportsButton)
+        Tools.beautifulButton(lunchButton)
+        Tools.beautifulButton(calendersButton)
+        Tools.beautifulButton(socialButton)
         
         uvBackground.layer.cornerRadius = 5
         
-        observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { notification in
+        observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { _ in
             self.fetchData()
         }
 
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         originalLocation = data.center.x - view.bounds.width
         
         button = HamburgerButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
-        button.addTarget(self, action: #selector(toggle(_:)), for:.touchUpInside)
+        button.addTarget(self, action: #selector(toggle(_:)), for: .touchUpInside)
                                 
         buttonView.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -173,18 +173,6 @@ class ViewController: UIViewController {
             self.reportsButton.transform = CGAffineTransform.identity
             self.supportButton.transform = CGAffineTransform.identity
         }
-    } 
-    
-    func isAppAlreadyLaunchedOnce()-> Bool {
-        let defaults = UserDefaults.standard
-        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce") {
-            //print("App already launched")
-            return true
-        } else {
-            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            //print("App launched first time")
-            return false
-        }
     }
     
     func adjustMenuItem() {
@@ -234,7 +222,7 @@ class ViewController: UIViewController {
         let apiKey = URL(string: "https://api.darksky.net/forecast/149da9678f344c568394d88cf55289f2/42.5482866,-72.6059389")
         
         if let url = apiKey {
-             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+             let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
              if let error = error {
                   print(error)
              } else {

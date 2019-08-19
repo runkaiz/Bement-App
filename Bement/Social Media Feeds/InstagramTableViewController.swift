@@ -53,8 +53,7 @@ class InstagramTableViewController: UITableViewController {
             with: url,
             options: [
                 .scaleFactor(UIScreen.main.scale)
-            ])
-        { result in
+            ]) { _ in
             cellWithImage.contentImage.hideSkeleton()
         }
         

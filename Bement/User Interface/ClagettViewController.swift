@@ -12,7 +12,7 @@ import WebKit
 class ClagettViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     @IBOutlet var libraryView: WKWebView!
-    @objc func canRotate() -> Void {}
+    @objc func canRotate() {}
     var activityIndicator: UIActivityIndicatorView!
     
     override func loadView() {
@@ -31,16 +31,15 @@ class ClagettViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myURL = URL(string:"https://bementlibrary.follettdestiny.com/common/welcome.jsp?context=saas23_2000489")
+        let myURL = URL(string: "https://bementlibrary.follettdestiny.com/common/welcome.jsp?context=saas23_2000489")
         let myRequest = URLRequest(url: myURL!)
         libraryView.load(myRequest)
     }
     
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if (self.isMovingFromParent) {
+        if self.isMovingFromParent {
             UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
         }
     }
@@ -65,7 +64,7 @@ class ClagettViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
         }
     }
     
-    //MARK:- WKNavigationDelegate
+    // MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         showActivityIndicator(show: true)
     }

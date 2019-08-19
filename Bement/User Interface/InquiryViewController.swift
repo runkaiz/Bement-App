@@ -50,7 +50,7 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
             IQKeyboardManager.shared.toolbarTintColor = .black
         }
         
-        tools.beautifulButton(sendButton)
+        Tools.beautifulButton(sendButton)
         
         nameField.delegate = self
         parentNameField.delegate = self
@@ -63,7 +63,7 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
     }
 
     @IBAction func sendClicked(_ sender: Any) {
-        if nameField.text!.replacingOccurrences(of: " ", with: "") != "" && parentNameField.text?.replacingOccurrences(of: " ", with: "") != "" && emailField.text!.replacingOccurrences(of:" ", with: "") != "" && countryField.text?.replacingOccurrences(of:" ", with: "") != "" && gradeApplying.title(for: .normal) != "Please select the grade" && yearApplying.title(for: .normal) != "Please select the year" {
+        if nameField.text!.replacingOccurrences(of: " ", with: "") != "" && parentNameField.text?.replacingOccurrences(of: " ", with: "") != "" && emailField.text!.replacingOccurrences(of: " ", with: "") != "" && countryField.text?.replacingOccurrences(of: " ", with: "") != "" && gradeApplying.title(for: .normal) != "Please select the grade" && yearApplying.title(for: .normal) != "Please select the year" {
             
             let message = """
                         <h1>Inquiry Submission</h1>
@@ -124,7 +124,7 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .alert)
         alertController.view.addSubview(myPicker)
-        let set = UIAlertAction(title: "Set", style: .default) { action in
+        let set = UIAlertAction(title: "Set", style: .default) { _ in
             self.yearApplying.setTitle(self.pickerDataSource[myPicker.selectedRow(inComponent: 0)], for: .normal)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -144,7 +144,7 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .alert)
         alertController.view.addSubview(myPicker)
-        let set = UIAlertAction(title: "Set", style: .default) { action in
+        let set = UIAlertAction(title: "Set", style: .default) { _ in
             self.gradeApplying.setTitle(self.pickerDataSource[myPicker.selectedRow(inComponent: 0)], for: .normal)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -164,7 +164,7 @@ class InquiryViewController: UIViewController, MFMailComposeViewControllerDelega
         
         let alertController = UIAlertController(title: "\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .alert)
         alertController.view.addSubview(myPicker)
-        let set = UIAlertAction(title: "Set", style: .default) { action in
+        let set = UIAlertAction(title: "Set", style: .default) { _ in
             self.currentGrade.setTitle(self.pickerDataSource[myPicker.selectedRow(inComponent: 0)], for: .normal)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
