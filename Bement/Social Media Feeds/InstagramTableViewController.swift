@@ -40,7 +40,6 @@ class InstagramTableViewController: UITableViewController {
         
         do {
             let doc = try HTMLDocument(string: AppDelegate.instagramItems[indexPath.row].description!, encoding: String.Encoding.utf8)
-          
             cellWithImage.content.text =  doc.body?.children[0].children[1].stringValue
         } catch let error {
             print(error)

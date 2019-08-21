@@ -32,9 +32,9 @@
         "package": "RunkaiKit",
         "repositoryURL": "https://github.com/1105420698/RunkaiKit.git",
         "state": {
-          "branch": "beta",
-          "revision": "1bfbec799b9ef55623007e0b08f81b7aab81bb9e",
-          "version": null
+          "branch": null,
+          "revision": "c212ce59911f740a9861925d006bd927f01b44fe",
+          "version": "1.1.2"
         }
       },
       {

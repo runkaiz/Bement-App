@@ -40,8 +40,11 @@ class FacebookTableViewController: UITableViewController {
         
         do {
             let doc = try HTMLDocument(string: AppDelegate.facebookItems[indexPath.row].description!, encoding: String.Encoding.utf8)
-          
-            cellWithImage.content.text = doc.body?.children[0].children[1].stringValue
+            if doc.body!.children[0].stringValue == "\n      \n      \n    " {
+                cellWithImage.content.text = ""
+            } else {
+                cellWithImage.content.text = doc.body?.children[0].children[1].stringValue
+            }
         } catch let error {
             print(error)
         }
@@ -51,7 +54,7 @@ class FacebookTableViewController: UITableViewController {
             cellWithImage.contentImage.kf.setImage(
                 with: URL(string: url),
                 options: [
-                
+                .scaleFactor(UIScreen.main.scale)
                 ]) { _ in
                 cellWithImage.contentImage.hideSkeleton()
             }

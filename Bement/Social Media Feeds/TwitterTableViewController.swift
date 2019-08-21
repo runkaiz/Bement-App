@@ -40,8 +40,7 @@ class TwitterTableViewController: UITableViewController {
         
         do {
             let doc = try HTMLDocument(string: AppDelegate.twitterItems[indexPath.row].description!, encoding: String.Encoding.utf8)
-          
-            cellWithImage.content.text = doc.body?.children[0].children[0].stringValue
+            cellWithImage.content.text = doc.body?.children[0].stringValue
         } catch let error {
             print(error)
         }

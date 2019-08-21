@@ -12,6 +12,7 @@ target 'Bement' do
   pod "Shift"
   pod 'SwiftLint'
   pod "SkeletonView"
+  pod "MarkdownView"
 end
   
 target 'BementUITests' do

@@ -11,6 +11,7 @@
 		9400F42FB93EAF2F60211202 /* Pods_BementUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA4D922E4C2480051B4A6 /* Pods_BementUITests.framework */; };
 		B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */; };
 		B2045D8A21297F7000272036 /* GlobalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2045D8921297F7000272036 /* GlobalVariable.swift */; };
+		B2152B01230B71970095211E /* UpdateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2152B00230B71970095211E /* UpdateTableViewController.swift */; };
 		B215F02A22DE805A0079E426 /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B215F02922DE805A0079E426 /* InquiryViewController.swift */; };
 		B223965A22F522000044DBC1 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = B223965922F522000044DBC1 /* SwiftyJSON */; };
 		B223966022F5226A0044DBC1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B223965F22F5226A0044DBC1 /* IQKeyboardManagerSwift */; };
@@ -18,8 +19,8 @@
 		B223967022F600910044DBC1 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B223966F22F600910044DBC1 /* DetailTableViewCell.swift */; };
 		B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */; };
 		B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2395B4F2159A67F006B7F0A /* CatalogResources.swift */; };
-		B2396532230A1A5E00F295C3 /* RunkaiKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2396531230A1A5E00F295C3 /* RunkaiKit */; };
 		B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23E651922DD5A550028889E /* HamburgerButton.swift */; };
+		B2412256230DA78400BD4802 /* Update#0.md in Resources */ = {isa = PBXBuildFile; fileRef = B2412255230DA78400BD4802 /* Update#0.md */; };
 		B241A2AE2298908F00ABD14E /* CalendersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */; };
 		B251C7F522974F8400566842 /* CatalogWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7F422974F8400566842 /* CatalogWebViewController.swift */; };
 		B251C7F72297585500566842 /* LunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B251C7F62297585500566842 /* LunchViewController.swift */; };
@@ -52,11 +53,14 @@
 		B2D667B921861F3D00CF8428 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667B621861F3C00CF8428 /* UIViewController.swift */; };
 		B2D667CB21862E8700CF8428 /* BementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D667CA21862E8700CF8428 /* BementUITests.swift */; };
 		B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F35211215C5B3300E0F436 /* ClagettViewController.swift */; };
+		B2F4B945230B675700232247 /* RunkaiKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2F4B944230B675700232247 /* RunkaiKit */; };
 		B2F5769E22F8CD5800494538 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5769D22F8CD5800494538 /* LoginViewController.swift */; };
 		B2F61DB32301F6BC0091AD1C /* FacebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DAF2301F6BC0091AD1C /* FacebookTableViewController.swift */; };
 		B2F61DB42301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DB02301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift */; };
 		B2F61DB52301F6BC0091AD1C /* TwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DB12301F6BC0091AD1C /* TwitterTableViewController.swift */; };
 		B2F61DB62301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F61DB22301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift */; };
+		B2FEA366230B74B60072613C /* UpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEA365230B74B60072613C /* UpdateTableViewCell.swift */; };
+		B2FEA36A230B77800072613C /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEA369230B77800072613C /* UpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,7 @@
 		B203056B22C05FE4007B13C4 /* SpeedContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedContactViewController.swift; sourceTree = "<group>"; };
 		B2045D8921297F7000272036 /* GlobalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariable.swift; sourceTree = "<group>"; };
 		B2045DF1212A7DF700272036 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B2152B00230B71970095211E /* UpdateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTableViewController.swift; sourceTree = "<group>"; };
 		B215F02922DE805A0079E426 /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		B223966422F5CD100044DBC1 /* Shift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B223966F22F600910044DBC1 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 		B2395B4D2159A5AD006B7F0A /* CatalogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTableViewController.swift; sourceTree = "<group>"; };
 		B2395B4F2159A67F006B7F0A /* CatalogResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogResources.swift; sourceTree = "<group>"; };
 		B23E651922DD5A550028889E /* HamburgerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerButton.swift; sourceTree = "<group>"; };
+		B2412255230DA78400BD4802 /* Update#0.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Update#0.md"; sourceTree = "<group>"; };
 		B241A2AD2298908F00ABD14E /* CalendersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendersTableViewController.swift; sourceTree = "<group>"; };
 		B251C7F422974F8400566842 /* CatalogWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogWebViewController.swift; sourceTree = "<group>"; };
 		B251C7F62297585500566842 /* LunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +165,8 @@
 		B2F61DB02301F6BC0091AD1C /* FacebookWithImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookWithImageTableViewCell.swift; sourceTree = "<group>"; };
 		B2F61DB12301F6BC0091AD1C /* TwitterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterTableViewController.swift; sourceTree = "<group>"; };
 		B2F61DB22301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterWithImageTableViewCell.swift; sourceTree = "<group>"; };
+		B2FEA365230B74B60072613C /* UpdateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTableViewCell.swift; sourceTree = "<group>"; };
+		B2FEA369230B77800072613C /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		C43408465FC5BCAEBB652920 /* Pods-Bement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bement/Pods-Bement.debug.xcconfig"; sourceTree = "<group>"; };
 		C836ACBBEB62D0DCB40A2562 /* Pods_watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D23074EAADDC2DFE075C4583 /* Pods_BementUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BementUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,7 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2BFDE0422FB9C0C00A737F7 /* CloudKit.framework in Frameworks */,
-				B2396532230A1A5E00F295C3 /* RunkaiKit in Frameworks */,
+				B2F4B945230B675700232247 /* RunkaiKit in Frameworks */,
 				B2BFDE0722FB9FA200A737F7 /* Reachability in Frameworks */,
 				B223966022F5226A0044DBC1 /* IQKeyboardManagerSwift in Frameworks */,
 				B223965A22F522000044DBC1 /* SwiftyJSON in Frameworks */,
@@ -234,6 +242,7 @@
 			children = (
 				B2885D4F230A2076006A9108 /* .swiftlint.yml */,
 				B2BA44D320EB9FD1009437A7 /* Bement */,
+				B2FEA367230B76070072613C /* Updates */,
 				B2D667C921862E8700CF8428 /* BementUITests */,
 				B2BA44D220EB9FD1009437A7 /* Products */,
 				B2E97A27211B2B8D0005BEA9 /* Frameworks */,
@@ -302,6 +311,9 @@
 				B2F5769D22F8CD5800494538 /* LoginViewController.swift */,
 				B2BFDDFF22FB93B000A737F7 /* AnnouncementViewController.swift */,
 				B2BFDE0122FB97E900A737F7 /* Announcement.swift */,
+				B2152B00230B71970095211E /* UpdateTableViewController.swift */,
+				B2FEA365230B74B60072613C /* UpdateTableViewCell.swift */,
+				B2FEA369230B77800072613C /* UpdateViewController.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -342,6 +354,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B2FEA367230B76070072613C /* Updates */ = {
+			isa = PBXGroup;
+			children = (
+				B2412255230DA78400BD4802 /* Update#0.md */,
+			);
+			path = Updates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,7 +388,7 @@
 				B223965F22F5226A0044DBC1 /* IQKeyboardManagerSwift */,
 				B223966222F5227D0044DBC1 /* FeedKit */,
 				B2BFDE0622FB9FA200A737F7 /* Reachability */,
-				B2396531230A1A5E00F295C3 /* RunkaiKit */,
+				B2F4B944230B675700232247 /* RunkaiKit */,
 			);
 			productName = Bement;
 			productReference = B2BA44D120EB9FD1009437A7 /* Bement.app */;
@@ -446,7 +466,7 @@
 				B223965E22F5226A0044DBC1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				B223966122F5227D0044DBC1 /* XCRemoteSwiftPackageReference "FeedKit" */,
 				B2BFDE0522FB9FA200A737F7 /* XCRemoteSwiftPackageReference "Reachability" */,
-				B2396530230A1A5E00F295C3 /* XCRemoteSwiftPackageReference "RunkaiKit" */,
+				B2F4B943230B675700232247 /* XCRemoteSwiftPackageReference "RunkaiKit" */,
 			);
 			productRefGroup = B2BA44D220EB9FD1009437A7 /* Products */;
 			projectDirPath = "";
@@ -468,6 +488,7 @@
 				B26C0F122119861100750545 /* LaunchScreen.storyboard in Resources */,
 				B2B46E79212B046600CA7480 /* Localizable.strings in Resources */,
 				B2BA44DC20EB9FD6009437A7 /* Assets.xcassets in Resources */,
+				B2412256230DA78400BD4802 /* Update#0.md in Resources */,
 				B2BA44DA20EB9FD1009437A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,11 +584,13 @@
 				B241A2AE2298908F00ABD14E /* CalendersTableViewController.swift in Sources */,
 				B2B42D8F22A73398001BDF8C /* ContactBementViewController.swift in Sources */,
 				B2BEE38322FDC0D40064CEFB /* AnimationHelper.swift in Sources */,
+				B2152B01230B71970095211E /* UpdateTableViewController.swift in Sources */,
 				B223967022F600910044DBC1 /* DetailTableViewCell.swift in Sources */,
 				B2BFDE0222FB97E900A737F7 /* Announcement.swift in Sources */,
 				B23E651A22DD5A550028889E /* HamburgerButton.swift in Sources */,
 				B2CBE5EC22F26A240026B803 /* LookAheadViewController.swift in Sources */,
 				B2395B4E2159A5AD006B7F0A /* CatalogTableViewController.swift in Sources */,
+				B2FEA366230B74B60072613C /* UpdateTableViewCell.swift in Sources */,
 				B299D8AD229CB13C0071B688 /* InstagramWithImageTableViewCell.swift in Sources */,
 				B268D40B21195B06001D7BF1 /* ViewController.swift in Sources */,
 				B2F61DB62301F6BC0091AD1C /* TwitterWithImageTableViewCell.swift in Sources */,
@@ -584,6 +607,7 @@
 				B2F35212215C5B3300E0F436 /* ClagettViewController.swift in Sources */,
 				B215F02A22DE805A0079E426 /* InquiryViewController.swift in Sources */,
 				B283965A2161A7A200034DA4 /* UIViewExtensions.swift in Sources */,
+				B2FEA36A230B77800072613C /* UpdateViewController.swift in Sources */,
 				B2F61DB32301F6BC0091AD1C /* FacebookTableViewController.swift in Sources */,
 				B2395B502159A67F006B7F0A /* CatalogResources.swift in Sources */,
 				B203056C22C05FE4007B13C4 /* SpeedContactViewController.swift in Sources */,
@@ -893,20 +917,20 @@
 				minimumVersion = 8.1.1;
 			};
 		};
-		B2396530230A1A5E00F295C3 /* XCRemoteSwiftPackageReference "RunkaiKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/1105420698/RunkaiKit.git";
-			requirement = {
-				branch = beta;
-				kind = branch;
-			};
-		};
 		B2BFDE0522FB9FA200A737F7 /* XCRemoteSwiftPackageReference "Reachability" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.3.1;
+			};
+		};
+		B2F4B943230B675700232247 /* XCRemoteSwiftPackageReference "RunkaiKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/1105420698/RunkaiKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -927,15 +951,15 @@
 			package = B223966122F5227D0044DBC1 /* XCRemoteSwiftPackageReference "FeedKit" */;
 			productName = FeedKit;
 		};
-		B2396531230A1A5E00F295C3 /* RunkaiKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B2396530230A1A5E00F295C3 /* XCRemoteSwiftPackageReference "RunkaiKit" */;
-			productName = RunkaiKit;
-		};
 		B2BFDE0622FB9FA200A737F7 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B2BFDE0522FB9FA200A737F7 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
+		};
+		B2F4B944230B675700232247 /* RunkaiKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2F4B943230B675700232247 /* XCRemoteSwiftPackageReference "RunkaiKit" */;
+			productName = RunkaiKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
